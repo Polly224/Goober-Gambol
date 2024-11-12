@@ -31,7 +31,6 @@ public class InputHandler : MonoBehaviour
             3 => Color.magenta,
             _ => Color.white
         };
-        Debug.Log(lookDir);
     }
 
     public void ProcessMovement(CallbackContext context)
