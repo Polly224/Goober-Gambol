@@ -12,6 +12,7 @@ public class InputHandler : MonoBehaviour
     private PlayerInput playerInput;
     private int index = 0;
     private Vector2 movementDir;
+    private Vector2 lookDir;
     private float movementSpeed = 5;
     private void Awake()
     {
@@ -20,7 +21,8 @@ public class InputHandler : MonoBehaviour
     }
     private void Update()
     {
-        ProcessInput(movementDir);
+        SetMoveDirection(movementDir);
+        SetLookDirection(lookDir);
         cubeMat.color = playerInput.playerIndex switch
         {
             0 => Color.red,
@@ -29,34 +31,24 @@ public class InputHandler : MonoBehaviour
             3 => Color.magenta,
             _ => Color.white
         };
+        Debug.Log(lookDir);
     }
 
-    public void ProcessInputSystem(CallbackContext context)
+    public void ProcessMovement(CallbackContext context)
     {
-        /*if (context.ReadValue<Vector2>().y > 0)
-            ProcessInput("up");
-        if (context.ReadValue<Vector2>().y < 0)
-            ProcessInput("down");
-        if (context.ReadValue<Vector2>() == new Vector2(0, 0))
-            ProcessInput(default);
-        if (context.ReadValue<Vector2>().x > 0)
-            ProcessInput("right");
-        if (context.ReadValue<Vector2>().x < 0)
-            ProcessInput("left");*/
         movementDir = context.ReadValue<Vector2>();
     }
-    public void ProcessInput(Vector2 input)
+    public void ProcessAiming(CallbackContext context)
     {
-        /*cubeMat.color = input switch
-        {
-            "up" => new Color(255, 0, 0),
-            "down" => new Color(0, 255, 0),
-            "left" => new Color(0, 50, 255),
-            "right" => new Color(0, 0, 255),
-            _ => new Color(255, 255, 255),
-        };*/
+        lookDir = context.ReadValue<Vector2>();
+    }
+    public void SetMoveDirection(Vector2 input)
+    { 
         transform.position += movementSpeed * Time.deltaTime * new Vector3(input.x, 0, input.y);
+    }
 
-        Debug.Log(input);
+    private void SetLookDirection(Vector2 input)
+    {
+        transform.LookAt(transform.position + new Vector3(input.x, transform.position.y, input.y));
     }
 }
