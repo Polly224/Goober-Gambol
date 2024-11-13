@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Devs/Polly/Scenes/Polly Test Scene.unity
+    guid: 70bd38fd7ef83434e925b1ec49be3466
+  - enabled: 1
+    path: Assets/Devs/Polly/Scenes/Scene2.unity
+    guid: 8da4999d9f47823458dc452eb283942e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ff03ae927bcd05447861910a0e7beb08, type: 2}

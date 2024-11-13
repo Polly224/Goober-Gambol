@@ -14,10 +14,17 @@ public class InputHandler : MonoBehaviour
     private Vector2 movementDir;
     private Vector2 lookDir;
     private float movementSpeed = 5;
+    private PlayerInputManager pIM;
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         cubeMat = GetComponent<MeshRenderer>().material;
+    }
+
+    private void Start()
+    {
+        Debug.Log(playerInput.playerIndex);
+        PlayerDataStorage.instance.AddToControllers(playerInput.GetDevice<InputDevice>());
     }
     private void Update()
     {

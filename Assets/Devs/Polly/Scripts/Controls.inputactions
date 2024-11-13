@@ -1,8 +1,8 @@
 {
-    "name": "Movement",
+    "name": "Controls",
     "maps": [
         {
-            "name": "CubeChangerTest",
+            "name": "Gameplay",
             "id": "90b41331-e769-4a30-b01c-78b9c6917bc9",
             "actions": [
                 {
@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Pausing",
+                    "type": "Button",
+                    "id": "7959689b-8ce8-4533-ad16-772b06e74664",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -101,6 +110,101 @@
                     "action": "Aiming",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c91a0832-1af9-40bf-a354-8e7e6d80d9e8",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pausing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Title screen",
+            "id": "91593dcb-66e8-4aa0-8063-f9a7ceadec23",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "ebeb87b0-a9e2-43d9-a2ac-3c73c8d5b90e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "365d9c5c-18ec-4163-a383-06d35feb4f61",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Character select",
+            "id": "88c9d13c-4bfd-4787-8a33-e7b681f53534",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "520ceeb9-6932-41e1-a131-2589de22f6bd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fae615aa-2932-4543-a8d0-bc008e642bac",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Joining",
+            "id": "786673a6-3d64-4f67-8581-ee5b8308be21",
+            "actions": [
+                {
+                    "name": "Join",
+                    "type": "Button",
+                    "id": "7bc5c66b-9104-450e-883c-da037d15ca98",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "364d4998-6421-497f-9672-3f26906e05d9",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -112,17 +216,6 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "TestWASD",
-            "bindingGroup": "TestWASD",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
                     "isOptional": false,
                     "isOR": false
                 }
