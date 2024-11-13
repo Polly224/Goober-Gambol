@@ -7,7 +7,6 @@ public class PlayerDataStorage : MonoBehaviour
 {
     public static PlayerDataStorage instance;
     public static List<InputDevice> connectedControllers = new();
-    public static List<int> indexes = new();
 
     private void Awake()
     {
@@ -23,11 +22,6 @@ public class PlayerDataStorage : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void AddToIndexes(int indexToAdd)
-    {
-        indexes.Add(indexToAdd);
     }
 
     public void AddToControllers(InputDevice controllerToAdd)

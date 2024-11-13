@@ -120,8 +120,9 @@ GameObject:
   - component: {fileID: 3892889048800221373}
   - component: {fileID: 8241147534948928039}
   - component: {fileID: 484948906729318700}
+  - component: {fileID: 442578727046520998}
   m_Layer: 0
-  m_Name: Test
+  m_Name: PlayerPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,8 +345,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f103028d-d56f-4a1d-889e-7609d5746f41
     m_ActionName: CubeChangerTest/Aiming[/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7959689b-8ce8-4533-ad16-772b06e74664
+    m_ActionName: Gameplay/Pausing[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ebeb87b0-a9e2-43d9-a2ac-3c73c8d5b90e
+    m_ActionName: Title screen/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 520ceeb9-6932-41e1-a131-2589de22f6bd
+    m_ActionName: Character select/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7bc5c66b-9104-450e-883c-da037d15ca98
+    m_ActionName: Joining/Join[/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: CubeChangerTest
+  m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &442578727046520998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8623839776551813442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4c69c3d53c57d44a9320a3881154fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
