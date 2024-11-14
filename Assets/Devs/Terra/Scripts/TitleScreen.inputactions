@@ -1,0 +1,34 @@
+{
+    "name": "TitleScreen",
+    "maps": [
+        {
+            "name": "TitleScreen",
+            "id": "ecc0e748-21c8-4b05-bf4a-b4bf352760c9",
+            "actions": [
+                {
+                    "name": "MenuMovement",
+                    "type": "Value",
+                    "id": "69e159ed-e34c-4fe5-b1f1-2342bf2f6fac",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2f259823-11d0-4c24-aa79-87823c15cafa",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
