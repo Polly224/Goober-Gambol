@@ -10,7 +10,6 @@ public class InputHandler : MonoBehaviour
 {
     Material cubeMat;
     private PlayerInput playerInput;
-    private int index = 0;
     private Vector2 movementDir;
     private Vector2 lookDir;
     private float movementSpeed = 5;

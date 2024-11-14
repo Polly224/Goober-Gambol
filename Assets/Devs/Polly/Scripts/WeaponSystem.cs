@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour
 {
+    [System.Serializable]
     public struct Weapon
     {
         public string name;
@@ -13,8 +15,10 @@ public class WeaponSystem : MonoBehaviour
         public float knockback;
         public List<Hitbox> hitboxes;
         public AttackType attackType;
+        public bool swingable;
         public bool throwable;
-        public Weapon(string name, float damage, float startup, float recovery, float knockback, List<Hitbox> hitboxes, AttackType attackType, bool throwable)
+        public float bleedAmount;
+        public Weapon(string name, float damage, float startup, float recovery, float knockback, List<Hitbox> hitboxes, AttackType attackType, bool swingable, bool throwable, float bleedAmount)
         {
             this.name = name;
             this.damage = damage;
@@ -23,7 +27,9 @@ public class WeaponSystem : MonoBehaviour
             this.knockback = knockback;
             this.hitboxes = hitboxes;
             this.attackType = attackType;
+            this.swingable = swingable;
             this.throwable = throwable;
+            this.bleedAmount = bleedAmount;
         }
     }
     public enum AttackType
@@ -34,6 +40,14 @@ public class WeaponSystem : MonoBehaviour
         Stab,
         OneArmBonk
     }
+    public enum WeaponGimmick
+    {
+        None,
+        InflictsBleedOnHit,
+        Shotgun,
+        MetalPipe
+    }
+    [System.Serializable]
     public struct Hitbox
     {
         public Vector3 positionOffset;
