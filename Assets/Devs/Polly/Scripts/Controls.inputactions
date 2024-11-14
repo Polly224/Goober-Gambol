@@ -133,6 +133,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7a1f3b00-48d6-4a92-95a6-f2e5ca468981",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pausing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "23ffe6f8-9494-43c2-9847-565e8017a54d",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
