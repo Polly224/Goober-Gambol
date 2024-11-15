@@ -9,11 +9,13 @@ public class PlayerInventory : MonoBehaviour
 {
     public List<WeaponSystem.Weapon> weaponInventory = new();
     public int currentWeaponIndex = 0;
+    // When the player presses either of the bumpers on their controller, they switch weapons.
     public void SwitchWeapons(CallbackContext context)
     {
         currentWeaponIndex = currentWeaponIndex == 0 ? 1 : 0;
     }
 
+    // When the pickup button is pressed, this script checks whether there's a weapon to pick up in the first place. If there is, it picks up said weapon.
     public void PickUpTest(CallbackContext context)
     {
         bool pickupInRange = false;
@@ -27,6 +29,7 @@ public class PlayerInventory : MonoBehaviour
         if (pickupInRange && context.performed) PickUpWeapon();
     }
 
+    // Only gets called if there's a weapon in range to pick up. Picks up the closest weapon, and either adds it to the player inventory or swaps the current gun.
     public void PickUpWeapon()
     {
         GameObject closestPickup = GetClosestPickup();
@@ -51,7 +54,7 @@ public class PlayerInventory : MonoBehaviour
 
         }
     }
-
+    // Checks which weapon within range of the player is closest to them, then returns that gameObject.
     public GameObject GetClosestPickup()
     {
         float lowestDistance = 10000;

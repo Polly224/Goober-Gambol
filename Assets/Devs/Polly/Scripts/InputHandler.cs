@@ -13,22 +13,24 @@ public class InputHandler : MonoBehaviour
     private Vector2 movementDir;
     private Vector2 lookDir;
     private float movementSpeed = 5;
-    private PlayerInputManager pIM;
     private void Awake()
     {
+        // Gets the player input and the player's material for later usage.
         playerInput = GetComponent<PlayerInput>();
         cubeMat = GetComponent<MeshRenderer>().material;
     }
 
     private void Start()
     {
-        Debug.Log(playerInput.playerIndex);
+        // When a player is added, their controller gets added to the controller list.
         PlayerDataStorage.instance.AddToControllers(playerInput.GetDevice<InputDevice>());
     }
     private void Update()
     {
+        // Moves in the held direction, looks in the held direction.
         SetMoveDirection(movementDir);
         SetLookDirection(lookDir);
+        // Sets cube's color dependant on player slot, makes it easier to distinguish players. For testing.
         cubeMat.color = playerInput.playerIndex switch
         {
             0 => Color.red,

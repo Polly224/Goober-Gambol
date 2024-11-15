@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour
 {
+    // This script simply stores 2 struct types; Weapon and Hitbox, the latter of which just being used for the Weapon struct.
+    // To define a new weapon, just make a variable of the Weapon type, and enter the Weapon's data in the following order:
+    // name, damage, startup, recovery, knockback, hitboxes, attack type, swingable, throwable, and bleed amount.
     [System.Serializable]
     public struct Weapon
     {
@@ -32,6 +35,25 @@ public class WeaponSystem : MonoBehaviour
             this.bleedAmount = bleedAmount;
         }
     }
+
+    [System.Serializable]
+    public struct Hitbox
+    {
+        public Vector3 positionOffset;
+        public float duration;
+        public float xSize;
+        public float ySize;
+        public HitboxShape hitboxShape;
+        public Hitbox(Vector3 positionOffset, float duration, float xSize, float ySize, HitboxShape hitboxShape)
+        {
+            this.positionOffset = positionOffset;
+            this.duration = duration;
+            this.xSize = xSize;
+            this.ySize = ySize;
+            this.hitboxShape = hitboxShape;
+        }
+    }
+
     public enum AttackType
     {
         Spin360,
@@ -47,15 +69,9 @@ public class WeaponSystem : MonoBehaviour
         Shotgun,
         MetalPipe
     }
-    [System.Serializable]
-    public struct Hitbox
+    public enum HitboxShape
     {
-        public Vector3 positionOffset;
-        public float duration;
-        public Hitbox(Vector3 positionOffset, float duration)
-        {
-            this.positionOffset = positionOffset;
-            this.duration = duration;
-        }
+        Square,
+        Circle
     }
 }
