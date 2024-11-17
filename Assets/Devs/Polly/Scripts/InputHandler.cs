@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
@@ -13,11 +14,14 @@ public class InputHandler : MonoBehaviour
     private Vector2 movementDir;
     private Vector2 lookDir;
     private float movementSpeed = 5;
+    private bool isLooking = false;
+    private Rigidbody rb;
     private void Awake()
     {
         // Gets the player input and the player's material for later usage.
         playerInput = GetComponent<PlayerInput>();
         cubeMat = GetComponent<MeshRenderer>().material;
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Start()
@@ -29,7 +33,7 @@ public class InputHandler : MonoBehaviour
     {
         // Moves in the held direction, looks in the held direction.
         SetMoveDirection(movementDir);
-        SetLookDirection(lookDir);
+        SetLookDirection(isLooking ? lookDir : movementDir);
         // Sets cube's color dependant on player slot, makes it easier to distinguish players. For testing.
         cubeMat.color = playerInput.playerIndex switch
         {
@@ -48,10 +52,11 @@ public class InputHandler : MonoBehaviour
     public void ProcessAiming(CallbackContext context)
     {
         lookDir = context.ReadValue<Vector2>();
+        isLooking = !context.canceled;
     }
     public void SetMoveDirection(Vector2 input)
     { 
-        transform.position += movementSpeed * Time.deltaTime * new Vector3(input.x, 0, input.y);
+        rb.transform.position += movementSpeed * Time.deltaTime * new Vector3(input.x, 0, input.y);
     }
 
     private void SetLookDirection(Vector2 input)
