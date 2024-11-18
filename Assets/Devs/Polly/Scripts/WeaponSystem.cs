@@ -39,6 +39,9 @@ public class WeaponSystem : MonoBehaviour
     [System.Serializable]
     public struct Hitbox
     {
+        // Hitboxes are spawned when you perform an attack. positionOffset is based off the player's position.
+        // For example, if positionOffset was set to (0, 0, 1) would spawn a hitbox 1 unit in front of the player.
+        // hitboxShape denotes whether the hitbox will be a box collider or a sphere collider. Sphere colliders always use the xSize, always being a 1:1:1 size ratio.
         public Vector3 positionOffset;
         public float duration;
         public float xSize;
@@ -56,6 +59,7 @@ public class WeaponSystem : MonoBehaviour
 
     public enum AttackType
     {
+        // Denotes the animation the attack will use when the player attacks.
         Spin360,
         OneArmSwing,
         ReinhardtSwing,
@@ -64,6 +68,7 @@ public class WeaponSystem : MonoBehaviour
     }
     public enum WeaponGimmick
     {
+        // Names should speak for themselves. The weapon's bleedAmount variable does nothing unless its WeaponGimmick is set to InflictsBleedOnHit.
         None,
         InflictsBleedOnHit,
         Shotgun,
@@ -71,6 +76,7 @@ public class WeaponSystem : MonoBehaviour
     }
     public enum HitboxShape
     {
+        // All these squares make a circle...
         Square,
         Circle
     }
