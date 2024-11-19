@@ -60,6 +60,7 @@ public class WeaponSystem : MonoBehaviour
     public enum AttackType
     {
         // Denotes the animation the attack will use when the player attacks.
+        Punch,
         Spin360,
         OneArmSwing,
         ReinhardtSwing,
@@ -80,4 +81,21 @@ public class WeaponSystem : MonoBehaviour
         Square,
         Circle
     }
+
+    public static Weapon fists = new()
+    {
+        name = "fists",
+        damage = 5,
+        startup = 0.5f,
+        recovery = 2,
+        knockback = 3,
+        hitboxes = new()
+        {
+            new Hitbox(new Vector3(0, 0, 1), 0.2f, 1, 1, HitboxShape.Circle)
+        },
+        attackType = AttackType.Punch,
+        swingable = true,
+        throwable = false,
+        bleedAmount = 0
+    };
 }

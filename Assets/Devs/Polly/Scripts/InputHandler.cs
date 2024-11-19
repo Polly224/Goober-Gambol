@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 using static UnityEngine.InputSystem.InputAction;
 
@@ -16,6 +18,8 @@ public class InputHandler : MonoBehaviour
     private float movementSpeed = 5;
     private bool isLooking = false;
     private Rigidbody rb;
+    [SerializeField]
+    private float turnSpeed = 1;
     private void Awake()
     {
         // Gets the player input and the player's material for later usage.
@@ -32,8 +36,9 @@ public class InputHandler : MonoBehaviour
     private void Update()
     {
         // Moves in the held direction, looks in the held direction.
+        lookDir = isLooking ? lookDir : movementDir;
         SetMoveDirection(movementDir);
-        SetLookDirection(isLooking ? lookDir : movementDir);
+        SetLookDirection(lookDir);
         // Sets cube's color dependant on player slot, makes it easier to distinguish players. For testing.
         cubeMat.color = playerInput.playerIndex switch
         {
@@ -44,7 +49,6 @@ public class InputHandler : MonoBehaviour
             _ => Color.white
         };
     }
-
     public void ProcessMovement(CallbackContext context)
     {
         movementDir = context.ReadValue<Vector2>();
@@ -61,6 +65,8 @@ public class InputHandler : MonoBehaviour
 
     private void SetLookDirection(Vector2 input)
     {
-        transform.LookAt(transform.position + new Vector3(input.x, transform.position.y, input.y));
+        // transform.LookAt(transform.position + new Vector3(input.x, transform.position.y, input.y));
+        Quaternion newRotation = Quaternion.LookRotation(new Vector3(lookDir.x, rb.position.y, lookDir.y));
+        transform.rotation = Quaternion.Slerp(rb.rotation, newRotation, turnSpeed * Time.deltaTime);
     }
 }

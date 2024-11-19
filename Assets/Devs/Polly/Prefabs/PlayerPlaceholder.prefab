@@ -117,10 +117,10 @@ GameObject:
   - component: {fileID: 8129324851063242216}
   - component: {fileID: 1286688707802992237}
   - component: {fileID: 8970379971112590612}
-  - component: {fileID: 3892889048800221373}
   - component: {fileID: 8241147534948928039}
   - component: {fileID: 484948906729318700}
   - component: {fileID: 442578727046520998}
+  - component: {fileID: 4048770972178759657}
   - component: {fileID: 4139782108211817537}
   m_Layer: 0
   m_Name: PlayerPlaceholder
@@ -216,67 +216,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3892889048800221373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8623839776551813442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f076b4f8e5f2e0b43a60ee267d437f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testInput:
-    m_Name: Test Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: bfcb0498-8950-4430-94cc-8c07bd50dfb8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: e1cf12e7-641a-4ebe-a4d1-d72c860bd6a8
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Test Input
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 0b5aa4a3-c6bf-448b-9d4d-61651e4e8bf3
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Test Input
-      m_Flags: 8
-    - m_Name: down
-      m_Id: 543957af-2b2a-4f52-926b-6144a3cc27e8
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Test Input
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 3cb7c194-b0c6-4cba-9bce-2dfa7b946c1a
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Test Input
-      m_Flags: 8
-    - m_Name: right
-      m_Id: d1dbed57-504a-494f-b64a-fe30d9a22fe1
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Test Input
-      m_Flags: 8
-    m_Flags: 0
 --- !u!114 &8241147534948928039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc76c118daa8df848bddde58f4e5c5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnSpeed: 3
 --- !u!114 &484948906729318700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +334,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2e91e27f-c19e-4d18-8334-37de11a09426
     m_ActionName: Gameplay/Switch Weapon[/XInputControllerWindows/rightShoulder,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4048770972178759657}
+        m_TargetAssemblyTypeName: AttackScript, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f5cdca32-9c8e-4e95-ac3d-d9e24c2ad432
+    m_ActionName: Gameplay/Attack[/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 37752205-9acd-4211-88a2-a2b3cd3d90e4
+    m_ActionName: Gameplay/AltAttack[/XInputControllerWindows/leftTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -413,6 +373,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponInventory: []
   currentWeaponIndex: 0
+--- !u!114 &4048770972178759657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8623839776551813442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059076ca6ed77d54b91bd561af4f08b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphereHitbox: {fileID: 1762811529330813548, guid: bc6f14c578ab95849aa512ee230fb6d3, type: 3}
+  cubeHitbox: {fileID: 6886558610954420018, guid: fbf0927ccb8b1594b848825eb311487c, type: 3}
 --- !u!54 &4139782108211817537
 Rigidbody:
   m_ObjectHideFlags: 0
