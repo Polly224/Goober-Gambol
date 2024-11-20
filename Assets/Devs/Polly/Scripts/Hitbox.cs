@@ -7,22 +7,20 @@ public class Hitbox : MonoBehaviour
 {
     public WeaponSystem.Hitbox hitboxData;
     public WeaponSystem.Weapon attackData;
-    private List<GameObject> hitPlayers = new();
-    void Start()
+    public List<GameObject> hitPlayers = new();
+
+    private void Start()
     {
-        
+        Destroy(gameObject, hitboxData.duration);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player") && !hitPlayers.Contains(other.gameObject))
         {
-
+            hitPlayers.Add(other.gameObject);
+            other.GetComponent<DamageSystem>().GotHit(attackData);
+            Debug.Log("hit player");
         }
     }
 }

@@ -10,13 +10,6 @@ public class PlayerInventory : MonoBehaviour
 {
     public List<WeaponSystem.Weapon> weaponInventory = new();
     public int currentWeaponIndex = 0;
-    private void Update()
-    {
-        if(weaponInventory.Count >= currentWeaponIndex + 1)
-        {
-            Debug.Log(weaponInventory[currentWeaponIndex]);
-        }
-    }
     // When the player presses either of the bumpers on their controller, they switch weapons.
     public void SwitchWeapons(CallbackContext context)
     {

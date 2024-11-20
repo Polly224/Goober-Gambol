@@ -17,6 +17,7 @@ public class InputHandler : MonoBehaviour
     private Vector2 lookDir;
     private float movementSpeed = 5;
     private bool isLooking = false;
+    private bool isMoving = false;
     private Rigidbody rb;
     [SerializeField]
     private float turnSpeed = 1;
@@ -32,11 +33,14 @@ public class InputHandler : MonoBehaviour
     {
         // When a player is added, their controller gets added to the controller list.
         PlayerDataStorage.instance.AddToControllers(playerInput.GetDevice<InputDevice>());
+        PlayerDataStorage.connectedPlayerObjects.Add(gameObject);
     }
-    private void Update()
+
+    private void OnDestroy() => PlayerDataStorage.connectedPlayerObjects.Remove(gameObject);
+    private void FixedUpdate()
     {
         // Moves in the held direction, looks in the held direction.
-        lookDir = isLooking ? lookDir : movementDir;
+        lookDir = (isMoving && !isLooking) ? movementDir : lookDir;
         SetMoveDirection(movementDir);
         SetLookDirection(lookDir);
         // Sets cube's color dependant on player slot, makes it easier to distinguish players. For testing.
@@ -52,10 +56,11 @@ public class InputHandler : MonoBehaviour
     public void ProcessMovement(CallbackContext context)
     {
         movementDir = context.ReadValue<Vector2>();
+        isMoving = !context.canceled;
     }
     public void ProcessAiming(CallbackContext context)
     {
-        lookDir = context.ReadValue<Vector2>();
+        if(context.performed) lookDir = context.ReadValue<Vector2>();
         isLooking = !context.canceled;
     }
     public void SetMoveDirection(Vector2 input)
@@ -66,7 +71,7 @@ public class InputHandler : MonoBehaviour
     private void SetLookDirection(Vector2 input)
     {
         // transform.LookAt(transform.position + new Vector3(input.x, transform.position.y, input.y));
-        Quaternion newRotation = Quaternion.LookRotation(new Vector3(lookDir.x, rb.position.y, lookDir.y));
+        Quaternion newRotation = Quaternion.LookRotation(new Vector3(input.x, rb.position.y, input.y));
         transform.rotation = Quaternion.Slerp(rb.rotation, newRotation, turnSpeed * Time.deltaTime);
     }
 }

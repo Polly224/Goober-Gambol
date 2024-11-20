@@ -86,12 +86,19 @@ public class WeaponSystem : MonoBehaviour
     {
         name = "fists",
         damage = 5,
-        startup = 0.5f,
-        recovery = 2,
+        startup = 0.05f,
+        recovery = 1,
         knockback = 3,
         hitboxes = new()
         {
-            new Hitbox(new Vector3(0, 0, 1), 0.2f, 1, 1, HitboxShape.Circle)
+            new Hitbox()
+            {
+                positionOffset = new Vector3(0, 0, 1),
+                duration = 0.1f,
+                xSize = 2,
+                ySize = 1,
+                hitboxShape = HitboxShape.Circle
+            }
         },
         attackType = AttackType.Punch,
         swingable = true,
