@@ -16,8 +16,9 @@ public class InputHandler : MonoBehaviour
     private Vector2 movementDir;
     private Vector2 lookDir;
     private float movementSpeed = 5;
-    private bool isLooking = false;
-    private bool isMoving = false;
+    public bool isLooking = false;
+    public bool isMoving = false;
+    public bool isRagdolling = false;
     private Rigidbody rb;
     [SerializeField]
     private float turnSpeed = 1;
@@ -41,8 +42,8 @@ public class InputHandler : MonoBehaviour
     {
         // Moves in the held direction, looks in the held direction.
         lookDir = (isMoving && !isLooking) ? movementDir : lookDir;
-        SetMoveDirection(movementDir);
-        SetLookDirection(lookDir);
+        if(!isRagdolling) SetMoveDirection(movementDir);
+        if(!isRagdolling) SetLookDirection(lookDir);
         // Sets cube's color dependant on player slot, makes it easier to distinguish players. For testing.
         cubeMat.color = playerInput.playerIndex switch
         {
@@ -52,6 +53,12 @@ public class InputHandler : MonoBehaviour
             3 => Color.magenta,
             _ => Color.white
         };
+        if ((rb.rotation.x != 0 || rb.rotation.z != 0) && !isRagdolling)
+        {
+            rb.AddTorque(new Vector3(-rb.rotation.x, 0, -rb.rotation.z));
+        }
+        isRagdolling = !IsGrounded() && isRagdolling;
+        if(!isRagdolling && !isMoving) rb.velocity /= (1 / (2 * Time.deltaTime));
     }
     public void ProcessMovement(CallbackContext context)
     {
@@ -73,5 +80,10 @@ public class InputHandler : MonoBehaviour
         // transform.LookAt(transform.position + new Vector3(input.x, transform.position.y, input.y));
         Quaternion newRotation = Quaternion.LookRotation(new Vector3(input.x, rb.position.y, input.y));
         transform.rotation = Quaternion.Slerp(rb.rotation, newRotation, turnSpeed * Time.deltaTime);
+    }
+
+    public bool IsGrounded()
+    {
+        return Physics.Raycast(rb.position, -Vector3.up, 0.6f) && rb.velocity.y <= 0;
     }
 }

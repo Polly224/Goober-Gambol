@@ -445,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9201588279472647433, guid: cf77da74316e260428d6d16d15c5993e, type: 3}
       propertyPath: pickupWeaponData.startup
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9201588279472647433, guid: cf77da74316e260428d6d16d15c5993e, type: 3}
       propertyPath: pickupWeaponData.recovery
@@ -465,6 +465,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9201588279472647433, guid: cf77da74316e260428d6d16d15c5993e, type: 3}
       propertyPath: pickupWeaponData.attackType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201588279472647433, guid: cf77da74316e260428d6d16d15c5993e, type: 3}
+      propertyPath: pickupWeaponData.bleedAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201588279472647433, guid: cf77da74316e260428d6d16d15c5993e, type: 3}
+      propertyPath: pickupWeaponData.weaponGimmick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201588279472647433, guid: cf77da74316e260428d6d16d15c5993e, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201588279472647433, guid: cf77da74316e260428d6d16d15c5993e, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].xSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201588279472647433, guid: cf77da74316e260428d6d16d15c5993e, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].ySize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201588279472647433, guid: cf77da74316e260428d6d16d15c5993e, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].duration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201588279472647433, guid: cf77da74316e260428d6d16d15c5993e, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].positionOffset.z
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

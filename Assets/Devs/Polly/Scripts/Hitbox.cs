@@ -19,8 +19,7 @@ public class Hitbox : MonoBehaviour
         if(other.gameObject.CompareTag("Player") && !hitPlayers.Contains(other.gameObject))
         {
             hitPlayers.Add(other.gameObject);
-            other.GetComponent<DamageSystem>().GotHit(attackData);
-            Debug.Log("hit player");
+            other.GetComponent<DamageSystem>().GotHit(attackData, transform.position);
         }
     }
 }

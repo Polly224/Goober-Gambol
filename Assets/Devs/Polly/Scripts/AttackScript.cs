@@ -35,7 +35,7 @@ public class AttackScript : MonoBehaviour
 
     public void Attack(CallbackContext context)
     {
-        if (context.performed && !attackOnCooldown)
+        if (context.performed && !attackOnCooldown && !GetComponent<InputHandler>().isRagdolling)
         {
             if(inventory.weaponInventory.Count >= inventory.currentWeaponIndex + 1)
             {
