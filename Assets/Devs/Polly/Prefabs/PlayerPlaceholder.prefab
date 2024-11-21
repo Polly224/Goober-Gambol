@@ -358,6 +358,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 37752205-9acd-4211-88a2-a2b3cd3d90e4
     m_ActionName: Gameplay/AltAttack[/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8241147534948928039}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: Ragdoll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ea6c4ae2-f2cb-4a70-9b35-87a4e0fbb81d
+    m_ActionName: Gameplay/Ragdoll[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8241147534948928039}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: JumpRoll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aa56ea9c-26d9-4f2d-bdb5-90db46fde95b
+    m_ActionName: Gameplay/Jump Roll[/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
