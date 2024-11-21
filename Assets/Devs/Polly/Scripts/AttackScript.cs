@@ -8,7 +8,7 @@ public class AttackScript : MonoBehaviour
     PlayerInventory inventory;
     [SerializeField] GameObject sphereHitbox;
     [SerializeField] GameObject cubeHitbox;
-    private bool attackOnCooldown = false;
+    public bool attackOnCooldown = false;
     private void Start()
     {
         inventory = GetComponent<PlayerInventory>();

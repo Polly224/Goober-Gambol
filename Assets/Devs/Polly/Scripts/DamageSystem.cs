@@ -56,6 +56,6 @@ public class DamageSystem : MonoBehaviour
         if (GetComponent<InputHandler>().isRagdolling) knockbackDirection *= 1.5f;
         knockbackDirection += Vector3.up * 5;
         GetComponent<Rigidbody>().AddForce(knockbackDirection * totalKnockback);
-        GetComponent<InputHandler>().isRagdolling = true;
+        GetComponent<InputHandler>().Ragdoll();
     }
 }

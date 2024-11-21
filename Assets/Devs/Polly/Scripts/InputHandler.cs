@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
 using Unity.VisualScripting;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -16,9 +17,11 @@ public class InputHandler : MonoBehaviour
     private Vector2 movementDir;
     private Vector2 lookDir;
     private float movementSpeed = 5;
+    private float jumpRollSpeed = 50;
     public bool isLooking = false;
     public bool isMoving = false;
     public bool isRagdolling = false;
+    public bool canStopRagdolling = true;
     private Rigidbody rb;
     [SerializeField]
     private float turnSpeed = 1;
@@ -55,9 +58,9 @@ public class InputHandler : MonoBehaviour
         };
         if ((rb.rotation.x != 0 || rb.rotation.z != 0) && !isRagdolling)
         {
-            rb.AddTorque(new Vector3(-rb.rotation.x, 0, -rb.rotation.z));
+            rb.AddTorque(new Vector3(-rb.rotation.x * 3, 0, -rb.rotation.z * 3));
         }
-        isRagdolling = !IsGrounded() && isRagdolling;
+        if (isRagdolling && IsGrounded() && canStopRagdolling) isRagdolling = false;
         if(!isRagdolling && !isMoving) rb.velocity /= (1 / (2 * Time.deltaTime));
     }
     public void ProcessMovement(CallbackContext context)
@@ -85,5 +88,38 @@ public class InputHandler : MonoBehaviour
     public bool IsGrounded()
     {
         return Physics.Raycast(rb.position, -Vector3.up, 0.6f) && rb.velocity.y <= 0;
+    }
+
+    public void JumpRoll(CallbackContext context)
+    {
+        if(context.performed) 
+        {
+            if(!isRagdolling && IsGrounded())
+            {
+                rb.AddRelativeForce(new Vector3(0, jumpRollSpeed / 5, jumpRollSpeed), ForceMode.Impulse);
+                rb.AddRelativeTorque(new Vector3(UnityEngine.Random.Range(10f, 20), 0, UnityEngine.Random.Range(10f, 20)), ForceMode.Impulse);
+                transform.LookAt(rb.position + (transform.up / 3 + transform.forward) * jumpRollSpeed);
+                Ragdoll();
+                StartCoroutine(DelayedRagdoll());
+                GetComponent<AttackScript>().StopAllCoroutines();
+                GetComponent<AttackScript>().attackOnCooldown = false;
+            }
+        }
+    }
+
+    public void Ragdoll(CallbackContext context)
+    {
+        if(!isRagdolling && context.performed) isRagdolling = true;
+    }
+    public void Ragdoll()
+    {
+        if (!isRagdolling) isRagdolling = true;
+    }
+
+    public IEnumerator DelayedRagdoll()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Ragdoll();
+        yield break;
     }
 }
