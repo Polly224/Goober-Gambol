@@ -11,6 +11,7 @@ public class PauseGame : MonoBehaviour
     void Start()
     {
         Button.PauseScreen.SetActive(false);
+        Button.OptionsScreen.SetActive(false);
     }
 
     // Update is called once per frame
