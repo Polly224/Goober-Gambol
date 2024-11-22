@@ -11,6 +11,7 @@ public class Button : MonoBehaviour
     private EventSystem EventSystem;
     private GameObject VolumeSlider;
     private GameObject Continue;
+    [SerializeField] GameObject ControlScreen;
     public bool PauseScreenActive = false;
 
     private void Awake()
@@ -68,5 +69,15 @@ public class Button : MonoBehaviour
     {
         OptionsScreen.SetActive(false);
         EventSystem.SetSelectedGameObject(Continue);
+    }
+
+    public void ControlsPressed()
+    {
+        ControlScreen.SetActive(true);
+    }
+
+    public void ControlsBackPressed()
+    {
+        ControlScreen.SetActive(false);
     }
 }
