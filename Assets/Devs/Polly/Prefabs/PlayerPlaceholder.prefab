@@ -232,6 +232,7 @@ MonoBehaviour:
   isLooking: 0
   isMoving: 0
   isRagdolling: 0
+  canStopRagdolling: 1
   turnSpeed: 3
 --- !u!114 &484948906729318700
 MonoBehaviour:
@@ -423,6 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereHitbox: {fileID: 1762811529330813548, guid: bc6f14c578ab95849aa512ee230fb6d3, type: 3}
   cubeHitbox: {fileID: 6886558610954420018, guid: fbf0927ccb8b1594b848825eb311487c, type: 3}
+  attackOnCooldown: 0
 --- !u!114 &8548153979076806242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +439,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageTaken: 0
   bleedAmount: 0
+  isDizzy: 0
+  dizzyTimer: 0
+  dizzyTimerSpeed: 5
 --- !u!54 &4139782108211817537
 Rigidbody:
   m_ObjectHideFlags: 0

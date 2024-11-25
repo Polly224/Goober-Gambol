@@ -60,8 +60,9 @@ public class InputHandler : MonoBehaviour
         {
             rb.AddTorque(new Vector3(-rb.rotation.x * 3, 0, -rb.rotation.z * 3));
         }
-        if (isRagdolling && IsGrounded() && canStopRagdolling) isRagdolling = false;
+        if (isRagdolling && IsGrounded() && !GetComponent<DamageSystem>().isDizzy) isRagdolling = false;
         if(!isRagdolling && !isMoving) rb.velocity /= (1 / (2 * Time.deltaTime));
+        if (!isRagdolling) rb.AddTorque(-rb.GetAccumulatedTorque() * 10);
     }
     public void ProcessMovement(CallbackContext context)
     {
