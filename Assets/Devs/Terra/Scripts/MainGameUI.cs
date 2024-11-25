@@ -19,7 +19,6 @@ public class MainGameUI : MonoBehaviour
     public bool P3elim = false;
     public bool P4elim = false;
     [SerializeField] float PlayerHealthPercentage = 0;
-    [SerializeField] int MaxDamage = 200;
 
 
     private void Update()
