@@ -8,11 +8,10 @@ public class DamageSystem : MonoBehaviour
 {
     public float damageTaken = 0;
     public float bleedAmount = 0;
+    public bool isDizzy = false;
+    public float dizzyTimer = 0;
+    public float dizzyTimerSpeed = 1;
     private List<float> bleedStacks = new();
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -25,6 +24,8 @@ public class DamageSystem : MonoBehaviour
                 damageTaken += Time.deltaTime;
             }
         }
+        if(isDizzy) dizzyTimer -= Time.deltaTime;
+        if (isDizzy && dizzyTimer <= 0) ExitDizzy();
     }
 
     public void GotHit(WeaponSystem.Weapon weaponHitBy, Vector3 hitboxPosition)
@@ -54,8 +55,22 @@ public class DamageSystem : MonoBehaviour
         knockbackDirection.Normalize();
         knockbackDirection *= 2;
         if (GetComponent<InputHandler>().isRagdolling) knockbackDirection *= 1.5f;
+        if (isDizzy) knockbackDirection *= 3f;
         knockbackDirection += Vector3.up * 5;
         GetComponent<Rigidbody>().AddForce(knockbackDirection * totalKnockback);
         GetComponent<InputHandler>().Ragdoll();
+        GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(Random.Range(damageTaken, damageTaken * 2), 0, Random.Range(damageTaken, damageTaken * 2)), ForceMode.Impulse);
+        if (damageTaken > 50 && !isDizzy) EnterDizzy();
+    }
+    private void EnterDizzy()
+    {
+        isDizzy = true;
+        dizzyTimer = damageTaken / dizzyTimerSpeed;
+    }
+
+    private void ExitDizzy()
+    {
+        isDizzy = false;
+        dizzyTimer = 0;
     }
 }
