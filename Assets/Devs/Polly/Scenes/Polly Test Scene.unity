@@ -349,6 +349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rooftop_Level
       objectReference: {fileID: 0}
+    - target: {fileID: 7120212686029970055, guid: 9c91a03d9cf914648a1d83e6bc6d4998, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

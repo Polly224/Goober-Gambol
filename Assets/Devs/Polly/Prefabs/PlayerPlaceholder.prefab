@@ -229,6 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc76c118daa8df848bddde58f4e5c5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementDir: {x: 0, y: 0}
+  lookDir: {x: 0, y: 0}
   isLooking: 0
   isMoving: 0
   isRagdolling: 0
