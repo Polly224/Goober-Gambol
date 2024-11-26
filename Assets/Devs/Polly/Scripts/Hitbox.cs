@@ -11,6 +11,7 @@ public class Hitbox : MonoBehaviour
 
     private void Start()
     {
+        if(!attackData.throwable)
         Destroy(gameObject, hitboxData.duration);
     }
 
@@ -20,6 +21,7 @@ public class Hitbox : MonoBehaviour
         {
             hitPlayers.Add(other.gameObject);
             other.GetComponent<DamageSystem>().GotHit(attackData, transform.position);
+            if(attackData.throwable) Destroy(gameObject);
         }
     }
 }

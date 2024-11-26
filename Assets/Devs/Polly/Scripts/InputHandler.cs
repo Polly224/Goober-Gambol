@@ -24,6 +24,7 @@ public class InputHandler : MonoBehaviour
     public bool isMoving = false;
     public bool isRagdolling = false;
     public bool canStopRagdolling = true;
+    private Animator modelAnim;
     private Rigidbody rb;
     [SerializeField]
     private float turnSpeed = 1;
@@ -33,6 +34,7 @@ public class InputHandler : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         cubeMat = GetComponent<MeshRenderer>().material;
         rb = GetComponent<Rigidbody>();
+        modelAnim = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -70,6 +72,7 @@ public class InputHandler : MonoBehaviour
         if (isRagdolling && IsGrounded() && !GetComponent<DamageSystem>().isDizzy) isRagdolling = false;
         if(!isRagdolling && !isMoving) rb.velocity /= 2;
         // if (!isRagdolling) rb.AddTorque(-rb.GetAccumulatedTorque() * 10);
+        modelAnim.SetBool("IsMoving", isMoving);
     }
     public void ProcessMovement(CallbackContext context)
     {

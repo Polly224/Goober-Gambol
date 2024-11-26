@@ -37,7 +37,11 @@ public class AttackScript : MonoBehaviour
     {
         GameObject thrownWeapon = Instantiate(weaponUsed.weaponToThrow, transform.position, transform.rotation);
         thrownWeapon.transform.localPosition = weaponUsed.hitboxes[0].positionOffset;
+        thrownWeapon.transform.localScale = new Vector3(weaponUsed.hitboxes[0].xSize, weaponUsed.hitboxes[0].xSize, weaponUsed.hitboxes[0].xSize);
         thrownWeapon.GetComponent<Rigidbody>().AddRelativeForce(transform.forward * 5 + transform.up * 2, ForceMode.Impulse);
+        thrownWeapon.GetComponent<Hitbox>().hitPlayers.Add(gameObject);
+        thrownWeapon.GetComponent<Hitbox>().hitboxData = weaponUsed.hitboxes[0];
+        thrownWeapon.GetComponent<Hitbox>().attackData = weaponUsed;
         yield return null;
     }
 
