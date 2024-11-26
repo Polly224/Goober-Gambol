@@ -6,18 +6,15 @@ using UnityEngine.EventSystems;
 
 public class Button : MonoBehaviour
 {
-    public GameObject PauseScreen;
-    public GameObject OptionsScreen;
+    private CanvasFinder Canvas;
     private EventSystem EventSystem;
     private GameObject VolumeSlider;
     private GameObject Continue;
-    [SerializeField] GameObject ControlScreen;
     public bool PauseScreenActive = false;
 
     private void Awake()
     {
-        PauseScreen = GameObject.Find("PauseScreen");
-        OptionsScreen = GameObject.Find("Options");
+        Canvas = FindObjectOfType<CanvasFinder>();
         VolumeSlider = GameObject.Find("Volume");
         Continue = GameObject.Find("Continue");
         EventSystem = EventSystem.current;
@@ -39,7 +36,7 @@ public class Button : MonoBehaviour
 
     public void OptionsPressed()
     {
-        OptionsScreen.SetActive(true);
+        Canvas.OptionsScreen.SetActive(true);
         EventSystem.SetSelectedGameObject(VolumeSlider);
     }
 
@@ -50,7 +47,7 @@ public class Button : MonoBehaviour
 
     public void ContinuePressed()
     {
-        PauseScreen.SetActive(false);
+        Canvas.PauseScreen.SetActive(false);
         PauseScreenActive = false;
         Time.timeScale = 1;
     }
@@ -67,17 +64,17 @@ public class Button : MonoBehaviour
 
     public void OptionsBackPressed()
     {
-        OptionsScreen.SetActive(false);
+        Canvas.OptionsScreen.SetActive(false);
         EventSystem.SetSelectedGameObject(Continue);
     }
 
     public void ControlsPressed()
     {
-        ControlScreen.SetActive(true);
+        Canvas.ControlScreen.SetActive(true);
     }
 
     public void ControlsBackPressed()
     {
-        ControlScreen.SetActive(false);
+        Canvas.ControlScreen.SetActive(false);
     }
 }

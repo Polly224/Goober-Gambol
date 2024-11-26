@@ -6,12 +6,17 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PauseGame : MonoBehaviour
 {
-    [SerializeField] Button Button;
+    private CanvasFinder Canvas;
+    private Button Button;
+
+    private void Awake()
+    {
+        Canvas = FindObjectOfType<CanvasFinder>();
+        Button = FindObjectOfType<Button>();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        Button.PauseScreen.SetActive(false);
-        Button.OptionsScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,7 +29,7 @@ public class PauseGame : MonoBehaviour
     {
         if (context.performed)
         {
-            Button.PauseScreen.SetActive(true);
+            Canvas.PauseScreen.SetActive(true);
             Button.PauseScreenActive = true;
             Time.timeScale = 0;
         }
