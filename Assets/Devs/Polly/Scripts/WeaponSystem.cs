@@ -21,8 +21,9 @@ public class WeaponSystem : MonoBehaviour
         public WeaponGimmick weaponGimmick;
         public bool swingable;
         public bool throwable;
+        public GameObject weaponToThrow;
         public float bleedAmount;
-        public Weapon(string name, float damage, float startup, float recovery, float knockback, List<Hitbox> hitboxes, AttackType attackType, WeaponGimmick weaponGimmick, bool swingable, bool throwable, float bleedAmount)
+        public Weapon(string name, float damage, float startup, float recovery, float knockback, List<Hitbox> hitboxes, AttackType attackType, WeaponGimmick weaponGimmick, bool swingable, bool throwable, GameObject weaponToThrow, float bleedAmount)
         {
             this.name = name;
             this.damage = damage;
@@ -34,6 +35,7 @@ public class WeaponSystem : MonoBehaviour
             this.weaponGimmick = weaponGimmick;
             this.swingable = swingable;
             this.throwable = throwable;
+            this.weaponToThrow = weaponToThrow;
             this.bleedAmount = bleedAmount;
         }
     }

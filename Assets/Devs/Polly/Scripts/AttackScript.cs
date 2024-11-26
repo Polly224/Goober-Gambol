@@ -33,6 +33,14 @@ public class AttackScript : MonoBehaviour
         yield return null;
     }
 
+    public IEnumerator ThrowAttack(WeaponSystem.Weapon weaponUsed)
+    {
+        GameObject thrownWeapon = Instantiate(weaponUsed.weaponToThrow, transform.position, transform.rotation);
+        thrownWeapon.transform.localPosition = weaponUsed.hitboxes[0].positionOffset;
+        thrownWeapon.GetComponent<Rigidbody>().AddRelativeForce(transform.forward * 5 + transform.up * 2, ForceMode.Impulse);
+        yield return null;
+    }
+
     public void Attack(CallbackContext context)
     {
         if (context.performed && !attackOnCooldown && !GetComponent<InputHandler>().isRagdolling)
@@ -48,5 +56,14 @@ public class AttackScript : MonoBehaviour
         }
     }
 
-
+    public void AltAttack(CallbackContext context)
+    {
+        if(context.performed && !GetComponent<InputHandler>().isRagdolling)
+        {
+            if (inventory.weaponInventory[inventory.currentWeaponIndex].throwable)
+            {
+                StartCoroutine(ThrowAttack(inventory.weaponInventory[inventory.currentWeaponIndex]));
+            }
+        }
+    }
 }

@@ -14,8 +14,8 @@ public class InputHandler : MonoBehaviour
 {
     Material cubeMat;
     private PlayerInput playerInput;
-    private Vector2 movementDir;
-    private Vector2 lookDir;
+    public Vector2 movementDir;
+    public Vector2 lookDir;
     private float acceleration = 7;
     private float movementSpeed = 0;
     private float maxMovementSpeed = 7;
