@@ -16,7 +16,9 @@ public class InputHandler : MonoBehaviour
     private PlayerInput playerInput;
     private Vector2 movementDir;
     private Vector2 lookDir;
-    private float movementSpeed = 5;
+    private float acceleration = 7;
+    private float movementSpeed = 0;
+    private float maxMovementSpeed = 7;
     private float jumpRollSpeed = 50;
     public bool isLooking = false;
     public bool isMoving = false;
@@ -44,9 +46,14 @@ public class InputHandler : MonoBehaviour
     private void FixedUpdate()
     {
         // Moves in the held direction, looks in the held direction.
+        if(isMoving && !isRagdolling && movementSpeed <= maxMovementSpeed)
+            movementSpeed += acceleration * Time.deltaTime;
+        if(movementSpeed > maxMovementSpeed) movementSpeed = maxMovementSpeed;
+        if (!isMoving) movementSpeed = 0;
         lookDir = (isMoving && !isLooking) ? movementDir : lookDir;
-        if(!isRagdolling) SetMoveDirection(movementDir);
-        if(!isRagdolling) SetLookDirection(lookDir);
+        if(!isRagdolling && isMoving) SetMoveDirection(movementDir);
+        if(!isRagdolling && (isLooking || isMoving)) SetLookDirection(lookDir);
+
         // Sets cube's color dependant on player slot, makes it easier to distinguish players. For testing.
         cubeMat.color = playerInput.playerIndex switch
         {
@@ -61,8 +68,8 @@ public class InputHandler : MonoBehaviour
             rb.AddTorque(new Vector3(-rb.rotation.x * 3, 0, -rb.rotation.z * 3));
         }
         if (isRagdolling && IsGrounded() && !GetComponent<DamageSystem>().isDizzy) isRagdolling = false;
-        if(!isRagdolling && !isMoving) rb.velocity /= (1 / (2 * Time.deltaTime));
-        if (!isRagdolling) rb.AddTorque(-rb.GetAccumulatedTorque() * 10);
+        if(!isRagdolling && !isMoving) rb.velocity /= 2;
+        // if (!isRagdolling) rb.AddTorque(-rb.GetAccumulatedTorque() * 10);
     }
     public void ProcessMovement(CallbackContext context)
     {
@@ -82,13 +89,13 @@ public class InputHandler : MonoBehaviour
     private void SetLookDirection(Vector2 input)
     {
         // transform.LookAt(transform.position + new Vector3(input.x, transform.position.y, input.y));
-        Quaternion newRotation = Quaternion.LookRotation(new Vector3(input.x, rb.position.y, input.y));
+        Quaternion newRotation = Quaternion.LookRotation(new Vector3(input.x, 0, input.y));
         transform.rotation = Quaternion.Slerp(rb.rotation, newRotation, turnSpeed * Time.deltaTime);
     }
 
     public bool IsGrounded()
     {
-        return Physics.Raycast(rb.position, -Vector3.up, 0.6f) && rb.velocity.y <= 0;
+        return Physics.Raycast(rb.position, -Vector3.up, 1.5f) && rb.velocity.y <= 0;
     }
 
     public void JumpRoll(CallbackContext context)
@@ -97,9 +104,9 @@ public class InputHandler : MonoBehaviour
         {
             if(!isRagdolling && IsGrounded())
             {
+                transform.LookAt(rb.position + new Vector3(lookDir.x, 0, lookDir.y) + Vector3.up / 5);
                 rb.AddRelativeForce(new Vector3(0, jumpRollSpeed / 5, jumpRollSpeed), ForceMode.Impulse);
                 rb.AddRelativeTorque(new Vector3(UnityEngine.Random.Range(10f, 20), 0, UnityEngine.Random.Range(10f, 20)), ForceMode.Impulse);
-                transform.LookAt(rb.position + (transform.up / 3 + transform.forward) * jumpRollSpeed);
                 Ragdoll();
                 StartCoroutine(DelayedRagdoll());
                 GetComponent<AttackScript>().StopAllCoroutines();

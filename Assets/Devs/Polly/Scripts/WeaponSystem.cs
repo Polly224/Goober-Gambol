@@ -90,7 +90,7 @@ public class WeaponSystem : MonoBehaviour
         damage = 5,
         startup = 0.05f,
         recovery = 1,
-        knockback = 3,
+        knockback = 2,
         hitboxes = new()
         {
             new Hitbox()
