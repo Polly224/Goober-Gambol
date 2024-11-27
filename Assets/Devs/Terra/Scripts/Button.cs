@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class Button : MonoBehaviour
 {
     private CanvasFinder Canvas;
+    private PauseGame pauseGame;
     private EventSystem EventSystem;
     private GameObject VolumeSlider;
     private GameObject Continue;
@@ -14,6 +15,7 @@ public class Button : MonoBehaviour
 
     private void Awake()
     {
+        pauseGame = FindObjectOfType<PauseGame>();
         Canvas = FindObjectOfType<CanvasFinder>();
         VolumeSlider = GameObject.Find("Volume");
         Continue = GameObject.Find("Continue");
@@ -50,6 +52,7 @@ public class Button : MonoBehaviour
     {
         Canvas.PauseScreen.SetActive(false);
         PauseScreenActive = false;
+        pauseGame.gamePaused = false;
         Time.timeScale = 1;
     }
 

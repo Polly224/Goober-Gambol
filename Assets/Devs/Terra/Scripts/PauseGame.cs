@@ -8,6 +8,7 @@ public class PauseGame : MonoBehaviour
 {
     private CanvasFinder Canvas;
     private Button Button;
+    public bool gamePaused;
 
     private void Awake()
     {
@@ -27,10 +28,11 @@ public class PauseGame : MonoBehaviour
 
     public void Pause(CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !gamePaused)
         {
             Canvas.PauseScreen.SetActive(true);
             Button.PauseScreenActive = true;
+            gamePaused = true;
             Time.timeScale = 0;
         }
     }
