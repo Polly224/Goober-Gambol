@@ -37,6 +37,7 @@ public class Button : MonoBehaviour
     public void OptionsPressed()
     {
         Canvas.OptionsScreen.SetActive(true);
+        Canvas.PauseScreen.SetActive(false);
         EventSystem.SetSelectedGameObject(VolumeSlider);
     }
 
@@ -65,16 +66,19 @@ public class Button : MonoBehaviour
     public void OptionsBackPressed()
     {
         Canvas.OptionsScreen.SetActive(false);
+        Canvas.PauseScreen.SetActive(true);
         EventSystem.SetSelectedGameObject(Continue);
     }
 
     public void ControlsPressed()
     {
         Canvas.ControlScreen.SetActive(true);
+        Canvas.OptionsScreen.SetActive(false);
     }
 
     public void ControlsBackPressed()
     {
         Canvas.ControlScreen.SetActive(false);
+        Canvas.OptionsScreen.SetActive(true);
     }
 }

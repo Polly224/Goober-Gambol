@@ -1370,6 +1370,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3859686455258728587, guid: 63b28101d6db4e44b968d061a08dce57, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859686455258728587, guid: 63b28101d6db4e44b968d061a08dce57, type: 3}
+      propertyPath: m_Color.b
+      value: 0.30588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859686455258728587, guid: 63b28101d6db4e44b968d061a08dce57, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859686455258728587, guid: 63b28101d6db4e44b968d061a08dce57, type: 3}
+      propertyPath: m_Color.r
+      value: 0.30980393
+      objectReference: {fileID: 0}
     - target: {fileID: 7465748453841966139, guid: 63b28101d6db4e44b968d061a08dce57, type: 3}
       propertyPath: ControlScreen
       value: 
@@ -1551,6 +1567,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1426573225}
+    - target: {fileID: 4961240584290325266, guid: ee1342f9eb06bb947b78c6ad70630585, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961240584290325266, guid: ee1342f9eb06bb947b78c6ad70630585, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961240584290325266, guid: ee1342f9eb06bb947b78c6ad70630585, type: 3}
+      propertyPath: m_Color.g
+      value: 0.32156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961240584290325266, guid: ee1342f9eb06bb947b78c6ad70630585, type: 3}
+      propertyPath: m_Color.r
+      value: 0.31764707
+      objectReference: {fileID: 0}
     - target: {fileID: 6642668732432808456, guid: ee1342f9eb06bb947b78c6ad70630585, type: 3}
       propertyPath: m_Name
       value: ControlScreen

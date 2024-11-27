@@ -182,7 +182,7 @@ ModelImporter:
       takeName: metarig|punch anim.001
       internalID: 3086147865187596667
       firstFrame: 0
-      lastFrame: 0
+      lastFrame: 14
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -240,7 +240,7 @@ ModelImporter:
       takeName: metarig|punch anim
       internalID: -9174259238629667860
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
