@@ -310,26 +310,70 @@
             "id": "88c9d13c-4bfd-4787-8a33-e7b681f53534",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
+                    "name": "MoveJoystick",
+                    "type": "Value",
                     "id": "520ceeb9-6932-41e1-a131-2589de22f6bd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "fae615aa-2932-4543-a8d0-bc008e642bac",
-                    "path": "",
+                    "name": "1D Axis",
+                    "id": "ef4370b8-09cd-42b8-a808-0b809be3fc33",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
+                    "action": "MoveJoystick",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "5a9ff3f9-d9ea-41e6-9875-cd4c99f82873",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "f817fd0a-3c33-4b76-9e03-7224422c6dee",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "05043508-3be2-4c39-b83e-fd587d2a0e21",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "1f416149-a074-4afb-afac-9f34ff647b0f",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
