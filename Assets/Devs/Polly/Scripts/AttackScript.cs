@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
@@ -15,7 +16,7 @@ public class AttackScript : MonoBehaviour
     }
     public IEnumerator StartAttack(WeaponSystem.Weapon weaponUsed)
     {
-        // Play animation first, then wait to spawn hitboxes.
+        if(weaponUsed.name=="fists") GetComponentInChildren<Animator>().SetTrigger("Punch");
         attackOnCooldown = true;
         yield return new WaitForSeconds(weaponUsed.startup);
         for (int i = 0; i < weaponUsed.hitboxes.Count; i++) 
