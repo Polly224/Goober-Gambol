@@ -9,16 +9,10 @@ public class PlayerCameraFollower : MonoBehaviour
 {
     [SerializeField] float zoomDistance;
     [SerializeField] float zoomSpeed;
-    PlayerInputManager pIM;
-
-    private void Start()
-    {
-        pIM = GameObject.Find("PlayerInputManager").GetComponent<PlayerInputManager>();
-    }
     // Update is called once per frame
     void Update()
     {
-        if (pIM != null)
+        if(PlayerDataStorage.connectedPlayerObjects.Count > 0)
         {
             List<GameObject> objects = new();
             List<float> distances = new();
@@ -39,7 +33,7 @@ public class PlayerCameraFollower : MonoBehaviour
                         {
                             distances.Insert(1, Vector3.Distance(curObj.transform.position, transform.position));
                             objects.Insert(1, curObj);
-                        }
+                    }
                     }
                     else
                     {
@@ -53,6 +47,7 @@ public class PlayerCameraFollower : MonoBehaviour
                     objects.Add(curObj);
                 }
             }
+
             // If there's only 1 player, the camera just focuses on them.
             if (PlayerDataStorage.connectedPlayerObjects.Count == 1)
             {

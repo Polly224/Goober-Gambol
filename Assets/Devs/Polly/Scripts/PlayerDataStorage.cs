@@ -20,5 +20,4 @@ public class PlayerDataStorage : MonoBehaviour
     {
         connectedControllers.Add(controllerToAdd);
     }
-        
 }

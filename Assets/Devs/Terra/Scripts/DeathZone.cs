@@ -21,8 +21,7 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            RagdollStateCheck = true;
-            Debug.Log(RagdollStateCheck);
+            other.gameObject.transform.position = new Vector3(3, 0, 0);
         }
         else if (other.CompareTag("Pickup"))
         {

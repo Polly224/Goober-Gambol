@@ -73,6 +73,9 @@ public class InputHandler : MonoBehaviour
         if(!isRagdolling && !isMoving) rb.velocity /= 2;
         // if (!isRagdolling) rb.AddTorque(-rb.GetAccumulatedTorque() * 10);
         modelAnim.SetBool("IsMoving", isMoving);
+        modelAnim.SetFloat("MovementSpeed", movementSpeed / maxMovementSpeed * (Mathf.Abs(movementDir.x) + Mathf.Abs(movementDir.y)));
+        if (isMoving) modelAnim.speed = movementSpeed / maxMovementSpeed * (Mathf.Abs(movementDir.x) + Mathf.Abs(movementDir.y));
+        else modelAnim.speed = 1;
     }
     public void ProcessMovement(CallbackContext context)
     {

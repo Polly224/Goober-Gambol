@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762811529330813548}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -132,7 +132,9 @@ MonoBehaviour:
     knockback: 0
     hitboxes: []
     attackType: 0
+    weaponGimmick: 0
     swingable: 0
     throwable: 0
+    weaponToThrow: {fileID: 0}
     bleedAmount: 0
   hitPlayers: []

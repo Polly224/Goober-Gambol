@@ -16,7 +16,7 @@ public class AttackScript : MonoBehaviour
     }
     public IEnumerator StartAttack(WeaponSystem.Weapon weaponUsed)
     {
-        if(weaponUsed.name=="fists") GetComponentInChildren<Animator>().SetTrigger("Punch");
+        GetComponentInChildren<Animator>().SetTrigger(weaponUsed.name);
         attackOnCooldown = true;
         yield return new WaitForSeconds(weaponUsed.startup);
         for (int i = 0; i < weaponUsed.hitboxes.Count; i++) 
