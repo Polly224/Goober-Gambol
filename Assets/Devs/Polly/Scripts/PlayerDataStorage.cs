@@ -8,6 +8,7 @@ public class PlayerDataStorage : MonoBehaviour
     public static PlayerDataStorage instance;
     public static List<InputDevice> connectedControllers = new();
     public static List<GameObject> connectedPlayerObjects = new();
+    public static List<PlayerSelectArrow.PickedCharacter> playerCharacters = new();
 
     // Keeps the connected controllers stored between scenes.
     private void Awake()
