@@ -11,6 +11,7 @@ public class Button : MonoBehaviour
     private EventSystem EventSystem;
     private GameObject VolumeSlider;
     private GameObject Continue;
+    private GameObject Back;
     public bool PauseScreenActive = false;
 
     private void Awake()
@@ -19,13 +20,16 @@ public class Button : MonoBehaviour
         Canvas = FindObjectOfType<CanvasFinder>();
         VolumeSlider = GameObject.Find("Volume");
         Continue = GameObject.Find("Continue");
+        Back = GameObject.Find("ControlsBack");
         EventSystem = EventSystem.current;
+        Debug.Log(Back);
     }
 
     private void Start()
     {
         Debug.Log(EventSystem.gameObject);
     }
+
     public void StartPressed()
     {
         SceneManager.LoadScene(1);
@@ -38,8 +42,8 @@ public class Button : MonoBehaviour
 
     public void OptionsPressed()
     {
-        Canvas.OptionsScreen.SetActive(true);
-        Canvas.PauseScreen.SetActive(false);
+        Canvas.OptionsScreen.GetComponent<Canvas>().enabled = true;
+        Canvas.PauseScreen.GetComponent<Canvas>().enabled = false;
         EventSystem.SetSelectedGameObject(VolumeSlider);
     }
 
@@ -50,7 +54,7 @@ public class Button : MonoBehaviour
 
     public void ContinuePressed()
     {
-        Canvas.PauseScreen.SetActive(false);
+        Canvas.PauseScreen.GetComponent<Canvas>().enabled = false;
         PauseScreenActive = false;
         pauseGame.gamePaused = false;
         Time.timeScale = 1;
@@ -68,20 +72,21 @@ public class Button : MonoBehaviour
 
     public void OptionsBackPressed()
     {
-        Canvas.OptionsScreen.SetActive(false);
-        Canvas.PauseScreen.SetActive(true);
+        Canvas.OptionsScreen.GetComponent<Canvas>().enabled = false;
+        Canvas.PauseScreen.GetComponent<Canvas>().enabled = true;
         EventSystem.SetSelectedGameObject(Continue);
     }
 
     public void ControlsPressed()
     {
-        Canvas.ControlScreen.SetActive(true);
-        Canvas.OptionsScreen.SetActive(false);
+        Canvas.ControlScreen.GetComponent<Canvas>().enabled = true;
+        Canvas.OptionsScreen.GetComponent<Canvas>().enabled = false;
+        EventSystem.SetSelectedGameObject(Back);
     }
 
     public void ControlsBackPressed()
     {
-        Canvas.ControlScreen.SetActive(false);
-        Canvas.OptionsScreen.SetActive(true);
+        Canvas.ControlScreen.GetComponent<Canvas>().enabled = false;
+        Canvas.OptionsScreen.GetComponent<Canvas>().enabled = true;
     }
 }

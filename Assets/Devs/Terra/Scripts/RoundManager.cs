@@ -7,6 +7,8 @@ using TMPro;
 public class RoundManager : MonoBehaviour
 {
     public GameObject winningPlayer;
+    public int playersDeadThisRound;
+    private PlayerPlacement PlayerPlacement;
     private PlayerDataStorage Players;
     private CanvasFinder Canvas;
 
@@ -14,12 +16,13 @@ public class RoundManager : MonoBehaviour
     {
         Canvas = FindObjectOfType<CanvasFinder>();
         Players = FindObjectOfType<PlayerDataStorage>();
+        PlayerPlacement = FindObjectOfType<PlayerPlacement>();
     }
     private void Update()
     {
         foreach (GameObject g in PlayerDataStorage.connectedPlayerObjects)
         {
-          //   if (g.GetComponent<RoundManager>().placingValue == 1) winningPlayer = g;
+           if (g.GetComponent<PlayerPlacement>().placingValue == 1) winningPlayer = g;
         }
     }
 }

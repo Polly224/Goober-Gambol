@@ -5,15 +5,37 @@ using UnityEngine;
 public class PlayerPlacement : MonoBehaviour
 {
     public int placingValue;
-    // Start is called before the first frame update
-    void Start()
+    private RoundManager RoundManager;
+
+    private void Awake()
     {
-        
+        RoundManager = FindObjectOfType<RoundManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (RoundManager.playersDeadThisRound == 3)
+        {
+            placingValue = 1;
+        }
+    }
+    public void Died()
+    {
+        RoundManager.playersDeadThisRound++;
+
+        switch (RoundManager.playersDeadThisRound)
+        {
+            case 1:
+                placingValue = 4;
+                break;
+
+            case 2:
+                placingValue = 3;
+                break;
+
+            case 3:
+                placingValue = 2;
+                break;
+        }
     }
 }

@@ -21,7 +21,8 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.transform.position = new Vector3(3, 0, 0);
+            other.gameObject.transform.position = new Vector3(0, -100, 0);
+            other.gameObject.GetComponent<PlayerPlacement>().Died();
         }
         else if (other.CompareTag("Pickup"))
         {

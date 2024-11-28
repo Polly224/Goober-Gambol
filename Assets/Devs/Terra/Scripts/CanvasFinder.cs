@@ -19,9 +19,9 @@ public class CanvasFinder : MonoBehaviour
 
     private void Start()
     {
-        PauseScreen.SetActive(false);
-        OptionsScreen.SetActive(false);
-        ControlScreen.SetActive(false);
-        RoundOverScreen.SetActive(false);
+        PauseScreen.GetComponent<Canvas>().enabled = false;
+        OptionsScreen.GetComponent<Canvas>().enabled = false;
+        ControlScreen.GetComponent<Canvas>().enabled = false;
+        RoundOverScreen.GetComponent<Canvas>().enabled = false;
     }
 }
