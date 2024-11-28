@@ -15,6 +15,7 @@ public class PlayerDataStorage : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
+        for (int i = 0; i < 4; i++) playerCharacters.Add(PlayerSelectArrow.PickedCharacter.Unselected);
     }
 
     public void AddToControllers(InputDevice controllerToAdd)

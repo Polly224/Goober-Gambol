@@ -101,3 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88a6635b314fad40b6775eb31b6bc2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTypesToSpawn:
+  - {fileID: 8623839776551813442, guid: 8e0ffe29bf8e66e4d87ceccfae78c2f1, type: 3}
+  - {fileID: 8623839776551813442, guid: 2d63027382d9056479a4758fa89434c3, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}

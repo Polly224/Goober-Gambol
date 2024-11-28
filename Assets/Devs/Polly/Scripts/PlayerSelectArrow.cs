@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR.Haptics;
+using UnityEngine.SceneManagement;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerSelectArrow : MonoBehaviour
@@ -17,7 +18,7 @@ public class PlayerSelectArrow : MonoBehaviour
     {
         Cat,
         Dog,
-        Robot,
+        Robot,  
         Bunny,
         Unselected
     }
@@ -26,6 +27,8 @@ public class PlayerSelectArrow : MonoBehaviour
     private void Start()
     {
         pI = GetComponent<PlayerInput>();
+        pickedCharacter = PickedCharacter.Unselected;
+        PlayerDataStorage.playerCharacters[pI.playerIndex] = pickedCharacter;
     }
 
     public void SwitchPosition(CallbackContext context)
@@ -67,6 +70,23 @@ public class PlayerSelectArrow : MonoBehaviour
             picked = false;
             pickedCharacter = PickedCharacter.Unselected;
         }
+        PlayerDataStorage.playerCharacters[pI.playerIndex] = pickedCharacter;
+    }
+
+    public void ContinueToMatch(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            int count = 0;
+            foreach(PickedCharacter character in PlayerDataStorage.playerCharacters)
+            {
+                if (character != PickedCharacter.Unselected) count++;
+            }
+            if(count >= 2)
+            {
+                // Code for loading the actual fighting scene.
+            }
+        }
     }
 
     private void Update()
@@ -77,6 +97,16 @@ public class PlayerSelectArrow : MonoBehaviour
             transform.position = Vector3.Slerp(transform.position, intendedPos, 0.2f);
         }
         if (picked) GetComponent<SpriteRenderer>().color = Color.yellow;
-        else GetComponent<SpriteRenderer>().color = Color.white;
+        else
+        {
+            GetComponent<SpriteRenderer>().color = pI.playerIndex switch
+            {
+                0 => Color.red,
+                1 => Color.green,
+                2 => Color.blue,
+                3 => Color.magenta,
+                _ => Color.white
+            };
+        }
     }
 }
