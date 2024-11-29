@@ -19,7 +19,7 @@ public class InputHandler : MonoBehaviour
     private float acceleration = 7;
     private float movementSpeed = 0;
     private float maxMovementSpeed = 7;
-    private float jumpRollSpeed = 50;
+    private float jumpRollSpeed = 25;
     public bool isLooking = false;
     public bool isMoving = false;
     public bool isRagdolling = false;
@@ -52,6 +52,7 @@ public class InputHandler : MonoBehaviour
             movementSpeed += acceleration * Time.deltaTime;
         if(movementSpeed > maxMovementSpeed) movementSpeed = maxMovementSpeed;
         if (!isMoving) movementSpeed = 0;
+
         lookDir = (isMoving && !isLooking) ? movementDir : lookDir;
         if(!isRagdolling && isMoving) SetMoveDirection(movementDir);
         if(!isRagdolling && (isLooking || isMoving)) SetLookDirection(lookDir);
@@ -72,6 +73,8 @@ public class InputHandler : MonoBehaviour
         if (isRagdolling && IsGrounded() && !GetComponent<DamageSystem>().isDizzy) isRagdolling = false;
         if(!isRagdolling && !isMoving) rb.velocity /= 2;
         // if (!isRagdolling) rb.AddTorque(-rb.GetAccumulatedTorque() * 10);
+
+        // Animation functions.
         modelAnim.SetBool("IsMoving", isMoving);
         modelAnim.SetFloat("MovementSpeed", movementSpeed / maxMovementSpeed * (Mathf.Abs(movementDir.x) + Mathf.Abs(movementDir.y)));
     }
@@ -99,7 +102,8 @@ public class InputHandler : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics.Raycast(rb.position, -Vector3.up, 1.5f) && rb.velocity.y <= 0;
+        // Draws a line from the center of the player's model, 2 units in length, straight down. If it hits a surface, the player's considered grounded.
+        return Physics.Raycast(rb.position, -Vector3.up, 2f) && rb.velocity.y <= 0;
     }
 
     public void JumpRoll(CallbackContext context)
@@ -108,11 +112,14 @@ public class InputHandler : MonoBehaviour
         {
             if(!isRagdolling && IsGrounded())
             {
+                // If the player's not already ragdolling and also grounded, the player jumps forward with a large burst of speed and ragdolls.
                 transform.LookAt(rb.position + new Vector3(lookDir.x, 0, lookDir.y) + Vector3.up / 5);
                 rb.AddRelativeForce(new Vector3(0, jumpRollSpeed / 5, jumpRollSpeed), ForceMode.Impulse);
                 rb.AddRelativeTorque(new Vector3(UnityEngine.Random.Range(10f, 20), 0, UnityEngine.Random.Range(10f, 20)), ForceMode.Impulse);
                 Ragdoll();
+                // Makes sure you're actually ragdolling when you jumproll. Bandaid fix, honestly.
                 StartCoroutine(DelayedRagdoll());
+                // If the player cancelled an attack with their jumproll, it cancels said attack.
                 GetComponent<AttackScript>().StopAllCoroutines();
                 GetComponent<AttackScript>().attackOnCooldown = false;
             }
@@ -121,10 +128,11 @@ public class InputHandler : MonoBehaviour
 
     public void Ragdoll(CallbackContext context)
     {
-        if(!isRagdolling && context.performed) isRagdolling = true;
+        if (!isRagdolling && context.performed) Ragdoll();
     }
     public void Ragdoll()
     {
+        // Activates ragdoll, stopping all control input until the ground is hit.
         if (!isRagdolling) isRagdolling = true;
     }
 

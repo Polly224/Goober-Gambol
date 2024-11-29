@@ -17,6 +17,7 @@ public class Hitbox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // If the hitbox hasn't hit the other player before, deal damage and knockback to them. If the hitbox is that of a thrown weapon, it destroys the thrown weapon.
         if(other.gameObject.CompareTag("Player") && !hitPlayers.Contains(other.gameObject))
         {
             hitPlayers.Add(other.gameObject);

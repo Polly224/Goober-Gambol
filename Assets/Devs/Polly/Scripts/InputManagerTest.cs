@@ -13,7 +13,7 @@ public class InputManagerTest : MonoBehaviour
     void Start()
     {
         pIM = GetComponent<PlayerInputManager>();
-        if(SceneManager.GetActiveScene().name != "CharacterSelect")
+        if(SceneManager.GetActiveScene().name == "CharacterSelect")
         {
             if (PlayerDataStorage.connectedControllers.Count > 0)
             {
@@ -26,7 +26,7 @@ public class InputManagerTest : MonoBehaviour
         }
         else
         {
-            
+            // Gets the character the players have picked, and spawns the correct model for each.
             PlayerDataStorage.connectedPlayerObjects.Clear();
             for (int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
             {

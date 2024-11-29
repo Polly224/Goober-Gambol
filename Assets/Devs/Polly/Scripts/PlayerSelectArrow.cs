@@ -26,6 +26,7 @@ public class PlayerSelectArrow : MonoBehaviour
 
     private void Start()
     {
+        // Defines the controller in the datastorage, setting it to unselected.
         pI = GetComponent<PlayerInput>();
         pickedCharacter = PickedCharacter.Unselected;
         PlayerDataStorage.playerCharacters[pI.playerIndex] = pickedCharacter;
@@ -33,6 +34,7 @@ public class PlayerSelectArrow : MonoBehaviour
 
     public void SwitchPosition(CallbackContext context)
     {
+        // When the dpad is clicked left or right, the cursor moves left or right.
         if (context.performed && !picked)
         {
             if (context.ReadValue<float>() == 1)
@@ -48,6 +50,7 @@ public class PlayerSelectArrow : MonoBehaviour
     
     public void PickCharacter(CallbackContext context)
     {
+        // Picks the character the selectarrow is currently hovering on, saving said character to a personal variable and playerdatastorage.
         if (context.performed && !picked)
         {
             picked = true;
@@ -65,6 +68,7 @@ public class PlayerSelectArrow : MonoBehaviour
 
     public void CancelPick(CallbackContext context)
     {
+        // Undoes a picked character, going back to unselected.
         if(context.performed && picked)
         {
             picked = false;
@@ -75,6 +79,7 @@ public class PlayerSelectArrow : MonoBehaviour
 
     public void ContinueToMatch(CallbackContext context)
     {
+        // If at least 2 players have picked a character, when start is pressed the game continues to the fighting scene.
         if (context.performed)
         {
             int count = 0;
@@ -91,11 +96,13 @@ public class PlayerSelectArrow : MonoBehaviour
 
     private void Update()
     {
+        // Controls the position of the cursor.
         intendedPos = new Vector3(-4.5f + currentSelectionIndex * 3f, 1.7f, 0);
         if(intendedPos != null)
         {
             transform.position = Vector3.Slerp(transform.position, intendedPos, 0.2f);
         }
+        // If the player's picked a character, the cursor's yellow. Otherwise, it's their player color.
         if (picked) GetComponent<SpriteRenderer>().color = Color.yellow;
         else
         {
