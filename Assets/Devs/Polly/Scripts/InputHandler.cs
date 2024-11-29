@@ -19,7 +19,7 @@ public class InputHandler : MonoBehaviour
     private float acceleration = 7;
     private float movementSpeed = 0;
     private float maxMovementSpeed = 7;
-    private float jumpRollSpeed = 25;
+    private float jumpRollSpeed = 40;
     public bool isLooking = false;
     public bool isMoving = false;
     public bool isRagdolling = false;

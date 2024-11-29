@@ -11,8 +11,10 @@ public class Hitbox : MonoBehaviour
 
     private void Start()
     {
-        if(!attackData.throwable)
-        Destroy(gameObject, hitboxData.duration);
+        if (!attackData.throwable)
+        {
+            Destroy(gameObject, hitboxData.duration);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

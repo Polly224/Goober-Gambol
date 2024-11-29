@@ -17,7 +17,16 @@ public class AttackScript : MonoBehaviour
     public IEnumerator StartAttack(WeaponSystem.Weapon weaponUsed)
     {
         // Triggers the animation bound to the weapon the player is holding.
-        GetComponentInChildren<Animator>().SetTrigger(weaponUsed.name);
+        GetComponentInChildren<Animator>().SetTrigger(weaponUsed.attackType switch
+        {
+            WeaponSystem.AttackType.Punch => "Punch",
+            WeaponSystem.AttackType.Spin360 => "Spin",
+            WeaponSystem.AttackType.OneArmSwing => "OneArmSwing",
+            WeaponSystem.AttackType.ReinhardtSwing => "ReinhardtSwing",
+            WeaponSystem.AttackType.Stab => "Stab",
+            WeaponSystem.AttackType.OneArmBonk => "OneArmBonk",
+            _ => ""
+        });
 
         // Puts the attack on cooldown, so it can't be used for a bit.
         attackOnCooldown = true;
@@ -40,19 +49,30 @@ public class AttackScript : MonoBehaviour
         // After the weapon's recovery is up, the weapon can be swung again.
         yield return new WaitForSeconds(weaponUsed.recovery);
         attackOnCooldown = false;
-        yield return null;
+        yield break;
     }
 
     public IEnumerator ThrowAttack(WeaponSystem.Weapon weaponUsed)
     {
-        GameObject thrownWeapon = Instantiate(weaponUsed.weaponToThrow, transform.position, transform.rotation);
-        thrownWeapon.transform.localPosition = weaponUsed.hitboxes[0].positionOffset;
-        thrownWeapon.transform.localScale = new Vector3(weaponUsed.hitboxes[0].xSize, weaponUsed.hitboxes[0].xSize, weaponUsed.hitboxes[0].xSize);
-        thrownWeapon.GetComponent<Rigidbody>().AddRelativeForce(transform.forward * 5 + transform.up * 2, ForceMode.Impulse);
+        GetComponentInChildren<Animator>().SetTrigger("Throw");
+        attackOnCooldown = true;
+        yield return new WaitForSeconds(weaponUsed.startup);
+        GameObject thrownWeapon = Instantiate(weaponUsed.weaponToThrow, transform);
         thrownWeapon.GetComponent<Hitbox>().hitPlayers.Add(gameObject);
         thrownWeapon.GetComponent<Hitbox>().hitboxData = weaponUsed.hitboxes[0];
         thrownWeapon.GetComponent<Hitbox>().attackData = weaponUsed;
+        thrownWeapon.transform.localPosition = thrownWeapon.transform.localPosition + weaponUsed.hitboxes[0].positionOffset;
+        thrownWeapon.transform.SetParent(null, true);
+        thrownWeapon.transform.localScale = new Vector3(weaponUsed.hitboxes[0].xSize, weaponUsed.hitboxes[0].xSize, weaponUsed.hitboxes[0].xSize);
         yield return null;
+        thrownWeapon.transform.LookAt(thrownWeapon.transform.localPosition + new Vector3(GetComponent<InputHandler>().lookDir.x, thrownWeapon.transform.position.y, GetComponent<InputHandler>().lookDir.y));
+        yield return null;
+        thrownWeapon.GetComponent<Rigidbody>().AddForce(transform.forward * 20 + transform.up * 5, ForceMode.Impulse);
+        yield return null;
+        inventory.RemoveCurrentWeapon();
+        yield return new WaitForSeconds(weaponUsed.recovery);
+        attackOnCooldown = false;
+        yield break;
     }
 
     public void Attack(CallbackContext context)
@@ -74,7 +94,7 @@ public class AttackScript : MonoBehaviour
 
     public void AltAttack(CallbackContext context)
     {
-        if(context.performed && !GetComponent<InputHandler>().isRagdolling)
+        if(context.performed && !GetComponent<InputHandler>().isRagdolling && inventory.weaponInventory.Count >= inventory.currentWeaponIndex + 1)
         {
             if (inventory.weaponInventory[inventory.currentWeaponIndex].throwable)
             {

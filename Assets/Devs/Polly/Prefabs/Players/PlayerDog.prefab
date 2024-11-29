@@ -253,7 +253,19 @@ MonoBehaviour:
     m_ActionId: f5cdca32-9c8e-4e95-ac3d-d9e24c2ad432
     m_ActionName: Gameplay/Attack[/XInputControllerWindows/rightTrigger]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4048770972178759657}
+        m_TargetAssemblyTypeName: AttackScript, Assembly-CSharp
+        m_MethodName: AltAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 37752205-9acd-4211-88a2-a2b3cd3d90e4
     m_ActionName: Gameplay/AltAttack[/XInputControllerWindows/leftTrigger]
   - m_PersistentCalls:
@@ -296,6 +308,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b057904a-1b94-43fa-b32a-ac4cbb31dc7c
     m_ActionName: Character select/Cancel[/DualSenseGamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8502b2bc-370c-42c2-9587-e48ad913eb07
+    m_ActionName: Character select/Continue[/XInputControllerWindows/start,/DualSenseGamepadHID/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -315,6 +331,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponInventory: []
   currentWeaponIndex: 0
+  handToHoldWeapons: {fileID: 2969891670139459853}
+  weaponsToHold:
+  - {fileID: 0}
+  - {fileID: 5227395296807092513, guid: cbdb3e41a3a03b443872e47d784c2678, type: 3}
+  - {fileID: 1854420156453907442, guid: 83312385d0e7d7c4992f8c7b3e75d69c, type: 3}
+  - {fileID: 0}
+  - {fileID: 4429953352461983280, guid: dbf8fb5ed2cac6e4d9feae5e5c69d425, type: 3}
+  - {fileID: 0}
+  - {fileID: 6734983488390823542, guid: 88ad1bb780a7c8d4db424f771ed33850, type: 3}
+  - {fileID: 0}
 --- !u!114 &4048770972178759657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,6 +465,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 53918293290111151}
   m_SourcePrefab: {fileID: 100100000, guid: 4ea6ee3e8e32f9246b49c7617c89fc7a, type: 3}
+--- !u!4 &2969891670139459853 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8457804647750993186, guid: 4ea6ee3e8e32f9246b49c7617c89fc7a, type: 3}
+  m_PrefabInstance: {fileID: 6653791618075024431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5806949616110297470 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ea6ee3e8e32f9246b49c7617c89fc7a, type: 3}
