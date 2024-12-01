@@ -704,6 +704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dawg_Rigged_Ragdoll
       objectReference: {fileID: 0}
+    - target: {fileID: 4309106787052350366, guid: f96fab01cabe5f843b5601db89863f8f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7166036670570729051, guid: f96fab01cabe5f843b5601db89863f8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.37
@@ -749,6 +753,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f96fab01cabe5f843b5601db89863f8f, type: 3}
+--- !u!1001 &3136416400445876563
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6178220730746847537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_Name
+      value: Robot_Rigged_Ragdoll
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 69.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -34.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
 --- !u!1001 &8368551631196191172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -760,6 +821,10 @@ PrefabInstance:
     - target: {fileID: 1664743994146738698, guid: de9fc1cedf9c52541a703d59cfebc011, type: 3}
       propertyPath: m_Name
       value: G-Field_Rigged_Ragdoll
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664743994146738698, guid: de9fc1cedf9c52541a703d59cfebc011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4742729214965544496, guid: de9fc1cedf9c52541a703d59cfebc011, type: 3}
       propertyPath: m_LocalPosition.x
@@ -817,3 +882,4 @@ SceneRoots:
   - {fileID: 1425063171}
   - {fileID: 2504437791816097178}
   - {fileID: 8368551631196191172}
+  - {fileID: 3136416400445876563}
