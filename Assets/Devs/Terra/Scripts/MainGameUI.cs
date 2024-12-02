@@ -5,7 +5,7 @@ using TMPro;
 
 public class MainGameUI : MonoBehaviour
 {
-    [SerializeField] int CurrentRound = 0;
+    [SerializeField] public int CurrentRound = 1;
     [SerializeField] GameObject RoundText;
     [SerializeField] GameObject Character1HealthText;
     [SerializeField] GameObject Character2HealthText;

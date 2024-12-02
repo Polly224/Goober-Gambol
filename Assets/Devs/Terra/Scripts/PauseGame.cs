@@ -30,7 +30,7 @@ public class PauseGame : MonoBehaviour
     {
         if (context.performed && !gamePaused)
         {
-            Canvas.PauseScreen.SetActive(true);
+            Canvas.PauseScreen.GetComponent<Canvas>().enabled = true;
             Button.PauseScreenActive = true;
             gamePaused = true;
             Time.timeScale = 0;
