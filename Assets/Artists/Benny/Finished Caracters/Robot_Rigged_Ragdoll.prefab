@@ -178,7 +178,7 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 30
+    limit: 33.837032
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
@@ -3045,9 +3045,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2361038854217555060}
-  - component: {fileID: 2378453489642582964}
   - component: {fileID: 7271503351762524880}
   - component: {fileID: 1641434682076196826}
+  - component: {fileID: 2321345628932891623}
   m_Layer: 0
   m_Name: spine.004
   m_TagString: Untagged
@@ -3072,27 +3072,6 @@ Transform:
   - {fileID: 3602491121958990136}
   m_Father: {fileID: 8728352580158291402}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2378453489642582964
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8307329190969657910}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.004619467
-  m_Center: {x: 0.000000023006494, y: 0.0046191397, z: 0.000000022954133}
 --- !u!54 &7271503351762524880
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3166,6 +3145,27 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &2321345628932891623
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8307329190969657910}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.008950652, y: 0.007507169, z: 0.009529075}
+  m_Center: {x: 0.00020678194, y: 0.0047958153, z: -0.0018820754}
 --- !u!1 &8426741132850370139
 GameObject:
   m_ObjectHideFlags: 0
