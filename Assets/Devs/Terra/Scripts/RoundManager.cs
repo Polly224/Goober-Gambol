@@ -11,18 +11,35 @@ public class RoundManager : MonoBehaviour
     private PlayerPlacement PlayerPlacement;
     private PlayerDataStorage Players;
     private CanvasFinder Canvas;
+    private MainGameUI MainGameUI;
 
     private void Awake()
     {
         Canvas = FindObjectOfType<CanvasFinder>();
         Players = FindObjectOfType<PlayerDataStorage>();
         PlayerPlacement = FindObjectOfType<PlayerPlacement>();
+        MainGameUI = FindObjectOfType<MainGameUI>();
     }
     private void Update()
     {
         foreach (GameObject g in PlayerDataStorage.connectedPlayerObjects)
         {
-           if (g.GetComponent<PlayerPlacement>().placingValue == 1) winningPlayer = g;
+            if (g.GetComponent<PlayerPlacement>().placingValue == 1)
+            {
+                winningPlayer = g;
+                StartCoroutine("SwitchRoundsCooldown");
+            }
         }
+    }
+
+
+
+
+
+
+    private IEnumerator SwitchRoundsCooldown()
+    {
+        yield return new WaitForSecondsRealtime(5);
+        MainGameUI.CurrentRound++;
     }
 }
