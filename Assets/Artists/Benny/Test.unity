@@ -709,16 +709,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7166036670570729051, guid: f96fab01cabe5f843b5601db89863f8f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1626
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166036670570729051, guid: f96fab01cabe5f843b5601db89863f8f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1626
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166036670570729051, guid: f96fab01cabe5f843b5601db89863f8f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1626
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166036670570729051, guid: f96fab01cabe5f843b5601db89863f8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.37
+      value: -13.28
       objectReference: {fileID: 0}
     - target: {fileID: 7166036670570729051, guid: f96fab01cabe5f843b5601db89863f8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 73.65677
+      value: 73.39
       objectReference: {fileID: 0}
     - target: {fileID: 7166036670570729051, guid: f96fab01cabe5f843b5601db89863f8f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -40.64
+      value: -32.3
       objectReference: {fileID: 0}
     - target: {fileID: 7166036670570729051, guid: f96fab01cabe5f843b5601db89863f8f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -764,6 +776,10 @@ PrefabInstance:
     - target: {fileID: 6178220730746847537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
       propertyPath: m_Name
       value: Robot_Rigged_Ragdoll
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201189870142260775, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
+      propertyPath: m_Swing1Limit.limit
+      value: 33.837032
       objectReference: {fileID: 0}
     - target: {fileID: 9031152295879357537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
       propertyPath: m_LocalPosition.x
