@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4447665032171297155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399058888865689028}
+  - component: {fileID: 2828242190663013249}
+  m_Layer: 0
+  m_Name: PickupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &399058888865689028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447665032171297155}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2828242190663013249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447665032171297155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99605955f622964d8105c5ea0a0b800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnablePickups:
+  - {fileID: 7737149658405604811, guid: da95684e014f2284cbabc8118a95bd29, type: 3}
+  - {fileID: 7737149658405604811, guid: 591c08ff46d3d574fa60c1d9ef1685bc, type: 3}
+  - {fileID: 7737149658405604811, guid: 013db078f6cb4fd4bb708518f3c147f4, type: 3}
+  - {fileID: 7737149658405604811, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+  - {fileID: 7737149658405604811, guid: c3548ea9132cf7d4daada321d4115c3f, type: 3}
+  - {fileID: 7737149658405604811, guid: ecd6d54ac6111cd48b6e1b007f21f498, type: 3}
+  - {fileID: 7737149658405604811, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+  - {fileID: 7737149658405604811, guid: cb1456c7b11f83b418fba528e2744974, type: 3}
+  dockPickups:
+  - {fileID: 7737149658405604811, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+  rooftopPickups:
+  - {fileID: 7737149658405604811, guid: 591c08ff46d3d574fa60c1d9ef1685bc, type: 3}
+  - {fileID: 7737149658405604811, guid: c3548ea9132cf7d4daada321d4115c3f, type: 3}
+  timeUntilStartSpawning: 0
+  timeBetweenSpawns: 1
