@@ -13,13 +13,17 @@ public class PickupSpawningSystem : MonoBehaviour
     [SerializeField] List<GameObject> rooftopPickups;
     [SerializeField] float timeUntilStartSpawning;
     [SerializeField] float timeBetweenSpawns;
-    List<GameObject> spawnLocationObjects;
+    public GameObject[] spawnLocationObjects;
 
     public static PickupSpawningSystem instance;
     private void Start()
     {
         if (instance == null) instance = this;
         else Destroy(this);
+
+        spawnLocationObjects = GameObject.FindGameObjectsWithTag("WeaponSpawnpoint");
+
+        pickedStagePickups = new();
         if (PlayerDataStorage.pickedStage == PlayerDataStorage.PickedStage.Rooftop)
             pickedStagePickups = rooftopPickups;
         else if (PlayerDataStorage.pickedStage == PlayerDataStorage.PickedStage.Docks)
@@ -40,7 +44,7 @@ public class PickupSpawningSystem : MonoBehaviour
     {
         for(int i = 0; i < amount; i++)
         {
-            GameObject pickedSpawnLocation = spawnLocationObjects[Random.Range(0, spawnLocationObjects.Count)];
+            GameObject pickedSpawnLocation = spawnLocationObjects[Random.Range(0, spawnLocationObjects.Length)];
             Instantiate(Random.Range(1, 6) != 5 ? spawnablePickups[Random.Range(0, spawnablePickups.Count)] : pickedStagePickups[Random.Range(0, pickedStagePickups.Count)], pickedSpawnLocation.transform.position, Quaternion.identity);
             pickedSpawnLocation.GetComponentInChildren<ParticleSystem>().Play();
         }

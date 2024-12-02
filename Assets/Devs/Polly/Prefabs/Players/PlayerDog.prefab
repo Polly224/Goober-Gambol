@@ -333,7 +333,7 @@ MonoBehaviour:
   currentWeaponIndex: 0
   handToHoldWeapons: {fileID: 2969891670139459853}
   weaponsToHold:
-  - {fileID: 0}
+  - {fileID: 3162030829107852764, guid: a11cc5359766fd54e8a244c43b1fbb06, type: 3}
   - {fileID: 5227395296807092513, guid: cbdb3e41a3a03b443872e47d784c2678, type: 3}
   - {fileID: 1854420156453907442, guid: 83312385d0e7d7c4992f8c7b3e75d69c, type: 3}
   - {fileID: 0}
