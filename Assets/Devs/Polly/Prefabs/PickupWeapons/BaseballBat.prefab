@@ -134,5 +134,6 @@ MonoBehaviour:
     weaponGimmick: 0
     swingable: 1
     throwable: 0
+    weaponToThrow: {fileID: 0}
     bleedAmount: 0
   lifeTime: 10
