@@ -2471,6 +2471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1975160582005244746}
+  - component: {fileID: 6587854699744907458}
   m_Layer: 0
   m_Name: G-Field_Rigged_Ragdoll 1
   m_TagString: Untagged
@@ -2488,8 +2489,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.90000093, y: 0.3, z: 0.90000093}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.90000093, y: 0.33333334, z: 0.90000093}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1310952816003434764}
   - {fileID: 4821327941777523626}
@@ -2499,6 +2500,27 @@ Transform:
   - {fileID: 3844458637613230069}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6587854699744907458
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5594309483207681904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ba398824fc25e33418e1e6838979fb1d, type: 3}
+  m_Controller: {fileID: 9100000, guid: 344cfd7bd7f4ccd41b6be848dfe25436, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5729656216172948868
 GameObject:
   m_ObjectHideFlags: 0

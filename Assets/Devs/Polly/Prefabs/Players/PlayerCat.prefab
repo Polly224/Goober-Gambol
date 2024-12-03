@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5574612884687999196}
   - component: {fileID: 8289498319401311367}
   - component: {fileID: 3411634938318717034}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1089,7 +1089,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5594309483207681904, guid: bd2e352572e6fd440b993aab8fac018a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4702779301823853643}
   m_SourcePrefab: {fileID: 100100000, guid: bd2e352572e6fd440b993aab8fac018a, type: 3}
 --- !u!4 &2762271934865653185 stripped
 Transform:
@@ -1101,3 +1104,29 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 297710178442559763, guid: bd2e352572e6fd440b993aab8fac018a, type: 3}
   m_PrefabInstance: {fileID: 4412579465670196875}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8115024119126628859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5594309483207681904, guid: bd2e352572e6fd440b993aab8fac018a, type: 3}
+  m_PrefabInstance: {fileID: 4412579465670196875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4702779301823853643
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115024119126628859}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

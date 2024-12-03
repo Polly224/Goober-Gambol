@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Transactions;
 using Unity.VisualScripting;
 using UnityEditor.Rendering.LookDev;
@@ -30,6 +31,7 @@ public class InputHandler : MonoBehaviour
     private float turnSpeed = 1;
     private GameObject playModel;
     private GameObject ragdollModel;
+    private List<Transform> ragdollPositions;
     private void Awake()
     {
         // Gets the player input and the player's material for later usage.
@@ -119,7 +121,7 @@ public class InputHandler : MonoBehaviour
     public bool IsGrounded()
     {
         // Draws a line from the center of the player's model, 2 units in length, straight down. If it hits a surface, the player's considered grounded.
-        return Physics.Raycast(rb.position, -Vector3.up, 2f) && rb.velocity.y <= 0;
+        return Physics.Raycast(rb.position, -Vector3.up, 1.7f) && rb.velocity.y <= 0;
     }
 
     public void JumpRoll(CallbackContext context)
@@ -130,7 +132,7 @@ public class InputHandler : MonoBehaviour
             {
                 // If the player's not already ragdolling and also grounded, the player jumps forward with a large burst of speed and ragdolls.
                 transform.LookAt(rb.position + new Vector3(lookDir.x, 0, lookDir.y) + Vector3.up / 5);
-                rb.AddRelativeForce(new Vector3(0, jumpRollSpeed / 5, jumpRollSpeed), ForceMode.Impulse);
+                rb.AddRelativeForce(new Vector3(0, 0, jumpRollSpeed), ForceMode.Impulse);
                 rb.AddRelativeTorque(new Vector3(UnityEngine.Random.Range(10f, 20), 0, UnityEngine.Random.Range(10f, 20)), ForceMode.Impulse);
                 Ragdoll();
                 // If the player cancelled an attack with their jumproll, it cancels said attack.
@@ -151,13 +153,13 @@ public class InputHandler : MonoBehaviour
     public void Ragdoll()
     {
         // Activates ragdoll, stopping all control input until the ground is hit.
-        foreach(Rigidbody r in transform.GetChild(1).GetComponentsInChildren<Rigidbody>())
-        {
-            r.velocity = rb.velocity;
-        }
         if (!isRagdolling) isRagdolling = true;
         playModel.SetActive(false);
         ragdollModel.SetActive(true);
+        foreach (Rigidbody r in transform.GetChild(1).GetComponentsInChildren<Rigidbody>())
+        {
+            r.velocity = Vector3.zero;
+        }
         canStopRagdolling = false;
         StartCoroutine(DelayedRagdoll());
     }
@@ -169,12 +171,16 @@ public class InputHandler : MonoBehaviour
             isRagdolling = false;
             ragdollModel.SetActive(false);
             playModel.SetActive(true);
+            foreach (Rigidbody r in transform.GetChild(1).GetComponentsInChildren<Rigidbody>())
+            {
+                r.velocity = Vector3.zero;
+            }
         }
     }
 
     public IEnumerator DelayedRagdoll()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         canStopRagdolling = true;
         yield break;
     }
