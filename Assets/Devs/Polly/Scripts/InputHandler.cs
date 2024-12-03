@@ -28,6 +28,8 @@ public class InputHandler : MonoBehaviour
     private Rigidbody rb;
     [SerializeField]
     private float turnSpeed = 1;
+    private GameObject playModel;
+    private GameObject ragdollModel;
     private void Awake()
     {
         // Gets the player input and the player's material for later usage.
@@ -35,13 +37,27 @@ public class InputHandler : MonoBehaviour
         cubeMat = GetComponent<MeshRenderer>().material;
         rb = GetComponent<Rigidbody>();
         modelAnim = GetComponentInChildren<Animator>();
+        playModel = transform.GetChild(0).gameObject;
+        ragdollModel = transform.GetChild(1).gameObject;
+        playModel.SetActive(true);
+        ragdollModel.SetActive(false);
     }
 
     private void Start()
     {
+        playerInput.ActivateInput();
         // When a player is added, their controller gets added to the controller list.
         PlayerDataStorage.instance.AddToControllers(playerInput.GetDevice<InputDevice>());
         PlayerDataStorage.connectedPlayerObjects.Add(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        playerInput.ActivateInput();
+    }
+    private void OnDisable()
+    {
+        playerInput.DeactivateInput();
     }
 
     private void OnDestroy() => PlayerDataStorage.connectedPlayerObjects.Remove(gameObject);
@@ -70,7 +86,7 @@ public class InputHandler : MonoBehaviour
         {
             rb.AddTorque(new Vector3(-rb.rotation.x * 3, 0, -rb.rotation.z * 3));
         }
-        if (isRagdolling && IsGrounded() && !GetComponent<DamageSystem>().isDizzy) isRagdolling = false;
+        if (isRagdolling && IsGrounded() && !GetComponent<DamageSystem>().isDizzy) StopRagdolling();
         if(!isRagdolling && !isMoving) rb.velocity /= 2;
         // if (!isRagdolling) rb.AddTorque(-rb.GetAccumulatedTorque() * 10);
 
@@ -117,8 +133,6 @@ public class InputHandler : MonoBehaviour
                 rb.AddRelativeForce(new Vector3(0, jumpRollSpeed / 5, jumpRollSpeed), ForceMode.Impulse);
                 rb.AddRelativeTorque(new Vector3(UnityEngine.Random.Range(10f, 20), 0, UnityEngine.Random.Range(10f, 20)), ForceMode.Impulse);
                 Ragdoll();
-                // Makes sure you're actually ragdolling when you jumproll. Bandaid fix, honestly.
-                StartCoroutine(DelayedRagdoll());
                 // If the player cancelled an attack with their jumproll, it cancels said attack.
                 GetComponent<AttackScript>().StopAllCoroutines();
                 GetComponent<AttackScript>().attackOnCooldown = false;
@@ -128,18 +142,40 @@ public class InputHandler : MonoBehaviour
 
     public void Ragdoll(CallbackContext context)
     {
-        if (!isRagdolling && context.performed) Ragdoll();
+        if (!isRagdolling && context.performed)
+        {
+            Ragdoll();
+            rb.AddForce(UnityEngine.Random.Range(2, 10), UnityEngine.Random.Range(2, 10), UnityEngine.Random.Range(2, 10));
+        }
     }
     public void Ragdoll()
     {
         // Activates ragdoll, stopping all control input until the ground is hit.
+        foreach(Rigidbody r in transform.GetChild(1).GetComponentsInChildren<Rigidbody>())
+        {
+            r.velocity = rb.velocity;
+        }
         if (!isRagdolling) isRagdolling = true;
+        playModel.SetActive(false);
+        ragdollModel.SetActive(true);
+        canStopRagdolling = false;
+        StartCoroutine(DelayedRagdoll());
+    }
+
+    public void StopRagdolling()
+    {
+        if (canStopRagdolling)
+        {
+            isRagdolling = false;
+            ragdollModel.SetActive(false);
+            playModel.SetActive(true);
+        }
     }
 
     public IEnumerator DelayedRagdoll()
     {
-        yield return new WaitForSeconds(0.1f);
-        Ragdoll();
+        yield return new WaitForSeconds(0.5f);
+        canStopRagdolling = true;
         yield break;
     }
 }

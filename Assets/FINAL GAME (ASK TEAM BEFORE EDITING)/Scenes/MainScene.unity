@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f000c19fec50cae458ebebb4cc7e10f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomDistance: 0.65
+  zoomDistance: 1
   zoomSpeed: 0
 --- !u!1 &146951404
 GameObject:
