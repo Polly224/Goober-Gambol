@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -118424793729219155}
   - component: {fileID: 6152878114609545341}
   m_Layer: 0
-  m_Name: hitboxSphere
+  m_Name: NINJASTAR
   m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
