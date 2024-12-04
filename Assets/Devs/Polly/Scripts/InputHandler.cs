@@ -152,6 +152,7 @@ public class InputHandler : MonoBehaviour
 
     public void Ragdoll(CallbackContext context)
     {
+        if (isRagdolling && context.performed) buttonPressedForRagdoll = false;
         if (!isRagdolling && context.performed)
         {
             Ragdoll();
@@ -161,7 +162,6 @@ public class InputHandler : MonoBehaviour
                 r.AddForce(UnityEngine.Random.Range(2, 10), UnityEngine.Random.Range(2, 10), UnityEngine.Random.Range(2, 10));
             }
         }
-        if (isRagdolling && context.performed) buttonPressedForRagdoll = false;
     }
     public void Ragdoll(bool jumpRolled = false)
     {
@@ -169,6 +169,7 @@ public class InputHandler : MonoBehaviour
         if (!isRagdolling) isRagdolling = true;
         playModel.SetActive(false);
         spawnedRagdoll = Instantiate(ragdollModel, transform.position, Quaternion.identity);
+        spawnedRagdoll.GetComponent<SpawnedRagdoll>().originPlayer = gameObject;
         if (jumpRolled)
         {
             foreach(Rigidbody r in spawnedRagdoll.GetComponentsInChildren<Rigidbody>())
@@ -182,7 +183,7 @@ public class InputHandler : MonoBehaviour
 
     public void StopRagdolling()
     {
-        if (isRagdolling && !GetComponent<DamageSystem>().isDizzy && !spawnedRagdoll.GetComponent<SpawnedRagdoll>().hasHitCollision)
+        if (isRagdolling && !GetComponent<DamageSystem>().isDizzy && spawnedRagdoll.GetComponent<SpawnedRagdoll>().hasHitCollision)
         {
             isRagdolling = false;
             transform.position = spawnedRagdoll.transform.GetChild(4).GetChild(0).position;
