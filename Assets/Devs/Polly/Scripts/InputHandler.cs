@@ -33,6 +33,7 @@ public class InputHandler : MonoBehaviour
     public GameObject ragdollModel;
     public GameObject spawnedRagdoll;
     private List<Transform> ragdollPositions;
+    private bool buttonPressedForRagdoll = false;
     private void Awake()
     {
         // Gets the player input and the player's material for later usage.
@@ -65,14 +66,14 @@ public class InputHandler : MonoBehaviour
     private void FixedUpdate()
     {
         // Moves in the held direction, looks in the held direction.
-        if(isMoving && !isRagdolling && movementSpeed <= maxMovementSpeed)
+        if (isMoving && !isRagdolling && movementSpeed <= maxMovementSpeed)
             movementSpeed += acceleration * Time.deltaTime;
-        if(movementSpeed > maxMovementSpeed) movementSpeed = maxMovementSpeed;
+        if (movementSpeed > maxMovementSpeed) movementSpeed = maxMovementSpeed;
         if (!isMoving) movementSpeed = 0;
 
         lookDir = (isMoving && !isLooking) ? movementDir : lookDir;
-        if(!isRagdolling && isMoving) SetMoveDirection(movementDir);
-        if(!isRagdolling && (isLooking || isMoving)) SetLookDirection(lookDir);
+        if (!isRagdolling && isMoving) SetMoveDirection(movementDir);
+        if (!isRagdolling && (isLooking || isMoving)) SetLookDirection(lookDir);
 
         // Sets cube's color dependant on player slot, makes it easier to distinguish players. For testing.
         cubeMat.color = playerInput.playerIndex switch
@@ -87,8 +88,18 @@ public class InputHandler : MonoBehaviour
         {
             rb.AddTorque(new Vector3(-rb.rotation.x * 3, 0, -rb.rotation.z * 3));
         }
-        if (isRagdolling && IsGrounded() && !GetComponent<DamageSystem>().isDizzy) StopRagdolling();
-        if(!isRagdolling && !isMoving) rb.velocity /= 2;
+        if (spawnedRagdoll != null) {
+            if (spawnedRagdoll.GetComponent<SpawnedRagdoll>().hasHitCollision)
+            {
+                if (isRagdolling && !GetComponent<DamageSystem>().isDizzy && canStopRagdolling && !buttonPressedForRagdoll) StartCoroutine(DelayedExitRagdoll(0.4f));
+            }
+        }
+        if(!isRagdolling)
+        {
+            float yVal = rb.velocity.y;
+            rb.velocity /= 1.2f;
+            rb.velocity = new Vector3(rb.velocity.x, yVal, rb.velocity.z);
+        }
         // if (!isRagdolling) rb.AddTorque(-rb.GetAccumulatedTorque() * 10);
 
         // Animation functions.
@@ -144,8 +155,13 @@ public class InputHandler : MonoBehaviour
         if (!isRagdolling && context.performed)
         {
             Ragdoll();
-            rb.AddForce(UnityEngine.Random.Range(2, 10), UnityEngine.Random.Range(2, 10), UnityEngine.Random.Range(2, 10));
+            buttonPressedForRagdoll = true;
+            foreach (Rigidbody r in spawnedRagdoll.GetComponentsInChildren<Rigidbody>())
+            {
+                r.AddForce(UnityEngine.Random.Range(2, 10), UnityEngine.Random.Range(2, 10), UnityEngine.Random.Range(2, 10));
+            }
         }
+        if (isRagdolling && context.performed) buttonPressedForRagdoll = false;
     }
     public void Ragdoll(bool jumpRolled = false)
     {
@@ -153,9 +169,12 @@ public class InputHandler : MonoBehaviour
         if (!isRagdolling) isRagdolling = true;
         playModel.SetActive(false);
         spawnedRagdoll = Instantiate(ragdollModel, transform.position, Quaternion.identity);
-        foreach(Rigidbody r in spawnedRagdoll.GetComponentsInChildren<Rigidbody>())
+        if (jumpRolled)
         {
-            r.AddForce(new Vector3(lookDir.x, 0, lookDir.y) * jumpRollSpeed * 1.25f + Vector3.up * 0.5f * jumpRollSpeed, ForceMode.Impulse);
+            foreach(Rigidbody r in spawnedRagdoll.GetComponentsInChildren<Rigidbody>())
+            {
+                r.AddForce(new Vector3(lookDir.x, 0, lookDir.y) * jumpRollSpeed * 1.25f + Vector3.up * 0.5f * jumpRollSpeed, ForceMode.Impulse);
+            }
         }
         canStopRagdolling = false;
         StartCoroutine(DelayedRagdoll());
@@ -163,7 +182,7 @@ public class InputHandler : MonoBehaviour
 
     public void StopRagdolling()
     {
-        if (canStopRagdolling)
+        if (isRagdolling && !GetComponent<DamageSystem>().isDizzy && !spawnedRagdoll.GetComponent<SpawnedRagdoll>().hasHitCollision)
         {
             isRagdolling = false;
             transform.position = spawnedRagdoll.transform.GetChild(4).GetChild(0).position;
@@ -176,6 +195,14 @@ public class InputHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         canStopRagdolling = true;
+        yield break;
+    }
+
+    public IEnumerator DelayedExitRagdoll(float delay)
+    {
+        canStopRagdolling = false;
+        yield return new WaitForSeconds(delay);
+        StopRagdolling();
         yield break;
     }
 }
