@@ -57,7 +57,7 @@ public class PlayerCameraFollower : MonoBehaviour
             }
             // If there's MORE than 1 player, however...
             // It gets the total distance between the 2 furthest player objects, then moves the camera back based on that distance and the difference between those
-            // 2 objects' z coordinates. I love coding. Coding is awesome.
+            // 2 objects' z coordinates. I love coding. Coding is awesome. This definitely didn't take me an hour to write.
             else if(PlayerDataStorage.connectedPlayerObjects.Count > 1)
             {
                 Vector3 middlePosition = new();
