@@ -6,11 +6,13 @@ public class Pickup : MonoBehaviour
 {
     public WeaponSystem.Weapon pickupWeaponData;
     public float lifeTime = 10f;
+    public float rotationSpeed = 1f;
     private void Update()
     {
         // Pickup destroys itself if it's left untouched for too long.
         lifeTime -= Time.deltaTime;
         if (lifeTime <= 0) DestroyPickup();
+        transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y + rotationSpeed, -45));
     }
     private void FixedUpdate()
     {
