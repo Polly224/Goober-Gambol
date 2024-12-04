@@ -129,7 +129,7 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
-    - _brightness: 1
+    - _brightness: 0.6
     - _rotation: 90
     - _speed: 0.005
     m_Colors:
