@@ -218,7 +218,8 @@ MonoBehaviour:
     weaponGimmick: 1
     swingable: 0
     throwable: 1
-    weaponToThrow: {fileID: 0}
+    weaponToThrow: {fileID: 1762811529330813548, guid: 4a8883ca1dca1004a84051e4683f606f, type: 3}
     hitSound: {fileID: 0}
     bleedAmount: 30
   lifeTime: 10
+  rotationSpeed: 1

@@ -59,16 +59,14 @@ public class DamageSystem : MonoBehaviour
         spawnedSoundPlayer.GetComponent<AudioSource>().Play();
         damageTaken += totalDamage;
         totalKnockback *= damageTaken;
-        Debug.Log(totalKnockback);
         Vector3 knockbackDirection = transform.position - hitboxPosition;
         knockbackDirection.Normalize();
-        knockbackDirection *= 2;
         if (GetComponent<InputHandler>().isRagdolling) knockbackDirection *= 1.5f;
         if (isDizzy) knockbackDirection *= 3f;
-        knockbackDirection += Vector3.up * 5;
-        GetComponent<Rigidbody>().AddForce(knockbackDirection * totalKnockback);
-        GetComponent<InputHandler>().Ragdoll();
-        GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(Random.Range(damageTaken, damageTaken * 2), 0, Random.Range(damageTaken, damageTaken * 2)), ForceMode.Impulse);
+        knockbackDirection += Vector3.up;
+        GetComponent<InputHandler>().Ragdoll(true, knockbackDirection * totalKnockback / 5);
+        /*GetComponent<Rigidbody>().AddForce(knockbackDirection * totalKnockback);
+        GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(Random.Range(damageTaken, damageTaken * 2), 0, Random.Range(damageTaken, damageTaken * 2)), ForceMode.Impulse);*/
         if (damageTaken > 50 && !isDizzy) EnterDizzy();
     }
     private void EnterDizzy()

@@ -9,6 +9,7 @@ TagManager:
   - PlayerSpawnpoint
   - WeaponSpawnpoint
   - Collision
+  - Ragdoll
   layers:
   - Default
   - TransparentFX

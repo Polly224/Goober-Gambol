@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8006557958229767326}
-  m_Layer: 0
+  - component: {fileID: 5493287898749269039}
+  m_Layer: 3
   m_Name: upper_arm.L
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +33,18 @@ Transform:
   - {fileID: 7394296018568601860}
   m_Father: {fileID: 4713158444306018566}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5493287898749269039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105217143341374135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &323250418532617787
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,9 +54,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2337596908232471323}
-  m_Layer: 0
+  - component: {fileID: 2328055931691117163}
+  m_Layer: 3
   m_Name: hand.R_end
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,6 +77,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7527326385360348286}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2328055931691117163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323250418532617787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &361972956513713808
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,9 +207,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7444045204392597109}
-  m_Layer: 0
+  - component: {fileID: 4559502034267611212}
+  m_Layer: 3
   m_Name: hand.L_end
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,6 +230,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2936777111076450978}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4559502034267611212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375579818468011396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &385345374957367667
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,9 +254,10 @@ GameObject:
   - component: {fileID: 3071279330693036942}
   - component: {fileID: 2376610259711197230}
   - component: {fileID: 3057462861078539725}
-  m_Layer: 0
+  - component: {fileID: 3202912644525142798}
+  m_Layer: 3
   m_Name: spine.005
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,6 +374,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3202912644525142798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385345374957367667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &453742825724161380
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasHitCollision: 0
+  originPlayer: {fileID: 0}
 --- !u!1 &804069605302800924
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,9 +447,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1339918851125236156}
-  m_Layer: 0
+  - component: {fileID: 3379948052914995400}
+  m_Layer: 3
   m_Name: foot.R_end
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,6 +470,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2433658100634028671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3379948052914995400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804069605302800924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1295335011851907271
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,9 +493,10 @@ GameObject:
   - component: {fileID: 8777060026993553572}
   - component: {fileID: 2863779753599444411}
   - component: {fileID: 6487493526506864904}
-  m_Layer: 0
+  - component: {fileID: 2388233765422438603}
+  m_Layer: 3
   m_Name: Foot_Right.003
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -499,6 +566,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2388233765422438603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295335011851907271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1851121962152615746
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,9 +698,10 @@ GameObject:
   - component: {fileID: 7605842298382429971}
   - component: {fileID: 7007135945229939021}
   - component: {fileID: 5677058670749813045}
-  m_Layer: 0
+  - component: {fileID: 4432668990812623950}
+  m_Layer: 3
   m_Name: Foot_Right.013
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -691,6 +771,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4432668990812623950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928930251036461764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2295274256219907043
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,9 +792,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2914519205337945152}
-  m_Layer: 0
+  - component: {fileID: 1632955606049467479}
+  m_Layer: 3
   m_Name: spine.008
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -723,6 +816,18 @@ Transform:
   - {fileID: 3688243613318647543}
   m_Father: {fileID: 786357609675850925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632955606049467479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2295274256219907043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2900479344184920290
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,9 +839,10 @@ GameObject:
   - component: {fileID: 5028766338326920782}
   - component: {fileID: 8832247480957117153}
   - component: {fileID: 7865863389731365494}
-  m_Layer: 0
+  - component: {fileID: 7475063218192704216}
+  m_Layer: 3
   m_Name: Foot_Right.009
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -806,6 +912,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7475063218192704216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2900479344184920290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3205046577110845736
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,9 +935,10 @@ GameObject:
   - component: {fileID: 7382092074245600934}
   - component: {fileID: 5820826409903711934}
   - component: {fileID: 7507315666878585847}
-  m_Layer: 0
+  - component: {fileID: 2002384310114392053}
+  m_Layer: 3
   m_Name: Foot_Right.012
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -889,6 +1008,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2002384310114392053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3205046577110845736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3400279359237871202
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,9 +1029,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 647637702393312269}
-  m_Layer: 0
+  - component: {fileID: 2650763220431740746}
+  m_Layer: 3
   m_Name: spine.002
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -921,6 +1053,18 @@ Transform:
   - {fileID: 3483301018942118921}
   m_Father: {fileID: 7968794787315542484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2650763220431740746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3400279359237871202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3512015726266305701
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,9 +1074,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8414768811911246157}
-  m_Layer: 0
+  - component: {fileID: 1698899928813419539}
+  m_Layer: 3
   m_Name: metarig.004
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -955,6 +1100,18 @@ Transform:
   - {fileID: 6947048157471974372}
   m_Father: {fileID: 6377127057658180444}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1698899928813419539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512015726266305701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3713512975431621485
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,9 +1124,10 @@ GameObject:
   - component: {fileID: 8834633318756641983}
   - component: {fileID: 2071573454435257358}
   - component: {fileID: 7559454667539660353}
-  m_Layer: 0
+  - component: {fileID: 7497746263314430185}
+  m_Layer: 3
   m_Name: foot.R
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,6 +1245,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7497746263314430185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3713512975431621485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3752350662092755885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,9 +1266,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3483301018942118921}
-  m_Layer: 0
+  - component: {fileID: 5415388296120140023}
+  m_Layer: 3
   m_Name: spine.002_end
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1118,6 +1289,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 647637702393312269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5415388296120140023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752350662092755885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4105402774919574437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,9 +1313,10 @@ GameObject:
   - component: {fileID: 1243760746965304985}
   - component: {fileID: 1870011119946566208}
   - component: {fileID: 3961567884722031752}
-  m_Layer: 0
+  - component: {fileID: 4620853270787360286}
+  m_Layer: 3
   m_Name: shin.R.001
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1249,6 +1433,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &4620853270787360286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105402774919574437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4162212486667225874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,9 +1456,10 @@ GameObject:
   - component: {fileID: 1200236640219769186}
   - component: {fileID: 6550294920248964243}
   - component: {fileID: 4017956686083880946}
-  m_Layer: 0
+  - component: {fileID: 1600952100381032150}
+  m_Layer: 3
   m_Name: Foot_Right.007
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1332,6 +1529,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1600952100381032150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4162212486667225874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4550116945166208232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,9 +1553,10 @@ GameObject:
   - component: {fileID: 873431195635755308}
   - component: {fileID: 5133554970261988249}
   - component: {fileID: 102209957195256354}
-  m_Layer: 0
+  - component: {fileID: 809183718874040693}
+  m_Layer: 3
   m_Name: spine.004
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1463,6 +1673,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &809183718874040693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550116945166208232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4580856094374579134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,9 +1697,10 @@ GameObject:
   - component: {fileID: 6127986682920466127}
   - component: {fileID: 3395044346373287082}
   - component: {fileID: 7247508593264700153}
-  m_Layer: 0
+  - component: {fileID: 1706304288368556291}
+  m_Layer: 3
   m_Name: spine.009
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1594,6 +1817,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1706304288368556291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580856094374579134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4671465559356047812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,9 +1840,10 @@ GameObject:
   - component: {fileID: 3242504002750378485}
   - component: {fileID: 6992169986525851082}
   - component: {fileID: 5848491448784091253}
-  m_Layer: 0
+  - component: {fileID: 793277751718926608}
+  m_Layer: 3
   m_Name: Sphere.001
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1677,6 +1913,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &793277751718926608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4671465559356047812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4883478609394675837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,9 +1936,10 @@ GameObject:
   - component: {fileID: 3832815459250595057}
   - component: {fileID: 946920937699363218}
   - component: {fileID: 6619002563533498917}
-  m_Layer: 0
+  - component: {fileID: 3390652760672446592}
+  m_Layer: 3
   m_Name: Foot_Right.014
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1760,6 +2009,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3390652760672446592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4883478609394675837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4916188377789990489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1878,9 +2139,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7968794787315542484}
-  m_Layer: 0
+  - component: {fileID: 2207767655381544001}
+  m_Layer: 3
   m_Name: spine.011
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1901,6 +2163,18 @@ Transform:
   - {fileID: 647637702393312269}
   m_Father: {fileID: 7847479678716921884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2207767655381544001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4963614624766366552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5161296906528277452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,9 +2186,10 @@ GameObject:
   - component: {fileID: 8155013990165738017}
   - component: {fileID: 1560820290107505170}
   - component: {fileID: 6114323252336507482}
-  m_Layer: 0
+  - component: {fileID: 7940048737848081419}
+  m_Layer: 3
   m_Name: Foot_Right.006
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1984,6 +2259,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7940048737848081419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161296906528277452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5309958788633655436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,9 +2280,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3688243613318647543}
-  m_Layer: 0
+  - component: {fileID: 7244090553635794214}
+  m_Layer: 3
   m_Name: spine.008_end
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2015,6 +2303,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2914519205337945152}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7244090553635794214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5309958788633655436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5384876318737669916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,9 +2327,10 @@ GameObject:
   - component: {fileID: 2826812604777930130}
   - component: {fileID: 5119019291642369802}
   - component: {fileID: 9053519348181500874}
-  m_Layer: 0
+  - component: {fileID: 8354659925575444539}
+  m_Layer: 3
   m_Name: spine.003
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2146,6 +2447,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8354659925575444539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5384876318737669916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5473108249429385463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,9 +2471,10 @@ GameObject:
   - component: {fileID: 551422125817359259}
   - component: {fileID: 2677157700923527670}
   - component: {fileID: 1511929759182629805}
-  m_Layer: 0
+  - component: {fileID: 4632912149224356210}
+  m_Layer: 3
   m_Name: foot.L
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2278,6 +2592,18 @@ CapsuleCollider:
   m_Height: 0.0048094173
   m_Direction: 1
   m_Center: {x: 0.00011540336, y: 0.0013891482, z: -0.0006296811}
+--- !u!114 &4632912149224356210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5473108249429385463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5547746083332889120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,9 +2615,10 @@ GameObject:
   - component: {fileID: 6947048157471974372}
   - component: {fileID: 6887826196932437670}
   - component: {fileID: 7528922592142146781}
-  m_Layer: 0
+  - component: {fileID: 7147912698757351540}
+  m_Layer: 3
   m_Name: spine.001
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2361,6 +2688,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7147912698757351540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5547746083332889120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6372732310939361446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2373,9 +2712,10 @@ GameObject:
   - component: {fileID: 8348839247308714754}
   - component: {fileID: 7228438750607110656}
   - component: {fileID: 8148149914274218734}
-  m_Layer: 0
+  - component: {fileID: 2479079930391947867}
+  m_Layer: 3
   m_Name: spine.012
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2493,6 +2833,18 @@ CapsuleCollider:
   m_Height: 0.0029758187
   m_Direction: 1
   m_Center: {x: -0.00013034906, y: 0.003525344, z: 0.00027147174}
+--- !u!114 &2479079930391947867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6372732310939361446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7039876506328577923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,9 +2854,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8737492316185211697}
-  m_Layer: 0
+  - component: {fileID: 1772698411825148079}
+  m_Layer: 3
   m_Name: foot.L_end
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2524,6 +2877,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1659869359845943123}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1772698411825148079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039876506328577923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7098419044461139384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,9 +2901,10 @@ GameObject:
   - component: {fileID: 8780376436441610191}
   - component: {fileID: 2046981448894072810}
   - component: {fileID: 7176833134668761477}
-  m_Layer: 0
+  - component: {fileID: 1037193468658559798}
+  m_Layer: 3
   m_Name: forearm.R
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2655,6 +3021,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1037193468658559798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7098419044461139384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7231223355431111958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,9 +3042,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3231920603432065978}
-  m_Layer: 0
+  - component: {fileID: 731965231676152490}
+  m_Layer: 3
   m_Name: upper_arm.R
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2687,6 +3066,18 @@ Transform:
   - {fileID: 8604827661926866999}
   m_Father: {fileID: 4713158444306018566}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &731965231676152490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7231223355431111958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7271520356496840073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,9 +3196,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2936777111076450978}
-  m_Layer: 0
+  - component: {fileID: 5297922033706835137}
+  m_Layer: 3
   m_Name: hand.L
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2829,6 +3221,18 @@ Transform:
   - {fileID: 7444045204392597109}
   m_Father: {fileID: 6763524914565523507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5297922033706835137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360411912970595597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7643486935253708203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,9 +3242,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7527326385360348286}
-  m_Layer: 0
+  - component: {fileID: 8121574335078482920}
+  m_Layer: 3
   m_Name: hand.R
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2862,6 +3267,18 @@ Transform:
   - {fileID: 2337596908232471323}
   m_Father: {fileID: 3583259129223270370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8121574335078482920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643486935253708203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7749158372766108124
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,9 +3288,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8228319420208661943}
-  m_Layer: 0
+  - component: {fileID: 2282467776918321879}
+  m_Layer: 3
   m_Name: spine.010
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2894,6 +3312,18 @@ Transform:
   - {fileID: 723422733352968239}
   m_Father: {fileID: 4122830789840084133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2282467776918321879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749158372766108124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7886490803274518093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2906,9 +3336,10 @@ GameObject:
   - component: {fileID: 4949148497147946216}
   - component: {fileID: 1890960542921545436}
   - component: {fileID: 7404454834614947429}
-  m_Layer: 0
+  - component: {fileID: 173911167346151591}
+  m_Layer: 3
   m_Name: forearm.L.001
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3025,6 +3456,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &173911167346151591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886490803274518093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8177382225107612838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,9 +3589,10 @@ GameObject:
   - component: {fileID: 328094116616647056}
   - component: {fileID: 5857237110090438898}
   - component: {fileID: 627715949068443875}
-  m_Layer: 0
+  - component: {fileID: 5436216748868677443}
+  m_Layer: 3
   m_Name: forearm.L
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3265,6 +3709,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5436216748868677443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247533461428470375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8365466960609060002
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,9 +3733,10 @@ GameObject:
   - component: {fileID: 4257111068402090882}
   - component: {fileID: 5819409110518556087}
   - component: {fileID: 8859646850497983633}
-  m_Layer: 0
+  - component: {fileID: 4709339310354352860}
+  m_Layer: 3
   m_Name: shin.L.001
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3396,6 +3853,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &4709339310354352860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365466960609060002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8402265418297330055
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,9 +3874,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 723422733352968239}
-  m_Layer: 0
+  - component: {fileID: 8764559059665428689}
+  m_Layer: 3
   m_Name: spine.010_end
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3427,6 +3897,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8228319420208661943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8764559059665428689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8402265418297330055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8804402987667855206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3439,9 +3921,10 @@ GameObject:
   - component: {fileID: 7566107545783264088}
   - component: {fileID: 3877697618356074615}
   - component: {fileID: 585678232582342592}
-  m_Layer: 0
+  - component: {fileID: 3452674421325986122}
+  m_Layer: 3
   m_Name: forearm.R.001
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3558,6 +4041,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3452674421325986122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804402987667855206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8817729255283232811
 GameObject:
   m_ObjectHideFlags: 0
@@ -3570,9 +4065,10 @@ GameObject:
   - component: {fileID: 8986081949563852057}
   - component: {fileID: 6120544749647244134}
   - component: {fileID: 5313081255939308083}
-  m_Layer: 0
+  - component: {fileID: 6507152555443654459}
+  m_Layer: 3
   m_Name: shin.L
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3690,6 +4186,18 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &6507152555443654459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8817729255283232811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9181965319578501480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3702,9 +4210,10 @@ GameObject:
   - component: {fileID: 5033256772137600015}
   - component: {fileID: 1179138262392737081}
   - component: {fileID: 2228952974767246341}
-  m_Layer: 0
+  - component: {fileID: 1209733028501649556}
+  m_Layer: 3
   m_Name: shin.R
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3822,3 +4331,15 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1209733028501649556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9181965319578501480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbd6b93a2575424c949805d996c9f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

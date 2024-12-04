@@ -34,6 +34,7 @@ public class InputHandler : MonoBehaviour
     public GameObject spawnedRagdoll;
     private List<Transform> ragdollPositions;
     private bool buttonPressedForRagdoll = false;
+    private ParticleSystem dizzyParticle;
     private void Awake()
     {
         // Gets the player input and the player's material for later usage.
@@ -42,6 +43,7 @@ public class InputHandler : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         modelAnim = GetComponentInChildren<Animator>();
         playModel = transform.GetChild(0).gameObject;
+        dizzyParticle = transform.GetChild(1).gameObject.GetComponent<ParticleSystem>();
         playModel.SetActive(true);
     }
 
@@ -105,6 +107,11 @@ public class InputHandler : MonoBehaviour
         // Animation functions.
         modelAnim.SetBool("IsMoving", isMoving);
         modelAnim.SetFloat("MovementSpeed", movementSpeed / maxMovementSpeed * (Mathf.Abs(movementDir.x) + Mathf.Abs(movementDir.y)));
+        if (GetComponent<DamageSystem>().isDizzy)
+        {
+            if (!dizzyParticle.isPlaying) dizzyParticle.Play();
+        }
+        else if (dizzyParticle.isPlaying) dizzyParticle.Stop();
     }
     public void ProcessMovement(CallbackContext context)
     {
@@ -142,7 +149,7 @@ public class InputHandler : MonoBehaviour
             {
                 // If the player's not already ragdolling and also grounded, the player jumps forward with a large burst of speed and ragdolls.
                 transform.LookAt(rb.position + new Vector3(lookDir.x, 0, lookDir.y) + Vector3.up / 5);
-                Ragdoll(true);
+                Ragdoll(true, new Vector3(lookDir.x, 0, lookDir.y) * jumpRollSpeed * 1.25f + Vector3.up * 0.5f * jumpRollSpeed);
                 // If the player cancelled an attack with their jumproll, it cancels said attack.
                 GetComponent<AttackScript>().StopAllCoroutines();
                 GetComponent<AttackScript>().attackOnCooldown = false;
@@ -163,18 +170,18 @@ public class InputHandler : MonoBehaviour
             }
         }
     }
-    public void Ragdoll(bool jumpRolled = false)
+    public void Ragdoll(bool addForce = false, Vector3? forceAdded = null)
     {
         // Activates ragdoll, stopping all control input until the ground is hit.
         if (!isRagdolling) isRagdolling = true;
         playModel.SetActive(false);
         spawnedRagdoll = Instantiate(ragdollModel, transform.position, Quaternion.identity);
         spawnedRagdoll.GetComponent<SpawnedRagdoll>().originPlayer = gameObject;
-        if (jumpRolled)
+        if (addForce)
         {
             foreach(Rigidbody r in spawnedRagdoll.GetComponentsInChildren<Rigidbody>())
             {
-                r.AddForce(new Vector3(lookDir.x, 0, lookDir.y) * jumpRollSpeed * 1.25f + Vector3.up * 0.5f * jumpRollSpeed, ForceMode.Impulse);
+                r.AddForce((Vector3)forceAdded, ForceMode.Impulse);
             }
         }
         canStopRagdolling = false;
