@@ -2484,6 +2484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9031152295879357537}
+  - component: {fileID: 4995029816399206730}
   m_Layer: 0
   m_Name: Robot_Rigged_Ragdoll
   m_TagString: Untagged
@@ -2507,11 +2508,24 @@ Transform:
   - {fileID: 109305086956604552}
   - {fileID: 8319881669644322499}
   - {fileID: 5853873520638034311}
-  - {fileID: 7627736895967398068}
   - {fileID: 2416319319053899079}
+  - {fileID: 7627736895967398068}
   - {fileID: 779146292525981018}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4995029816399206730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6178220730746847537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329b145290225b844818ee92e48a36d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasHitCollision: 0
 --- !u!1 &6382935112647014388
 GameObject:
   m_ObjectHideFlags: 0

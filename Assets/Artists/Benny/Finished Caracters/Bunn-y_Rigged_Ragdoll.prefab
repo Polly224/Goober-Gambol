@@ -343,6 +343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6377127057658180444}
+  - component: {fileID: -3222001925620329075}
   m_Layer: 0
   m_Name: Bunn-y_Rigged_Ragdoll
   m_TagString: Untagged
@@ -367,10 +368,23 @@ Transform:
   - {fileID: 8594781798870506499}
   - {fileID: 1555578081187624369}
   - {fileID: 8460569115220389098}
-  - {fileID: 697405640077082953}
   - {fileID: 8414768811911246157}
+  - {fileID: 697405640077082953}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3222001925620329075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453742825724161380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329b145290225b844818ee92e48a36d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasHitCollision: 0
 --- !u!1 &804069605302800924
 GameObject:
   m_ObjectHideFlags: 0
