@@ -89,4 +89,9 @@ public class Button : MonoBehaviour
         Canvas.ControlScreen.GetComponent<Canvas>().enabled = false;
         Canvas.OptionsScreen.GetComponent<Canvas>().enabled = true;
     }
+
+    public void CreditsBack()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
