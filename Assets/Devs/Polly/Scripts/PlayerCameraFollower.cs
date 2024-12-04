@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,7 @@ public class PlayerCameraFollower : MonoBehaviour
             for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
             {
                 GameObject curObj = PlayerDataStorage.connectedPlayerObjects[i];
+                if (curObj.GetComponent<InputHandler>().isRagdolling) curObj = curObj.GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject;
                 if(distances.Count > 0)
                 {
                     if (Vector3.Distance(curObj.transform.position, transform.position) > distances[0])
@@ -51,7 +53,7 @@ public class PlayerCameraFollower : MonoBehaviour
             // If there's only 1 player, the camera just focuses on them.
             if (PlayerDataStorage.connectedPlayerObjects.Count == 1)
             {
-                transform.position = PlayerDataStorage.connectedPlayerObjects[0].transform.position - transform.forward * zoomDistance * 10;
+                transform.position = objects[0].transform.position - transform.forward * zoomDistance * 10;
             }
             // If there's MORE than 1 player, however...
             // It gets the total distance between the 2 furthest player objects, then moves the camera back based on that distance and the difference between those
@@ -59,9 +61,9 @@ public class PlayerCameraFollower : MonoBehaviour
             else if(PlayerDataStorage.connectedPlayerObjects.Count > 1)
             {
                 Vector3 middlePosition = new();
-                for (int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
+                for (int i = 0; i < objects.Count; i++)
                 {
-                    middlePosition += PlayerDataStorage.connectedPlayerObjects[i].transform.position;
+                    middlePosition += objects[i].transform.position;
                 }
                 middlePosition /= PlayerDataStorage.connectedPlayerObjects.Count;
                 // This line of code took a solid 10 years off my life span.
