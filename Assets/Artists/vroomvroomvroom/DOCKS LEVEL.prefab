@@ -5852,7 +5852,7 @@ GameObject:
   - component: {fileID: 2027424133252410848}
   m_Layer: 0
   m_Name: BRANCH 1
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -12134,7 +12134,7 @@ GameObject:
   - component: {fileID: 5890526895509626730}
   m_Layer: 0
   m_Name: EXTRA
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -15102,7 +15102,7 @@ GameObject:
   - component: {fileID: 8974145321420151409}
   m_Layer: 0
   m_Name: BASE
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -21802,7 +21802,7 @@ GameObject:
   - component: {fileID: 3798025451740987250}
   m_Layer: 0
   m_Name: EXTRA 2
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -23452,7 +23452,7 @@ GameObject:
   - component: {fileID: 3413679950796479699}
   m_Layer: 0
   m_Name: BRANCH 2
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -24674,7 +24674,7 @@ GameObject:
   - component: {fileID: 790869633367798737}
   m_Layer: 0
   m_Name: BASE 2 (1)
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -27713,7 +27713,7 @@ GameObject:
   - component: {fileID: 434356308478708407}
   m_Layer: 0
   m_Name: BASE 2
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -31277,7 +31277,7 @@ GameObject:
   - component: {fileID: 7288048297431267650}
   m_Layer: 0
   m_Name: BASE (1)
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -37884,14 +37884,48 @@ PrefabInstance:
       value: VIOLENCE MAP BOAT (5)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cba909080750a0342a29a7d41ba15407, type: 3}
+      propertyPath: m_TagString
+      value: Collision
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cba909080750a0342a29a7d41ba15407, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cba909080750a0342a29a7d41ba15407, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6730862810010072447}
   m_SourcePrefab: {fileID: 100100000, guid: cba909080750a0342a29a7d41ba15407, type: 3}
+--- !u!1 &523830402605327117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cba909080750a0342a29a7d41ba15407, type: 3}
+  m_PrefabInstance: {fileID: 829908250611293788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &6730862810010072447
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523830402605327117}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9014362073155952717, guid: cba909080750a0342a29a7d41ba15407, type: 3}
 --- !u!4 &868865241132792247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cba909080750a0342a29a7d41ba15407, type: 3}
@@ -38844,6 +38878,10 @@ PrefabInstance:
       value: VIOLENCE MAP BOAT (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cba909080750a0342a29a7d41ba15407, type: 3}
+      propertyPath: m_TagString
+      value: Collision
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cba909080750a0342a29a7d41ba15407, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -39482,6 +39520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOAT ANIM 2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1e5a7c84134e3d4c916e3e2b9735081, type: 3}
+      propertyPath: m_TagString
+      value: Collision
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -39498,6 +39540,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e1e5a7c84134e3d4c916e3e2b9735081, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7728919099194803581}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e1e5a7c84134e3d4c916e3e2b9735081, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2015319628007090480}
   m_SourcePrefab: {fileID: 100100000, guid: e1e5a7c84134e3d4c916e3e2b9735081, type: 3}
 --- !u!4 &2429732563344828438 stripped
 Transform:
@@ -39530,6 +39575,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!64 &2015319628007090480
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3095085960013968044}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9014362073155952717, guid: e1e5a7c84134e3d4c916e3e2b9735081, type: 3}
 --- !u!1001 &2766122312040962271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39733,6 +39800,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cba909080750a0342a29a7d41ba15407, type: 3}
       propertyPath: m_Name
       value: BOAT 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cba909080750a0342a29a7d41ba15407, type: 3}
+      propertyPath: m_TagString
+      value: Collision
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cba909080750a0342a29a7d41ba15407, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -40178,6 +40249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 7535555147078328402, guid: cd8275d01a6edb24b95a85769d859bc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -40482,6 +40557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOAT ANIM 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1e5a7c84134e3d4c916e3e2b9735081, type: 3}
+      propertyPath: m_TagString
+      value: Collision
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -40492,6 +40571,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e1e5a7c84134e3d4c916e3e2b9735081, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7018467279546388793}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e1e5a7c84134e3d4c916e3e2b9735081, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1134622663667666636}
   m_SourcePrefab: {fileID: 100100000, guid: e1e5a7c84134e3d4c916e3e2b9735081, type: 3}
 --- !u!4 &3902536374427462585 stripped
 Transform:
@@ -40524,6 +40606,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!64 &1134622663667666636
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423459022632022275}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9014362073155952717, guid: e1e5a7c84134e3d4c916e3e2b9735081, type: 3}
 --- !u!1001 &3579337129666297583
 PrefabInstance:
   m_ObjectHideFlags: 0
