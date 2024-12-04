@@ -32,22 +32,31 @@ public class DamageSystem : MonoBehaviour
     {
         float totalDamage = weaponHitBy.damage * Random.Range(0.8f, 1.2f);
         float totalKnockback = weaponHitBy.knockback;
+        bool metalPipeTriggered = false;
         switch (weaponHitBy.weaponGimmick)
         {
             case WeaponSystem.WeaponGimmick.InflictsBleedOnHit:
                 bleedStacks.Add(weaponHitBy.bleedAmount * Random.Range(0.8f, 1.2f));
                 break;
             case WeaponSystem.WeaponGimmick.MetalPipe:
-                if(Random.Range(1, 11) == 10)
-                {
-                    // Play metal pipe sound effect.
-                    totalKnockback *= 3;
-                    totalDamage *= 3;
-                }
+                metalPipeTriggered = Random.Range(0, 10) == 9;
                 break;
             default:
                 break;
         }
+        AudioClip hitSoundToPlay = weaponHitBy.hitSound;
+        GameObject spawnedSoundPlayer = new("HitSound");
+        spawnedSoundPlayer.AddComponent<AudioSource>();
+        if (weaponHitBy.weaponGimmick == WeaponSystem.WeaponGimmick.MetalPipe)
+        {
+            if (metalPipeTriggered)
+            {
+                totalKnockback *= 3;
+                totalDamage *= 3;
+            }
+        }
+        spawnedSoundPlayer.GetComponent<AudioSource>().clip = hitSoundToPlay;
+        spawnedSoundPlayer.GetComponent<AudioSource>().Play();
         damageTaken += totalDamage;
         totalKnockback *= damageTaken;
         Debug.Log(totalKnockback);

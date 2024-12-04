@@ -133,6 +133,7 @@ MonoBehaviour:
   canStopRagdolling: 1
   turnSpeed: 5
   ragdollModel: {fileID: 1664743994146738698, guid: de9fc1cedf9c52541a703d59cfebc011, type: 3}
+  spawnedRagdoll: {fileID: 0}
 --- !u!114 &484948906729318700
 MonoBehaviour:
   m_ObjectHideFlags: 0

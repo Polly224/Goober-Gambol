@@ -131,6 +131,8 @@ MonoBehaviour:
   isRagdolling: 0
   canStopRagdolling: 1
   turnSpeed: 5
+  ragdollModel: {fileID: 0}
+  spawnedRagdoll: {fileID: 0}
 --- !u!114 &484948906729318700
 MonoBehaviour:
   m_ObjectHideFlags: 0
