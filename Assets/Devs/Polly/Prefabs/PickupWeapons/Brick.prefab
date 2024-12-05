@@ -138,7 +138,8 @@ MonoBehaviour:
     weaponToThrow: {fileID: 1762811529330813548, guid: d37ff2305acecc4478aa57d56c7e8952, type: 3}
     hitSound: {fileID: 0}
     bleedAmount: 0
-  lifeTime: 10
+  lifeTime: 100
+  rotationSpeed: 1
 --- !u!1001 &409234684533752654
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -283,7 +283,8 @@ MonoBehaviour:
     weaponToThrow: {fileID: 0}
     hitSound: {fileID: 0}
     bleedAmount: 0
-  lifeTime: 10
+  lifeTime: 100
+  rotationSpeed: 1
 --- !u!65 &98016624140324382
 BoxCollider:
   m_ObjectHideFlags: 0
