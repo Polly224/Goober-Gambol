@@ -9,12 +9,12 @@ public class InputManagerTest : MonoBehaviour
 {
     PlayerInputManager pIM;
     [SerializeField] List<GameObject> playerTypesToSpawn;
-    // If controllers were already connected in a previous scene, automatically reconnect them in the same order.
-    void Start()
+    private void Awake()
     {
         pIM = GetComponent<PlayerInputManager>();
         StartCoroutine(SpawnRoutine());
     }
+
     // When a controller presses the start button, that controller joins as a player.
     public void SpawnNewPlayerByButton(CallbackContext context)
     {
@@ -23,6 +23,7 @@ public class InputManagerTest : MonoBehaviour
 
     private IEnumerator SpawnRoutine()
     {
+        // If controllers were already connected in a previous scene, automatically reconnect them in the same order.
         if (SceneManager.GetActiveScene().name == "CharacterSelect")
         {
             if (PlayerDataStorage.connectedControllers.Count > 0)
