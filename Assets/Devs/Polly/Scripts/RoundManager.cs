@@ -47,7 +47,9 @@ public class RoundManager : MonoBehaviour
             PlayerDataStorage.connectedPlayerObjects[i].transform.GetChild(0).gameObject.SetActive(true);
             PlayerDataStorage.connectedPlayerObjects[i].SetActive(true);
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerPlacement>().placingValue = 0;
+            PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInventory>().RemoveAllWeapons();
         }
+        foreach(GameObject g in GameObject.FindGameObjectsWithTag("Pickup")) Destroy(g);
         yield return null;
     }
     private IEnumerator SwitchRoundsCooldown()

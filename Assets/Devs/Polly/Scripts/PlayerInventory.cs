@@ -108,4 +108,10 @@ public class PlayerInventory : MonoBehaviour
         if(weaponInventory.Count > currentWeaponIndex) weaponInventory.RemoveAt(currentWeaponIndex);
         SwitchWeaponsToIndex(currentWeaponIndex);
     }
+
+    public void RemoveAllWeapons()
+    {
+        weaponInventory.Clear();
+        SwitchWeaponsToIndex(0);
+    }
 }

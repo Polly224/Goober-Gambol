@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/Devs/Terra/Scenes/TitleScreen.unity
     guid: f990d24ac8456e44b937437a0cd3844f
   - enabled: 1
+    path: Assets/Devs/Terra/Scenes/Credits.unity
+    guid: d9b438a533d1c3049af71aa8860be8b1
+  - enabled: 1
     path: Assets/FINAL GAME (ASK TEAM BEFORE EDITING)/Scenes/CharacterSelect.unity
     guid: b79a3ecabc9451f48bcf00185f731f15
   - enabled: 1
     path: Assets/FINAL GAME (ASK TEAM BEFORE EDITING)/Scenes/StageSelect.unity
     guid: 49f6216c0da64fb4887674a1225652a6
-  - enabled: 1
-    path: Assets/Devs/Terra/Scenes/Credits.unity
-    guid: d9b438a533d1c3049af71aa8860be8b1
   - enabled: 1
     path: Assets/FINAL GAME (ASK TEAM BEFORE EDITING)/Scenes/Rooftops.unity
     guid: 6d1c773f176b3a142ab70415b6db6e84
