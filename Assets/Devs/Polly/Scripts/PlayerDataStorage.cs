@@ -23,7 +23,7 @@ public class PlayerDataStorage : MonoBehaviour
         if (instance == null) instance = this;
         else Destroy(gameObject);
         // Makes sure the list of playercharacters is 4 in length.
-        for (int i = 0; i < 4 - playerCharacters.Count; i++) playerCharacters.Add(PlayerSelectArrow.PickedCharacter.Unselected);
+        if (playerCharacters.Count == 0) for (int i = 0; i < 4; i++) playerCharacters.Add(PlayerSelectArrow.PickedCharacter.Unselected);
     }
 
     public void AddToControllers(InputDevice controllerToAdd)

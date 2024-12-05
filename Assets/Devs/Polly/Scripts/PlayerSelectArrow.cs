@@ -30,6 +30,7 @@ public class PlayerSelectArrow : MonoBehaviour
         pI = GetComponent<PlayerInput>();
         pickedCharacter = PickedCharacter.Unselected;
         PlayerDataStorage.playerCharacters[pI.playerIndex] = pickedCharacter;
+        transform.localScale = new Vector3(0.5f + pI.playerIndex * 0.05f, 0.5f + pI.playerIndex * 0.05f, 0.5f + pI.playerIndex * 0.05f);
     }
 
     public void SwitchPosition(CallbackContext context)
@@ -89,7 +90,7 @@ public class PlayerSelectArrow : MonoBehaviour
             }
             if(count >= 2)
             {
-                // Code for loading the actual fighting scene.
+                SceneManager.LoadScene("StageSelect");
             }
         }
     }
@@ -109,8 +110,8 @@ public class PlayerSelectArrow : MonoBehaviour
             GetComponent<SpriteRenderer>().color = pI.playerIndex switch
             {
                 0 => Color.red,
-                1 => Color.green,
-                2 => Color.blue,
+                1 => Color.blue,
+                2 => Color.green,
                 3 => Color.magenta,
                 _ => Color.white
             };
