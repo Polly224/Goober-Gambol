@@ -24,6 +24,7 @@ public class DeathZone : MonoBehaviour
             other.gameObject.transform.position = new Vector3(0, -100, 0);
             other.gameObject.GetComponent<PlayerPlacement>().Died();
             other.gameObject.GetComponent<PlayerInventory>().RemoveCurrentWeapon();
+            other.gameObject.SetActive(false);
         }
         else if (other.CompareTag("Pickup"))
         {
