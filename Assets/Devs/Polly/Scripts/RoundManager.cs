@@ -48,6 +48,7 @@ public class RoundManager : MonoBehaviour
             PlayerDataStorage.connectedPlayerObjects[i].SetActive(true);
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerPlacement>().placingValue = 0;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInventory>().RemoveAllWeapons();
+            PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInput>().ActivateInput();
         }
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Pickup")) Destroy(g);
         yield return null;

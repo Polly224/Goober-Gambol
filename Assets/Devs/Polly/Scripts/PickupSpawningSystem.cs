@@ -13,7 +13,8 @@ public class PickupSpawningSystem : MonoBehaviour
     [SerializeField] List<GameObject> rooftopPickups;
     [SerializeField] float timeUntilStartSpawning;
     [SerializeField] float timeBetweenSpawns;
-    public GameObject[] spawnLocationObjects;
+    List<GameObject> alreadySpawnedLocations = new();
+    public List<GameObject> spawnLocationObjects;
 
     public static PickupSpawningSystem instance;
 
@@ -25,8 +26,6 @@ public class PickupSpawningSystem : MonoBehaviour
     private void Start()
     { 
 
-        spawnLocationObjects = GameObject.FindGameObjectsWithTag("WeaponSpawnpoint");
-
         pickedStagePickups = new();
         if (PlayerDataStorage.pickedStage == PlayerDataStorage.PickedStage.Rooftop)
             pickedStagePickups = rooftopPickups;
@@ -36,6 +35,11 @@ public class PickupSpawningSystem : MonoBehaviour
     }
     public IEnumerator StartSpawnRoutine()
     {
+        spawnLocationObjects.Clear();
+        for (int i = 0; i < GameObject.FindGameObjectsWithTag("WeaponSpawnpoint").Length; i++)
+        {
+            spawnLocationObjects.Add(GameObject.FindGameObjectsWithTag("WeaponSpawnpoint")[i]);
+        }
         yield return new WaitForSeconds(timeUntilStartSpawning);
         while (true)
         {
@@ -48,7 +52,8 @@ public class PickupSpawningSystem : MonoBehaviour
     {
         for(int i = 0; i < amount; i++)
         {
-            GameObject pickedSpawnLocation = spawnLocationObjects[Random.Range(0, spawnLocationObjects.Length)];
+            
+            GameObject pickedSpawnLocation = spawnLocationObjects[Random.Range(0, spawnLocationObjects.Count)];
             if(Random.Range(1, 6) != 5)
             {
                 Instantiate(spawnablePickups[Random.Range(0, spawnablePickups.Count)], pickedSpawnLocation.transform.position, Quaternion.identity);
@@ -58,6 +63,7 @@ public class PickupSpawningSystem : MonoBehaviour
                 Instantiate(pickedStagePickups[Random.Range(0, pickedStagePickups.Count)], pickedSpawnLocation.transform.position, Quaternion.identity);
             }
             pickedSpawnLocation.GetComponentInChildren<ParticleSystem>().Play();
+            spawnLocationObjects.Remove(pickedSpawnLocation);
         }
     }
 }
