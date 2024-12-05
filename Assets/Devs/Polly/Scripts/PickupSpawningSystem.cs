@@ -16,10 +16,14 @@ public class PickupSpawningSystem : MonoBehaviour
     public GameObject[] spawnLocationObjects;
 
     public static PickupSpawningSystem instance;
-    private void Start()
+
+    private void Awake()
     {
         if (instance == null) instance = this;
         else Destroy(this);
+    }
+    private void Start()
+    { 
 
         spawnLocationObjects = GameObject.FindGameObjectsWithTag("WeaponSpawnpoint");
 
