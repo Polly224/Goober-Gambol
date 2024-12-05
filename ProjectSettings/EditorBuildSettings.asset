@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Devs/Terra/Scenes/TitleScreen.unity
+    path: Assets/FINAL GAME (ASK TEAM BEFORE EDITING)/Scenes/TitleScreen.unity
     guid: f990d24ac8456e44b937437a0cd3844f
   - enabled: 1
-    path: Assets/Devs/Terra/Scenes/Credits.unity
+    path: Assets/FINAL GAME (ASK TEAM BEFORE EDITING)/Scenes/Credits.unity
     guid: d9b438a533d1c3049af71aa8860be8b1
   - enabled: 1
     path: Assets/FINAL GAME (ASK TEAM BEFORE EDITING)/Scenes/CharacterSelect.unity
