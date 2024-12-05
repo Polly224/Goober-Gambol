@@ -20,6 +20,8 @@ public class StageSelect : MonoBehaviour
     {
         iA.performed += SwitchStage;
         iA.Enable();
+        conTinue.performed += ConfirmPick;
+        conTinue.Enable();
     }
 
     private void Update()
@@ -34,6 +36,7 @@ public class StageSelect : MonoBehaviour
 
     public void ConfirmPick(CallbackContext context)
     {
+        conTinue.Disable();
         if (pickedIndex == 0)
             SceneManager.LoadScene("Rooftops");
         else SceneManager.LoadScene("Docks");

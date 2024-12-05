@@ -9,19 +9,19 @@ EditorBuildSettings:
     path: Assets/Devs/Terra/Scenes/TitleScreen.unity
     guid: f990d24ac8456e44b937437a0cd3844f
   - enabled: 1
-    path: Assets/Devs/Terra/Scenes/PlayerSelect.unity
-    guid: 3ce95a96e8830524d8c657da7fc9d14f
+    path: Assets/FINAL GAME (ASK TEAM BEFORE EDITING)/Scenes/CharacterSelect.unity
+    guid: b79a3ecabc9451f48bcf00185f731f15
+  - enabled: 1
+    path: Assets/FINAL GAME (ASK TEAM BEFORE EDITING)/Scenes/StageSelect.unity
+    guid: 49f6216c0da64fb4887674a1225652a6
   - enabled: 1
     path: Assets/Devs/Terra/Scenes/Credits.unity
     guid: d9b438a533d1c3049af71aa8860be8b1
   - enabled: 1
-    path: Assets/Devs/Terra/Scenes/Settings.unity
-    guid: c59ee875932b552419dd75f6b7a41c61
+    path: Assets/FINAL GAME (ASK TEAM BEFORE EDITING)/Scenes/Rooftops.unity
+    guid: 6d1c773f176b3a142ab70415b6db6e84
   - enabled: 1
-    path: Assets/Devs/Polly/Scenes/Polly Test Scene.unity
-    guid: 70bd38fd7ef83434e925b1ec49be3466
-  - enabled: 1
-    path: Assets/Devs/Polly/Scenes/Scene2.unity
-    guid: 8da4999d9f47823458dc452eb283942e
+    path: Assets/FINAL GAME (ASK TEAM BEFORE EDITING)/Scenes/Docks.unity
+    guid: 08aa08e6cca915e4790d39962020ec06
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ff03ae927bcd05447861910a0e7beb08, type: 2}

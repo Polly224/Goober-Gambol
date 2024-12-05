@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using TMPro;
 using UnityEditor;
@@ -10,17 +11,18 @@ public class PlayerCameraFollower : MonoBehaviour
 {
     [SerializeField] float zoomDistance;
     [SerializeField] float zoomSpeed;
+    public bool playersDoneSpawing = false;
     // Update is called once per frame
     void Update()
     {
-        if(PlayerDataStorage.connectedPlayerObjects.Count > 0)
+        if(PlayerDataStorage.connectedPlayerObjects.Count > 0 && playersDoneSpawing)
         {
             List<GameObject> objects = new();
             List<float> distances = new();
             // Algorithm that gets the 2 furthest objects from the camera from all player objects present.
-            for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
+            for(int i = 0; i < GameObject.FindGameObjectsWithTag("Player").Length; i++)
             {
-                GameObject curObj = PlayerDataStorage.connectedPlayerObjects[i];
+                GameObject curObj = GameObject.FindGameObjectsWithTag("Player")[i];
                 if (curObj.GetComponent<InputHandler>().isRagdolling) curObj = curObj.GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject;
                 if(distances.Count > 0)
                 {
@@ -51,21 +53,21 @@ public class PlayerCameraFollower : MonoBehaviour
             }
 
             // If there's only 1 player, the camera just focuses on them.
-            if (PlayerDataStorage.connectedPlayerObjects.Count == 1)
+            if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
             {
                 transform.position = objects[0].transform.position - transform.forward * zoomDistance * 10;
             }
             // If there's MORE than 1 player, however...
             // It gets the total distance between the 2 furthest player objects, then moves the camera back based on that distance and the difference between those
             // 2 objects' z coordinates. I love coding. Coding is awesome. This definitely didn't take me an hour to write.
-            else if(PlayerDataStorage.connectedPlayerObjects.Count > 1)
+            else if(GameObject.FindGameObjectsWithTag("Player").Length > 1)
             {
                 Vector3 middlePosition = new();
                 for (int i = 0; i < objects.Count; i++)
                 {
                     middlePosition += objects[i].transform.position;
                 }
-                middlePosition /= PlayerDataStorage.connectedPlayerObjects.Count;
+                middlePosition /= GameObject.FindGameObjectsWithTag("Player").Length;
                 // This line of code took a solid 10 years off my life span.
                 transform.position = middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(objects[0].transform.position, objects[1].transform.position)) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f;
             }

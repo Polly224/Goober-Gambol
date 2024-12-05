@@ -274,7 +274,7 @@ MonoBehaviour:
     - positionOffset: {x: 0, y: 0, z: 1}
       duration: 0.1
       xSize: 1
-      ySize: 1
+      ySize: 2.5
       hitboxShape: 0
     attackType: 5
     weaponGimmick: 0

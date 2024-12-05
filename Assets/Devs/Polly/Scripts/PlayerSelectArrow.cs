@@ -31,6 +31,8 @@ public class PlayerSelectArrow : MonoBehaviour
         pickedCharacter = PickedCharacter.Unselected;
         PlayerDataStorage.playerCharacters[pI.playerIndex] = pickedCharacter;
         transform.localScale = new Vector3(0.5f + pI.playerIndex * 0.05f, 0.5f + pI.playerIndex * 0.05f, 0.5f + pI.playerIndex * 0.05f);
+        if (!PlayerDataStorage.connectedControllers.Contains(pI.GetDevice<InputDevice>())) PlayerDataStorage.connectedControllers.Add(pI.GetDevice<InputDevice>());
+        PlayerDataStorage.connectedPlayerObjects.Add(gameObject);
     }
 
     public void SwitchPosition(CallbackContext context)
