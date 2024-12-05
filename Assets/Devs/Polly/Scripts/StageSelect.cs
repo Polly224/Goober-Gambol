@@ -15,6 +15,7 @@ public class StageSelect : MonoBehaviour
     Vector3 intendedPos;
     [SerializeField] InputAction iA;
     [SerializeField] InputAction conTinue;
+    bool canContinue = false;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class StageSelect : MonoBehaviour
         iA.Enable();
         conTinue.performed += ConfirmPick;
         conTinue.Enable();
+        StartCoroutine(TimeDelay());
     }
 
     private void Update()
@@ -36,9 +38,19 @@ public class StageSelect : MonoBehaviour
 
     public void ConfirmPick(CallbackContext context)
     {
-        conTinue.Disable();
-        if (pickedIndex == 0)
-            SceneManager.LoadScene("Rooftops");
-        else SceneManager.LoadScene("Docks");
+        if (canContinue)
+        {
+            conTinue.Disable();
+            if (pickedIndex == 0)
+                SceneManager.LoadScene("Rooftops");
+            else SceneManager.LoadScene("Docks");
+        }
+    }
+
+    private IEnumerator TimeDelay()
+    {
+        yield return new WaitForSeconds(1);
+        canContinue = true;
+        yield break;
     }
 }
