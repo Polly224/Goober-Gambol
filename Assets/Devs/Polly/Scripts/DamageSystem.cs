@@ -12,18 +12,28 @@ public class DamageSystem : MonoBehaviour
     public float dizzyTimer = 0;
     public float dizzyTimerSpeed = 1;
     private List<float> bleedStacks = new();
+    private ParticleSystem bleedEffect;
+
+    private void Start()
+    {
+        bleedEffect = transform.GetChild(2).gameObject.GetComponent<ParticleSystem>();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        float totalBleed = bleedAmount;
         for(int i = 0; i < bleedStacks.Count; i++)
         {
             if(bleedStacks[i] > 0)
             {
                 bleedStacks[i] -= Time.deltaTime;
                 damageTaken += Time.deltaTime;
+                totalBleed += bleedStacks[i];
             }
         }
+        var emission = bleedEffect.emission;
+        emission.rateOverTime = totalBleed;
         if(isDizzy) dizzyTimer -= Time.deltaTime;
         if (isDizzy && dizzyTimer <= 0) ExitDizzy();
     }

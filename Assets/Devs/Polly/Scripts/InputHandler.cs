@@ -36,6 +36,7 @@ public class InputHandler : MonoBehaviour
     private List<Transform> ragdollPositions;
     private bool buttonPressedForRagdoll = false;
     private ParticleSystem dizzyParticle;
+    private ParticleSystem bloodParticle;
     private void Awake()
     {
         // Gets the player input and the player's material for later usage.
@@ -45,6 +46,7 @@ public class InputHandler : MonoBehaviour
         modelAnim = GetComponentInChildren<Animator>();
         playModel = transform.GetChild(0).gameObject;
         dizzyParticle = transform.GetChild(1).gameObject.GetComponent<ParticleSystem>();
+        bloodParticle = transform.GetChild(2).gameObject.GetComponent<ParticleSystem>();
         playModel.SetActive(true);
     }
 
@@ -178,6 +180,9 @@ public class InputHandler : MonoBehaviour
         if (!isRagdolling) isRagdolling = true;
         playModel.SetActive(false);
         spawnedRagdoll = Instantiate(ragdollModel, transform.position, Quaternion.identity);
+        dizzyParticle.transform.localPosition = Vector3.zero;
+        dizzyParticle.transform.SetParent(spawnedRagdoll.transform.GetChild(4).GetChild(0), false);
+        bloodParticle.transform.SetParent(spawnedRagdoll.transform.GetChild(4).GetChild(0), false);
         spawnedRagdoll.GetComponent<SpawnedRagdoll>().originPlayer = gameObject;
         spawnedRagdoll.transform.rotation = Quaternion.LookRotation(new Vector3(lookDir.x, 0, lookDir.y));
         if (addForce)
@@ -198,6 +203,9 @@ public class InputHandler : MonoBehaviour
             isRagdolling = false;
             transform.position = spawnedRagdoll.transform.GetChild(4).GetChild(0).position;
             playModel.SetActive(true);
+            dizzyParticle.transform.SetParent(transform, false);
+            dizzyParticle.transform.position += transform.up * 0.8f;
+            bloodParticle.transform.SetParent(transform, false);
             Destroy(spawnedRagdoll);
         }
     }
