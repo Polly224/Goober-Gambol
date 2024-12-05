@@ -57,8 +57,104 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Left
+        weight: 1
+      - path: Arm_Right
+        weight: 1
+      - path: Ear_Left
+        weight: 1
+      - path: Ear_Right
+        weight: 1
+      - path: metarig
+        weight: 1
+      - path: metarig/shin.L.001
+        weight: 1
+      - path: metarig/shin.L.001/shin.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/foot.L_end
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/Foot_Left
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/Leg_Left
+        weight: 1
+      - path: metarig/shin.R.001
+        weight: 1
+      - path: metarig/shin.R.001/shin.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/foot.R_end
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/Foot_Right
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/Left_Right
+        weight: 1
+      - path: metarig/spine.001
+        weight: 1
+      - path: metarig/spine.001/spine.003
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/Head
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008/spine.008_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010/spine.010_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/hand.L_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/Hand_Right
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/hand.R_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/Hand_Left
+        weight: 1
+      - path: metarig/spine.001/spine.012
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/spine.002_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/Tail_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/Tail_Middle
+        weight: 1
+      - path: metarig/spine.001/spine.012/Tail_Begin
+        weight: 1
+      - path: Torso
+        weight: 1
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
@@ -115,8 +211,104 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Left
+        weight: 1
+      - path: Arm_Right
+        weight: 1
+      - path: Ear_Left
+        weight: 1
+      - path: Ear_Right
+        weight: 1
+      - path: metarig
+        weight: 1
+      - path: metarig/shin.L.001
+        weight: 1
+      - path: metarig/shin.L.001/shin.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/foot.L_end
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/Foot_Left
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/Leg_Left
+        weight: 1
+      - path: metarig/shin.R.001
+        weight: 1
+      - path: metarig/shin.R.001/shin.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/foot.R_end
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/Foot_Right
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/Left_Right
+        weight: 1
+      - path: metarig/spine.001
+        weight: 1
+      - path: metarig/spine.001/spine.003
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/Head
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008/spine.008_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010/spine.010_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/hand.L_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/Hand_Right
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/hand.R_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/Hand_Left
+        weight: 1
+      - path: metarig/spine.001/spine.012
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/spine.002_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/Tail_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/Tail_Middle
+        weight: 1
+      - path: metarig/spine.001/spine.012/Tail_Begin
+        weight: 1
+      - path: Torso
+        weight: 1
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
@@ -173,8 +365,104 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Left
+        weight: 1
+      - path: Arm_Right
+        weight: 1
+      - path: Ear_Left
+        weight: 1
+      - path: Ear_Right
+        weight: 1
+      - path: metarig
+        weight: 1
+      - path: metarig/shin.L.001
+        weight: 1
+      - path: metarig/shin.L.001/shin.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/foot.L_end
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/Foot_Left
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/Leg_Left
+        weight: 1
+      - path: metarig/shin.R.001
+        weight: 1
+      - path: metarig/shin.R.001/shin.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/foot.R_end
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/Foot_Right
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/Left_Right
+        weight: 1
+      - path: metarig/spine.001
+        weight: 1
+      - path: metarig/spine.001/spine.003
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/Head
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008/spine.008_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010/spine.010_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/hand.L_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/Hand_Right
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/hand.R_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/Hand_Left
+        weight: 1
+      - path: metarig/spine.001/spine.012
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/spine.002_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/Tail_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/Tail_Middle
+        weight: 1
+      - path: metarig/spine.001/spine.012/Tail_Begin
+        weight: 1
+      - path: Torso
+        weight: 1
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
@@ -260,8 +548,104 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Left
+        weight: 1
+      - path: Arm_Right
+        weight: 1
+      - path: Ear_Left
+        weight: 1
+      - path: Ear_Right
+        weight: 1
+      - path: metarig
+        weight: 1
+      - path: metarig/shin.L.001
+        weight: 1
+      - path: metarig/shin.L.001/shin.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/foot.L_end
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/Foot_Left
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/Leg_Left
+        weight: 1
+      - path: metarig/shin.R.001
+        weight: 1
+      - path: metarig/shin.R.001/shin.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/foot.R_end
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/Foot_Right
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/Left_Right
+        weight: 1
+      - path: metarig/spine.001
+        weight: 1
+      - path: metarig/spine.001/spine.003
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/Head
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008/spine.008_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010/spine.010_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/hand.L_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/Hand_Right
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/hand.R_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/Hand_Left
+        weight: 1
+      - path: metarig/spine.001/spine.012
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/spine.002_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/Tail_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/Tail_Middle
+        weight: 1
+      - path: metarig/spine.001/spine.012/Tail_Begin
+        weight: 1
+      - path: Torso
+        weight: 1
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
@@ -289,8 +673,104 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Left
+        weight: 1
+      - path: Arm_Right
+        weight: 1
+      - path: Ear_Left
+        weight: 1
+      - path: Ear_Right
+        weight: 1
+      - path: metarig
+        weight: 1
+      - path: metarig/shin.L.001
+        weight: 1
+      - path: metarig/shin.L.001/shin.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/foot.L_end
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/Foot_Left
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/Leg_Left
+        weight: 1
+      - path: metarig/shin.R.001
+        weight: 1
+      - path: metarig/shin.R.001/shin.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/foot.R_end
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/Foot_Right
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/Left_Right
+        weight: 1
+      - path: metarig/spine.001
+        weight: 1
+      - path: metarig/spine.001/spine.003
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/Head
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008/spine.008_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010/spine.010_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/hand.L_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/Hand_Right
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/hand.R_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/Hand_Left
+        weight: 1
+      - path: metarig/spine.001/spine.012
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/spine.002_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/Tail_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/Tail_Middle
+        weight: 1
+      - path: metarig/spine.001/spine.012/Tail_Begin
+        weight: 1
+      - path: Torso
+        weight: 1
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
@@ -318,8 +798,104 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Left
+        weight: 1
+      - path: Arm_Right
+        weight: 1
+      - path: Ear_Left
+        weight: 1
+      - path: Ear_Right
+        weight: 1
+      - path: metarig
+        weight: 1
+      - path: metarig/shin.L.001
+        weight: 1
+      - path: metarig/shin.L.001/shin.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/foot.L_end
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/foot.L/Foot_Left
+        weight: 1
+      - path: metarig/shin.L.001/shin.L/Leg_Left
+        weight: 1
+      - path: metarig/shin.R.001
+        weight: 1
+      - path: metarig/shin.R.001/shin.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/foot.R_end
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/foot.R/Foot_Right
+        weight: 1
+      - path: metarig/shin.R.001/shin.R/Left_Right
+        weight: 1
+      - path: metarig/spine.001
+        weight: 1
+      - path: metarig/spine.001/spine.003
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/Head
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008/spine.008_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010
+        weight: 1
+      - path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010/spine.010_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/hand.L_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/Hand_Right
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/hand.R_end
+        weight: 1
+      - path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/Hand_Left
+        weight: 1
+      - path: metarig/spine.001/spine.012
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/spine.002_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/spine.002/Tail_end
+        weight: 1
+      - path: metarig/spine.001/spine.012/spine.011/Tail_Middle
+        weight: 1
+      - path: metarig/spine.001/spine.012/Tail_Begin
+        weight: 1
+      - path: Torso
+        weight: 1
+      maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
