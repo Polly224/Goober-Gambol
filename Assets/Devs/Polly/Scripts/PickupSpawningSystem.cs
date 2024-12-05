@@ -45,8 +45,16 @@ public class PickupSpawningSystem : MonoBehaviour
         for(int i = 0; i < amount; i++)
         {
             GameObject pickedSpawnLocation = spawnLocationObjects[Random.Range(0, spawnLocationObjects.Length)];
-            Instantiate(Random.Range(1, 6) != 5 ? spawnablePickups[Random.Range(0, spawnablePickups.Count)] : pickedStagePickups[Random.Range(0, pickedStagePickups.Count)], pickedSpawnLocation.transform.position, Quaternion.identity);
+            if(Random.Range(1, 6) == 5)
+            {
+                Instantiate(spawnablePickups[Random.Range(0, spawnablePickups.Count)], pickedSpawnLocation.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(pickedStagePickups[Random.Range(0, pickedStagePickups.Count)], pickedSpawnLocation.transform.position, Quaternion.identity);
+            }
             pickedSpawnLocation.GetComponentInChildren<ParticleSystem>().Play();
+            Debug.Log("pog");
         }
     }
 }

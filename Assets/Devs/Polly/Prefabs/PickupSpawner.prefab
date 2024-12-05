@@ -58,5 +58,6 @@ MonoBehaviour:
   rooftopPickups:
   - {fileID: 7737149658405604811, guid: 591c08ff46d3d574fa60c1d9ef1685bc, type: 3}
   - {fileID: 7737149658405604811, guid: c3548ea9132cf7d4daada321d4115c3f, type: 3}
-  timeUntilStartSpawning: 0
-  timeBetweenSpawns: 1
+  timeUntilStartSpawning: 3
+  timeBetweenSpawns: 5
+  spawnLocationObjects: []

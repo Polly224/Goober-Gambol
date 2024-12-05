@@ -42,8 +42,15 @@ public class StageSelect : MonoBehaviour
         {
             conTinue.Disable();
             if (pickedIndex == 0)
+            {
+                PlayerDataStorage.pickedStage = PlayerDataStorage.PickedStage.Rooftop;
                 SceneManager.LoadScene("Rooftops");
-            else SceneManager.LoadScene("Docks");
+            }
+            else
+            {
+                PlayerDataStorage.pickedStage = PlayerDataStorage.PickedStage.Docks;
+                SceneManager.LoadScene("Docks");
+            }
         }
     }
 

@@ -32,8 +32,11 @@ public class DamageSystem : MonoBehaviour
                 totalBleed += bleedStacks[i];
             }
         }
-        var emission = bleedEffect.emission;
-        emission.rateOverTime = totalBleed;
+        if(bleedEffect != null)
+        {
+            var emission = bleedEffect.emission;
+            emission.rateOverTime = totalBleed;
+        }
         if(isDizzy) dizzyTimer -= Time.deltaTime;
         if (isDizzy && dizzyTimer <= 0) ExitDizzy();
     }
