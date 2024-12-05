@@ -33,8 +33,15 @@ public class DeathZone : MonoBehaviour
         {
             other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<PlayerPlacement>().Died();
             other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<PlayerInventory>().RemoveCurrentWeapon();
+            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().isDizzy = false;
+            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().dizzyTimer = 0;
+            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().bleedStacks.Clear();
+            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().damageTaken = 0;
+            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().bleedAmount = 0;
+            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().hasHitCollision = true;
             other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.SetActive(false);
-            Destroy(other.transform.root.gameObject);
+            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<InputHandler>().StopRagdolling();
+            Destroy(other.transform.root.gameObject, 0.1f);
         }
     }
 }

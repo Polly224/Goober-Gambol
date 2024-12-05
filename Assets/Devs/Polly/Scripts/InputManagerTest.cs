@@ -12,6 +12,7 @@ public class InputManagerTest : MonoBehaviour
     private void Awake()
     {
         pIM = GetComponent<PlayerInputManager>();
+        PlayerDataStorage.connectedPlayerObjects.Clear();
         StartCoroutine(SpawnRoutine());
     }
 

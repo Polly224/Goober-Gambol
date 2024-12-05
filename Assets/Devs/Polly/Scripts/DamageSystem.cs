@@ -11,7 +11,7 @@ public class DamageSystem : MonoBehaviour
     public bool isDizzy = false;
     public float dizzyTimer = 0;
     public float dizzyTimerSpeed = 1;
-    private List<float> bleedStacks = new();
+    public List<float> bleedStacks = new();
     private ParticleSystem bleedEffect;
 
     private void Start()
@@ -27,7 +27,7 @@ public class DamageSystem : MonoBehaviour
         {
             if(bleedStacks[i] > 0)
             {
-                bleedStacks[i] -= Time.deltaTime;
+                bleedStacks[i] -= Time.deltaTime * 3;
                 damageTaken += Time.deltaTime;
                 totalBleed += bleedStacks[i];
             }
@@ -35,7 +35,7 @@ public class DamageSystem : MonoBehaviour
         if(bleedEffect != null)
         {
             var emission = bleedEffect.emission;
-            emission.rateOverTime = totalBleed;
+            emission.rateOverTime = totalBleed / 5;
         }
         if(isDizzy) dizzyTimer -= Time.deltaTime;
         if (isDizzy && dizzyTimer <= 0) ExitDizzy();

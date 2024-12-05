@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerPlacement : MonoBehaviour
 {
     public int placingValue;
+    public int totalPlacingValue = 0;
     private RoundManager RoundManager;
+    int deadPlayerAmount = 0;
 
     private void Awake()
     {
@@ -14,7 +16,12 @@ public class PlayerPlacement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (RoundManager.playersDeadThisRound == PlayerDataStorage.connectedPlayerObjects.Count - 1 && placingValue != 1)
+        deadPlayerAmount = 0;
+        foreach(GameObject g in PlayerDataStorage.connectedPlayerObjects)
+        {
+            if (!g.activeSelf) deadPlayerAmount++;
+        }
+        if (deadPlayerAmount >= PlayerDataStorage.connectedPlayerObjects.Count - 1 && placingValue != 1)
         {
             placingValue = 1;
             RoundManager.instance.EndRound();
@@ -22,7 +29,7 @@ public class PlayerPlacement : MonoBehaviour
     }
     public void Died()
     {
-        placingValue = GameObject.FindGameObjectsWithTag("Player").Length - RoundManager.playersDeadThisRound;
+        placingValue = PlayerDataStorage.connectedPlayerObjects.Count - deadPlayerAmount;
         RoundManager.playersDeadThisRound++;
     }
 }

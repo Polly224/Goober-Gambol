@@ -56,7 +56,6 @@ public class InputHandler : MonoBehaviour
         // When a player is added, their controller gets added to the controller list.
         if(!PlayerDataStorage.connectedControllers.Contains(playerInput.GetDevice<InputDevice>()))
         PlayerDataStorage.instance.AddToControllers(playerInput.GetDevice<InputDevice>());
-        PlayerDataStorage.connectedPlayerObjects.Add(gameObject);
     }
 
     private void OnEnable()
@@ -198,7 +197,7 @@ public class InputHandler : MonoBehaviour
 
     public void StopRagdolling()
     {
-        if (isRagdolling && !GetComponent<DamageSystem>().isDizzy && spawnedRagdoll.GetComponent<SpawnedRagdoll>().hasHitCollision)
+        if (!GetComponent<DamageSystem>().isDizzy && spawnedRagdoll.GetComponent<SpawnedRagdoll>().hasHitCollision)
         {
             isRagdolling = false;
             transform.position = spawnedRagdoll.transform.GetChild(4).GetChild(0).position;
