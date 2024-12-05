@@ -12,7 +12,7 @@ public class RoundManager : MonoBehaviour
     private PlayerDataStorage Players;
     private CanvasFinder Canvas;
     private MainGameUI MainGameUI;
-
+    public int currentRound = 0;
     private List<GameObject> playerSpawnpoints;
 
     private int MaxRounds = 3;
@@ -53,7 +53,7 @@ public class RoundManager : MonoBehaviour
 
     private void StartRound()
     {
-        MainGameUI.CurrentRound++;
+        currentRound++;
         for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
         {
             PlayerDataStorage.connectedPlayerObjects[i].transform.position = playerSpawnpoints[i].transform.position;
@@ -71,7 +71,7 @@ public class RoundManager : MonoBehaviour
     private IEnumerator ShowRoundResults()
     {
         yield return new WaitForSecondsRealtime(5);
-        if (MainGameUI.CurrentRound == MaxRounds)
+        if (currentRound == MaxRounds)
         {
             StartCoroutine(ShowEndResults());
         }
