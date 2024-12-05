@@ -274,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomDistance: 1
   zoomSpeed: 0
+  playersDoneSpawing: 0
 --- !u!1001 &37949823
 PrefabInstance:
   m_ObjectHideFlags: 0
