@@ -5,30 +5,20 @@ using TMPro;
 
 public class MainGameUI : MonoBehaviour
 {
-    [SerializeField] public int CurrentRound = 1;
-    [SerializeField] GameObject RoundText;
-    [SerializeField] GameObject Character1HealthText;
-    [SerializeField] GameObject Character2HealthText;
-    [SerializeField] GameObject Character3HealthText;
-    [SerializeField] GameObject Character4HealthText;
-    [SerializeField] GameObject Character1cross, Character2cross, Character3cross, Character4cross;
+    [SerializeField] GameObject CharacterHealthText;
+    [SerializeField] GameObject Charactercross;
+
+    private List<GameObject> InventorySlots;
 
     //Temp stuff    
-    public bool P1elim = false;
-    public bool P2elim = false;
-    public bool P3elim = false;
-    public bool P4elim = false;
+    public bool playerElim = false;
     [SerializeField] float PlayerHealthPercentage = 0;
 
 
     private void Update()
     {
-        RoundText.GetComponent<TMP_Text>().text = "Round: " + CurrentRound.ToString();
-        Character1HealthText.GetComponent<TMP_Text>().text = PlayerHealthPercentage.ToString() + "%";
-        Character1HealthText.GetComponent<TMP_Text>().color = Color.HSVToRGB(1, Mathf.Clamp(PlayerHealthPercentage, 1, 100) /100, 1);
-        Character2HealthText.GetComponent<TMP_Text>().text = PlayerHealthPercentage.ToString() + "%";
-        Character3HealthText.GetComponent<TMP_Text>().text = PlayerHealthPercentage.ToString() + "%";
-        Character4HealthText.GetComponent<TMP_Text>().text = PlayerHealthPercentage.ToString() + "%";
+        CharacterHealthText.GetComponent<TMP_Text>().text = PlayerHealthPercentage.ToString() + "%";
+        CharacterHealthText.GetComponent<TMP_Text>().color = Color.HSVToRGB(1, Mathf.Clamp(PlayerHealthPercentage, 1, 100) / 100, 1);
 
         if (PlayerHealthPercentage < 0)
         {
@@ -40,9 +30,9 @@ public class MainGameUI : MonoBehaviour
             PlayerHealthPercentage = 230;
         }
 
-        if (P1elim)
+        if (playerElim)
         {
-            Character1cross.SetActive(true);
+            Charactercross.SetActive(true);
         }
     }
 }

@@ -186,7 +186,7 @@ MonoBehaviour:
     damage: 8
     startup: 0.1
     recovery: 1
-    knockback: 7
+    knockback: 5
     hitboxes:
     - positionOffset: {x: 0, y: 0, z: 1}
       duration: 0.3
@@ -201,6 +201,7 @@ MonoBehaviour:
     hitSound: {fileID: 0}
     bleedAmount: 0
   lifeTime: 10
+  rotationSpeed: 1
 --- !u!65 &8603140663094253575
 BoxCollider:
   m_ObjectHideFlags: 0
