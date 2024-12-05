@@ -327,6 +327,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pike
       objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].ySize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].hitboxShape
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].positionOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15366,13 +15378,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133363645}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ce38dbad5ae8464a84e1e16b352e4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   winningPlayer: {fileID: 0}
   playersDeadThisRound: 0
+  currentRound: 0
 --- !u!4 &1133363647
 Transform:
   m_ObjectHideFlags: 0
@@ -15557,6 +15570,22 @@ PrefabInstance:
     - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
       propertyPath: lifeTime
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+      propertyPath: pickupWeaponData.startup
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+      propertyPath: pickupWeaponData.recovery
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+      propertyPath: pickupWeaponData.knockback
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].ySize
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
