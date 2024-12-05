@@ -8,6 +8,7 @@ using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using UnityEngine.Windows;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 using static UnityEngine.InputSystem.InputAction;
 
@@ -178,6 +179,7 @@ public class InputHandler : MonoBehaviour
         playModel.SetActive(false);
         spawnedRagdoll = Instantiate(ragdollModel, transform.position, Quaternion.identity);
         spawnedRagdoll.GetComponent<SpawnedRagdoll>().originPlayer = gameObject;
+        spawnedRagdoll.transform.rotation = Quaternion.LookRotation(new Vector3(lookDir.x, 0, lookDir.y));
         if (addForce)
         {
             foreach(Rigidbody r in spawnedRagdoll.GetComponentsInChildren<Rigidbody>())
