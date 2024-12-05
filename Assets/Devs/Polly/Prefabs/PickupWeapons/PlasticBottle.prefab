@@ -266,10 +266,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupWeaponData:
     name: plasticbottle
-    damage: 0.5
+    damage: 1
     startup: 0.1
-    recovery: 0.5
-    knockback: 20
+    recovery: 0.8
+    knockback: 7
     hitboxes:
     - positionOffset: {x: 0, y: 0, z: 1}
       duration: 0.1

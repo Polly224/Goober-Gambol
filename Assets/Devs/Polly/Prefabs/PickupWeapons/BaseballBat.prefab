@@ -100,10 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupWeaponData:
     name: baseballbat
-    damage: 10
+    damage: 5
     startup: 0.2
     recovery: 2
-    knockback: 6
+    knockback: 5
     hitboxes:
     - positionOffset: {x: 0, y: 0, z: 0}
       duration: 0.3
