@@ -221,4 +221,5 @@ MonoBehaviour:
     weaponToThrow: {fileID: 0}
     hitSound: {fileID: 0}
     bleedAmount: 15
-  lifeTime: 10
+  lifeTime: 100
+  rotationSpeed: 1
