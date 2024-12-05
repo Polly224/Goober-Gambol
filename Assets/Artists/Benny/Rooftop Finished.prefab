@@ -45,7 +45,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 5
+  m_Intensity: 30
   m_Range: 27.532572
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 197679723501704831}
   serializedVersion: 2
   m_LocalRotation: {x: -1, y: -0, z: -0, w: 0.0000014603138}
-  m_LocalPosition: {x: 6.7960997, y: 1.6, z: 48.34514}
+  m_LocalPosition: {x: 6.7960997, y: -5.4, z: 48.34514}
   m_LocalScale: {x: 28.880867, y: 28.880867, z: 28.880867}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -341,7 +341,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.62352943}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -405,7 +405,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.58
+      scalar: 0.6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -724,7 +724,7 @@ ParticleSystem:
     gravitySource: 0
     maxNumParticles: 10000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
-    size3D: 0
+    size3D: 1
     rotation3D: 1
     gravityModifier:
       serializedVersion: 2
@@ -4895,7 +4895,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5a37d80c821d8045901287c9acb20ac, type: 2}
+  - {fileID: 2100000, guid: e2350f0955634b141977845c4b143d13, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10553,7 +10553,7 @@ GameObject:
   - component: {fileID: 2493349355955299206}
   m_Layer: 0
   m_Name: 'Ladder (1) (Missing Prefab with guid: 404f1bd1a7cec83429cd6dbc419cf466)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -10984,7 +10984,7 @@ GameObject:
   - component: {fileID: 4008840276306612235}
   m_Layer: 0
   m_Name: Cube.019
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -11810,7 +11810,6 @@ LightProbeGroup:
   - {x: -1, y: 6.261797, z: 13.28143}
   - {x: -3.0374374, y: 6.261797, z: 13.28143}
   - {x: -5.4148035, y: 6.261797, z: 13.281429}
-  - {x: -7.4337616, y: 6.261797, z: 13.281428}
   - {x: -9.742937, y: 6.261797, z: 13.281427}
   - {x: -12.157516, y: 6.261797, z: 13.281426}
   - {x: -14.57705, y: 6.2617965, z: 13.281425}
@@ -11979,7 +11978,6 @@ LightProbeGroup:
   - {x: -1, y: 6.2617965, z: 13.28143}
   - {x: -3.0374374, y: 6.2617965, z: 13.28143}
   - {x: -5.414803, y: 6.2617965, z: 13.281429}
-  - {x: -7.433761, y: 6.2617965, z: 13.281428}
   - {x: -9.742936, y: 6.2617965, z: 13.281427}
   - {x: -12.157515, y: 6.2617965, z: 13.281426}
   - {x: -14.57705, y: 6.261796, z: 13.281425}
@@ -12681,7 +12679,6 @@ LightProbeGroup:
   - {x: -5.414802, y: 9.795597, z: 17.80567}
   - {x: -7.43376, y: 9.795597, z: 17.805668}
   - {x: -9.742934, y: 9.795597, z: 17.805668}
-  - {x: -12.157513, y: 9.795596, z: 17.805666}
   - {x: -14.57705, y: 9.795596, z: 17.805666}
   - {x: -16.833305, y: 9.795596, z: 17.805664}
   - {x: 2.959764, y: 9.795597, z: 19.99303}
@@ -12850,7 +12847,6 @@ LightProbeGroup:
   - {x: -5.4148016, y: 9.795597, z: 17.80567}
   - {x: -7.4337597, y: 9.795597, z: 17.805668}
   - {x: -9.742933, y: 9.795596, z: 17.805668}
-  - {x: -12.157512, y: 9.795595, z: 17.805666}
   - {x: -14.57705, y: 9.795595, z: 17.805666}
   - {x: -16.833305, y: 9.795595, z: 17.805664}
   - {x: 2.959764, y: 9.795597, z: 19.993029}
@@ -12993,7 +12989,6 @@ LightProbeGroup:
   - {x: -1, y: 13.151758, z: 13.28143}
   - {x: -3.0374374, y: 13.151758, z: 13.28143}
   - {x: -5.4148026, y: 13.151758, z: 13.281429}
-  - {x: -7.4337606, y: 13.151758, z: 13.281428}
   - {x: -9.742935, y: 13.151758, z: 13.281427}
   - {x: -12.157514, y: 13.151758, z: 13.281426}
   - {x: -14.57705, y: 13.151758, z: 13.281425}
@@ -13162,7 +13157,6 @@ LightProbeGroup:
   - {x: -1, y: 13.151758, z: 13.28143}
   - {x: -3.0374374, y: 13.151758, z: 13.28143}
   - {x: -5.414802, y: 13.151758, z: 13.281429}
-  - {x: -7.43376, y: 13.151758, z: 13.281428}
   - {x: -9.742934, y: 13.151758, z: 13.281427}
   - {x: -12.157513, y: 13.151758, z: 13.281426}
   - {x: -14.57705, y: 13.151757, z: 13.281425}
@@ -14068,7 +14062,7 @@ GameObject:
   - component: {fileID: 7656214970573773785}
   m_Layer: 0
   m_Name: 'Plank (2) (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -14186,7 +14180,7 @@ Transform:
   m_GameObject: {fileID: 1190664890727090340}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6129952, y: 0.048915256, z: -0.27144003, w: 0.74038136}
-  m_LocalPosition: {x: 18.19615, y: 44.01, z: -18.454914}
+  m_LocalPosition: {x: 16.64, y: 41.61, z: -18.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14203,8 +14197,8 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 0.95687425, g: 0.9924528, b: 0.98941946, a: 1}
-  m_Intensity: 10
+  m_Color: {r: 0.92941177, g: 1, b: 0.99215686, a: 1}
+  m_Intensity: 15
   m_Range: 117.89
   m_SpotAngle: 62.881794
   m_InnerSpotAngle: 21.178478
@@ -14245,11 +14239,11 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 18.076025, y: 19.77647}
+  m_AreaSize: {x: 11.04006, y: 12.222176}
   m_BounceIntensity: 1
   m_ColorTemperature: 8282
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: -1, y: 1, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: NaN, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -14291,7 +14285,7 @@ GameObject:
   - component: {fileID: 3150664969591737381}
   m_Layer: 0
   m_Name: 'Pallet (Missing Prefab with guid: 130aa1d0ebe267248aa8bfcb33206de4)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -14626,7 +14620,7 @@ GameObject:
   - component: {fileID: 6616373478668781479}
   m_Layer: 0
   m_Name: Tower (1)
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -24846,7 +24840,7 @@ GameObject:
   m_Layer: 0
   m_Name: 'Plank (1) (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)
     (1)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -29876,7 +29870,7 @@ GameObject:
   - component: {fileID: 5590565724295008704}
   m_Layer: 0
   m_Name: 'Plank (1) (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -34820,7 +34814,7 @@ GameObject:
   - component: {fileID: 7670203505994717596}
   m_Layer: 0
   m_Name: Window Cleaning (1)
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -34926,7 +34920,7 @@ GameObject:
   - component: {fileID: 8409896774863401815}
   m_Layer: 0
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -35137,7 +35131,7 @@ GameObject:
   m_Layer: 0
   m_Name: 'Plank (1) (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)
     (3)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -35338,7 +35332,7 @@ GameObject:
   m_Layer: 0
   m_Name: 'Pallet (2) (Missing Prefab with guid: 130aa1d0ebe267248aa8bfcb33206de4)
     (1)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -35559,7 +35553,7 @@ GameObject:
   - component: {fileID: 8389023473452881094}
   m_Layer: 0
   m_Name: 'Plank (1) (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -40892,7 +40886,7 @@ GameObject:
   - component: {fileID: 6020589981825466499}
   m_Layer: 0
   m_Name: Sattalite Dish
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -40998,7 +40992,7 @@ GameObject:
   m_Layer: 0
   m_Name: 'Plank (1) (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)
     (6)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -41082,7 +41076,7 @@ GameObject:
   - component: {fileID: 5150050134290040079}
   m_Layer: 0
   m_Name: 'Pallet (1) (Missing Prefab with guid: 130aa1d0ebe267248aa8bfcb33206de4)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -46770,7 +46764,7 @@ GameObject:
   - component: {fileID: 5540807444718624909}
   m_Layer: 0
   m_Name: Rooftop Vents (2)
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -47204,7 +47198,7 @@ GameObject:
   - component: {fileID: 3693693542903395241}
   m_Layer: 0
   m_Name: 'Ladder (Missing Prefab with guid: 404f1bd1a7cec83429cd6dbc419cf466)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -47475,7 +47469,7 @@ GameObject:
   - component: {fileID: 4156202126139801584}
   m_Layer: 0
   m_Name: Rooftop Vents (1)
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -47581,7 +47575,7 @@ GameObject:
   - component: {fileID: 7987269450553163061}
   m_Layer: 0
   m_Name: Cube.017
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -47732,13 +47726,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5905926284334988850}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7007084, y: 0.3518184, z: -0.17151846, w: 0.59650064}
-  m_LocalPosition: {x: -2.110024, y: 44.009914, z: 50.79055}
+  m_LocalRotation: {x: 0.5476249, y: 0.18840131, z: -0.07655955, w: 0.81163454}
+  m_LocalPosition: {x: -5.41, y: 42.1, z: 19.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4195933722534220640}
-  m_LocalEulerAnglesHint: {x: 106.936005, y: -38.00299, z: -81.944}
+  m_LocalEulerAnglesHint: {x: 113.39499, y: -146.011, z: -168.071}
 --- !u!108 &7883110267804090613
 Light:
   m_ObjectHideFlags: 0
@@ -47750,8 +47744,8 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 0.95687425, g: 0.9924528, b: 0.98941946, a: 1}
-  m_Intensity: 10
+  m_Color: {r: 0.92941177, g: 1, b: 0.99215686, a: 1}
+  m_Intensity: 15
   m_Range: 117.89
   m_SpotAngle: 62.881794
   m_InnerSpotAngle: 21.178478
@@ -47792,11 +47786,11 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 14.872466, y: 15.28722}
+  m_AreaSize: {x: 7.831366, y: 8.160269}
   m_BounceIntensity: 1
   m_ColorTemperature: 8282
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.18e-43, z: 0, w: 1.18e-43}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -47921,7 +47915,7 @@ GameObject:
   m_Layer: 0
   m_Name: 'Plank (1) (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)
     (5)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -48121,7 +48115,7 @@ GameObject:
   - component: {fileID: 5506093827493418094}
   m_Layer: 0
   m_Name: 'Plank (3) (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -53065,7 +53059,7 @@ GameObject:
   - component: {fileID: 3404063900559258775}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -53183,13 +53177,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6581435514514901992}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.65370774, y: 0.30841398, z: -0.051115405, w: 0.6891547}
-  m_LocalPosition: {x: -30.282486, y: 15.199573, z: -18.451517}
+  m_LocalRotation: {x: 0.7070816, y: 0.03881424, z: 0.14834875, w: 0.6903055}
+  m_LocalPosition: {x: -29.55, y: 15.19957, z: -17.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4195933722534220640}
-  m_LocalEulerAnglesHint: {x: 68.834, y: 97.144, z: 67.168}
+  m_LocalEulerAnglesHint: {x: 74.728, y: 90.64, z: 99.604}
 --- !u!108 &2276758725310050735
 Light:
   m_ObjectHideFlags: 0
@@ -53201,8 +53195,8 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 0.95687425, g: 0.9924528, b: 0.98941946, a: 1}
-  m_Intensity: 7
+  m_Color: {r: 0.9264151, g: 1, b: 0.99144363, a: 1}
+  m_Intensity: 40
   m_Range: 117.89
   m_SpotAngle: 62.881794
   m_InnerSpotAngle: 21.178478
@@ -53243,11 +53237,11 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 7.3991404, y: 7.5554705}
+  m_AreaSize: {x: 5.0377817, y: 6.725135}
   m_BounceIntensity: 1
   m_ColorTemperature: 8282
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1, z: 6.53e-43, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: NaN, z: NaN, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -58119,7 +58113,7 @@ GameObject:
   - component: {fileID: 3296228535139434501}
   m_Layer: 0
   m_Name: 'Plank (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -58274,7 +58268,7 @@ GameObject:
   m_Layer: 0
   m_Name: 'Pallet (2) (Missing Prefab with guid: 130aa1d0ebe267248aa8bfcb33206de4)
     (2)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -58507,7 +58501,7 @@ GameObject:
   - component: {fileID: 2943518458451758642}
   m_Layer: 0
   m_Name: Cube.038
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -78473,7 +78467,7 @@ GameObject:
   m_Layer: 0
   m_Name: 'Plank (1) (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)
     (4)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -83429,7 +83423,7 @@ GameObject:
   - component: {fileID: 2461795751174473704}
   m_Layer: 0
   m_Name: 'Pallet (2) (Missing Prefab with guid: 130aa1d0ebe267248aa8bfcb33206de4)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -83853,7 +83847,7 @@ GameObject:
   m_Layer: 0
   m_Name: 'Plank (1) (Missing Prefab with guid: 9cd5565bf4a971142b5044fa0330aaa4)
     (2)'
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -84944,7 +84938,7 @@ GameObject:
   - component: {fileID: 4018397624225717186}
   m_Layer: 0
   m_Name: Cube.020
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -85155,7 +85149,7 @@ GameObject:
   - component: {fileID: 2165632083390330456}
   m_Layer: 0
   m_Name: Tower (2)
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
