@@ -32,6 +32,7 @@ public class RoundManager : MonoBehaviour
             GameObject.FindGameObjectsWithTag("Player")[i].transform.position = playerSpawnpoints[i].transform.position;
             GameObject.FindGameObjectsWithTag("Player")[i].SetActive(true);
         }
+        PickupSpawningSystem.instance.StartCoroutine(PickupSpawningSystem.instance.StartSpawnRoutine());
     }
 
     private IEnumerator StartRound()
