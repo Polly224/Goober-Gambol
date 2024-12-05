@@ -21,7 +21,6 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.transform.position = new Vector3(0, -100, 0);
             other.gameObject.GetComponent<PlayerPlacement>().Died();
             other.gameObject.GetComponent<PlayerInventory>().RemoveCurrentWeapon();
             other.gameObject.SetActive(false);
@@ -29,6 +28,13 @@ public class DeathZone : MonoBehaviour
         else if (other.CompareTag("Pickup"))
         {
             Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("Ragdoll"))
+        {
+            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<PlayerPlacement>().Died();
+            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<PlayerInventory>().RemoveCurrentWeapon();
+            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.SetActive(false);
+            Destroy(other.transform.root.gameObject);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -104,7 +105,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void RemoveCurrentWeapon()
     {
-        weaponInventory.RemoveAt(currentWeaponIndex);
+        if(weaponInventory.Count > currentWeaponIndex) weaponInventory.RemoveAt(currentWeaponIndex);
         SwitchWeaponsToIndex(currentWeaponIndex);
     }
 }

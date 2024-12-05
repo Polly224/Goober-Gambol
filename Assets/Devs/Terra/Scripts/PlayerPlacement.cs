@@ -14,28 +14,14 @@ public class PlayerPlacement : MonoBehaviour
 
     private void Update()
     {
-        if (RoundManager.playersDeadThisRound == 3)
+        if (RoundManager.playersDeadThisRound == GameObject.FindGameObjectsWithTag("Player").Length - 1)
         {
             placingValue = 1;
         }
     }
     public void Died()
     {
+        placingValue = GameObject.FindGameObjectsWithTag("Player").Length - RoundManager.playersDeadThisRound;
         RoundManager.playersDeadThisRound++;
-
-        switch (RoundManager.playersDeadThisRound)
-        {
-            case 1:
-                placingValue = 4;
-                break;
-
-            case 2:
-                placingValue = 3;
-                break;
-
-            case 3:
-                placingValue = 2;
-                break;
-        }
     }
 }

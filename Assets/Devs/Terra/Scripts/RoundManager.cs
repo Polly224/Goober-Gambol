@@ -16,9 +16,12 @@ public class RoundManager : MonoBehaviour
     private List<GameObject> playerSpawnpoints;
 
     private int MaxRounds = 3;
+    public static RoundManager instance;
 
     private void Awake()
     {
+        if(instance == null) instance = this;
+        else Destroy(this); 
         Canvas = FindObjectOfType<CanvasFinder>();
         Players = FindObjectOfType<PlayerDataStorage>();
         PlayerPlacement = FindObjectOfType<PlayerPlacement>();
