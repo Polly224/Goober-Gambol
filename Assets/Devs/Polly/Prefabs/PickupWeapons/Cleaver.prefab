@@ -184,7 +184,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -219,7 +219,7 @@ MonoBehaviour:
     swingable: 1
     throwable: 0
     weaponToThrow: {fileID: 0}
-    hitSound: {fileID: 0}
-    bleedAmount: 15
+    hitSound: {fileID: 8300000, guid: 4bc0b4ed51d3be04d8c458a8630e62fc, type: 3}
+    bleedAmount: 10
   lifeTime: 100
   rotationSpeed: 1
