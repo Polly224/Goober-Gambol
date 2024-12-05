@@ -13,7 +13,6 @@ public class StageSelect : MonoBehaviour
     public Vector3[] stagePositions;
     public float changeSpeed = 0.2f;
     Vector3 intendedPos;
-    [SerializeField] TextMeshPro stageName;
     [SerializeField] InputAction iA;
     [SerializeField] InputAction conTinue;
 

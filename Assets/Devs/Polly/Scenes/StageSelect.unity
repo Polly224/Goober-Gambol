@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 516930426}
   - component: {fileID: 516930425}
   - component: {fileID: 516930424}
+  - component: {fileID: 516930427}
   m_Layer: 0
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -373,8 +374,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: The Docks
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d796a98f7eacebc46befc14c235a6d49, type: 2}
+  m_sharedMaterial: {fileID: 6277620323519974161, guid: d796a98f7eacebc46befc14c235a6d49, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -463,7 +464,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 6277620323519974161, guid: d796a98f7eacebc46befc14c235a6d49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -504,6 +505,20 @@ RectTransform:
   m_AnchoredPosition: {x: 1250, y: -133.48369}
   m_SizeDelta: {x: 284.6, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &516930427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516930423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa65fd572c032140a6f6e32bff5d437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 3
+  rotationModifier: 3
 --- !u!1 &1983253094
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +530,7 @@ GameObject:
   - component: {fileID: 1983253095}
   - component: {fileID: 1983253097}
   - component: {fileID: 1983253096}
+  - component: {fileID: 1983253098}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -563,8 +579,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: The Rooftops
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d796a98f7eacebc46befc14c235a6d49, type: 2}
+  m_sharedMaterial: {fileID: 6277620323519974161, guid: d796a98f7eacebc46befc14c235a6d49, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -653,7 +669,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 6277620323519974161, guid: d796a98f7eacebc46befc14c235a6d49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -675,6 +691,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1983253098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983253094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa65fd572c032140a6f6e32bff5d437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 3
+  rotationModifier: 3
 --- !u!65 &1281328664881536
 BoxCollider:
   m_ObjectHideFlags: 0
