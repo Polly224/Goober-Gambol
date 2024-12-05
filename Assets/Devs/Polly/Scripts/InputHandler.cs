@@ -4,12 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Transactions;
 using Unity.VisualScripting;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
-using UnityEngine.Windows;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 using static UnityEngine.InputSystem.InputAction;
 
 public class InputHandler : MonoBehaviour
