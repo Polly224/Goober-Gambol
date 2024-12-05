@@ -213,7 +213,7 @@ MonoBehaviour:
       duration: 0.3
       xSize: 1.5
       ySize: 1.5
-      hitboxShape: 1
+      hitboxShape: 0
     attackType: 2
     weaponGimmick: 1
     swingable: 1
