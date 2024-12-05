@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 34077319fbd063940b13c9aee3695b41, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 34077319fbd063940b13c9aee3695b41, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -82,12 +82,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 2353723328981561190}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 34077319fbd063940b13c9aee3695b41, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2758
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34077319fbd063940b13c9aee3695b41, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2758
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34077319fbd063940b13c9aee3695b41, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2758
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 34077319fbd063940b13c9aee3695b41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.000000011762
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 34077319fbd063940b13c9aee3695b41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 34077319fbd063940b13c9aee3695b41, type: 3}
       propertyPath: m_LocalPosition.z
@@ -121,6 +133,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 34077319fbd063940b13c9aee3695b41, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fe2efe6b9ebd47f41965df51a2f20413, type: 2}
     - target: {fileID: 919132149155446097, guid: 34077319fbd063940b13c9aee3695b41, type: 3}
       propertyPath: m_Name
       value: BASEBALL BAT
