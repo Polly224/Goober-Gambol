@@ -32,12 +32,12 @@ public class Button : MonoBehaviour
 
     public void StartPressed()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("CharacterSelect") ;
     }
 
     public void CreditsPressed()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Credits");
     }
 
     public void OptionsPressed()
