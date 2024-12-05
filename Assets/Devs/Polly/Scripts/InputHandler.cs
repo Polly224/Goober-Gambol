@@ -51,6 +51,7 @@ public class InputHandler : MonoBehaviour
     {
         playerInput.ActivateInput();
         // When a player is added, their controller gets added to the controller list.
+        if(!PlayerDataStorage.connectedControllers.Contains(playerInput.GetDevice<InputDevice>()))
         PlayerDataStorage.instance.AddToControllers(playerInput.GetDevice<InputDevice>());
         PlayerDataStorage.connectedPlayerObjects.Add(gameObject);
     }

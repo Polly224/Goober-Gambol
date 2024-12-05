@@ -616,6 +616,26 @@ PrefabInstance:
       propertyPath: m_PlayerPrefab
       value: 
       objectReference: {fileID: 8623839776551813442, guid: 315d9dbb675106f429f8137eb86cc108, type: 3}
+    - target: {fileID: 7975803827927795604, guid: e8f79315de911b0419661a53ca972bcc, type: 3}
+      propertyPath: playerTypesToSpawn.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975803827927795604, guid: e8f79315de911b0419661a53ca972bcc, type: 3}
+      propertyPath: playerTypesToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 8623839776551813442, guid: 8e0ffe29bf8e66e4d87ceccfae78c2f1, type: 3}
+    - target: {fileID: 7975803827927795604, guid: e8f79315de911b0419661a53ca972bcc, type: 3}
+      propertyPath: playerTypesToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 8623839776551813442, guid: 2d63027382d9056479a4758fa89434c3, type: 3}
+    - target: {fileID: 7975803827927795604, guid: e8f79315de911b0419661a53ca972bcc, type: 3}
+      propertyPath: playerTypesToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 8623839776551813442, guid: b18ec8e467f02f741be4349691f9aff4, type: 3}
+    - target: {fileID: 7975803827927795604, guid: e8f79315de911b0419661a53ca972bcc, type: 3}
+      propertyPath: playerTypesToSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 8623839776551813442, guid: 315d9dbb675106f429f8137eb86cc108, type: 3}
     - target: {fileID: 8132587093238793524, guid: e8f79315de911b0419661a53ca972bcc, type: 3}
       propertyPath: m_Name
       value: PlayerInputManager

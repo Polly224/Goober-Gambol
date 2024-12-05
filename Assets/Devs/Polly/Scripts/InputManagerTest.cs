@@ -13,10 +13,21 @@ public class InputManagerTest : MonoBehaviour
     void Start()
     {
         pIM = GetComponent<PlayerInputManager>();
-        if(SceneManager.GetActiveScene().name == "CharacterSelect")
+        StartCoroutine(SpawnRoutine());
+    }
+    // When a controller presses the start button, that controller joins as a player.
+    public void SpawnNewPlayerByButton(CallbackContext context)
+    {
+        pIM.JoinPlayerFromAction(context);
+    }
+
+    private IEnumerator SpawnRoutine()
+    {
+        if (SceneManager.GetActiveScene().name == "CharacterSelect")
         {
             if (PlayerDataStorage.connectedControllers.Count > 0)
             {
+                pIM.joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
                 PlayerDataStorage.connectedPlayerObjects.Clear();
                 for (int i = 0; i < PlayerDataStorage.connectedControllers.Count; i++)
                 {
@@ -28,7 +39,7 @@ public class InputManagerTest : MonoBehaviour
         {
             // Gets the character the players have picked, and spawns the correct model for each.
             PlayerDataStorage.connectedPlayerObjects.Clear();
-            for (int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
+            for (int i = 0; i < PlayerDataStorage.connectedControllers.Count; i++)
             {
                 pIM.playerPrefab = PlayerDataStorage.playerCharacters[i] switch
                 {
@@ -39,13 +50,14 @@ public class InputManagerTest : MonoBehaviour
                     PlayerSelectArrow.PickedCharacter.Unselected => null,
                     _ => null
                 };
-                if(pIM.playerPrefab != null) PlayerDataStorage.connectedPlayerObjects.Add(pIM.JoinPlayer(i, -1, null, PlayerDataStorage.connectedControllers[i]).gameObject);
+                pIM.joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
+                if (pIM.playerPrefab != null) PlayerDataStorage.connectedPlayerObjects.Add(pIM.JoinPlayer(i, -1, null, PlayerDataStorage.connectedControllers[i]).gameObject);
+                yield return null;
             }
         }
-    }
-    // When a controller presses the start button, that controller joins as a player.
-    public void SpawnNewPlayerByButton(CallbackContext context)
-    {
-        pIM.JoinPlayerFromAction(context);
+        yield return new WaitForSeconds(0.1f);
+        if(SceneManager.GetActiveScene().name != "CharacterSelect")
+        GameObject.Find("Camera").GetComponent<PlayerCameraFollower>().playersDoneSpawing = true;
+        yield break;
     }
 }

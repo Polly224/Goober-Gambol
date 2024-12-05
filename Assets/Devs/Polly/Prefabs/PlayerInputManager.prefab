@@ -104,5 +104,5 @@ MonoBehaviour:
   playerTypesToSpawn:
   - {fileID: 8623839776551813442, guid: 8e0ffe29bf8e66e4d87ceccfae78c2f1, type: 3}
   - {fileID: 8623839776551813442, guid: 2d63027382d9056479a4758fa89434c3, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8623839776551813442, guid: b18ec8e467f02f741be4349691f9aff4, type: 3}
+  - {fileID: 8623839776551813442, guid: 315d9dbb675106f429f8137eb86cc108, type: 3}
