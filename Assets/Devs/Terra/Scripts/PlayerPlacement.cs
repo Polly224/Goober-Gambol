@@ -14,9 +14,10 @@ public class PlayerPlacement : MonoBehaviour
 
     private void Update()
     {
-        if (RoundManager.playersDeadThisRound == GameObject.FindGameObjectsWithTag("Player").Length - 1)
+        if (RoundManager.playersDeadThisRound == GameObject.FindGameObjectsWithTag("Player").Length - 1 && placingValue != 1)
         {
             placingValue = 1;
+            RoundManager.instance.EndRound();
         }
     }
     public void Died()

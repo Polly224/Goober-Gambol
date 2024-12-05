@@ -8,10 +8,6 @@ public class RoundManager : MonoBehaviour
 {
     public GameObject winningPlayer;
     public int playersDeadThisRound;
-    private PlayerPlacement PlayerPlacement;
-    private PlayerDataStorage Players;
-    private CanvasFinder Canvas;
-    private MainGameUI MainGameUI;
     public int currentRound = 0;
     private List<GameObject> playerSpawnpoints;
 
@@ -21,11 +17,7 @@ public class RoundManager : MonoBehaviour
     private void Awake()
     {
         if(instance == null) instance = this;
-        else Destroy(this); 
-        Canvas = FindObjectOfType<CanvasFinder>();
-        Players = FindObjectOfType<PlayerDataStorage>();
-        PlayerPlacement = FindObjectOfType<PlayerPlacement>();
-        MainGameUI = FindObjectOfType<MainGameUI>();
+        else Destroy(this);
     }
 
     private void Start()
@@ -40,25 +32,19 @@ public class RoundManager : MonoBehaviour
     }
     private void Update()
     {
-        foreach (GameObject g in PlayerDataStorage.connectedPlayerObjects)
-        {
-            if (g.GetComponent<PlayerPlacement>().placingValue == 1)
-            {
-                winningPlayer = g;
-                StartCoroutine(ShowRoundResults());
-            }
-        }
+        
     }
-
 
     private void StartRound()
     {
         playersDeadThisRound = 0;
         currentRound++;
+        PickupSpawningSystem.instance.StartCoroutine(PickupSpawningSystem.instance.StartSpawnRoutine());
         for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
         {
             PlayerDataStorage.connectedPlayerObjects[i].transform.position = playerSpawnpoints[i].transform.position;
             PlayerDataStorage.connectedPlayerObjects[i].SetActive(true);
+            PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerPlacement>().placingValue = 0;
         }
         
     }
@@ -86,7 +72,12 @@ public class RoundManager : MonoBehaviour
     private IEnumerator ShowEndResults()
     {
         yield return new WaitForSecondsRealtime(5);
+        
+    }
 
-
+    public void EndRound()
+    {
+        PickupSpawningSystem.instance.StopAllCoroutines();
+        StartCoroutine(ShowRoundResults());
     }
 }

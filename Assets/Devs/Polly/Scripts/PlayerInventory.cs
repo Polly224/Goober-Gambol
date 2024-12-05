@@ -42,7 +42,7 @@ public class PlayerInventory : MonoBehaviour
         if(handToHoldWeapons.childCount > 0) Destroy(handToHoldWeapons.GetChild(0).gameObject);
         if(indexToAddFrom != -1)
         {
-            GameObject weaponSpawned = Instantiate(weaponsToHold[indexToAddFrom], handToHoldWeapons.transform.position, Quaternion.identity);
+            GameObject weaponSpawned = Instantiate(weaponsToHold[indexToAddFrom], handToHoldWeapons.transform.position, handToHoldWeapons.rotation);
             weaponSpawned.transform.localScale = Vector3.one;
             weaponSpawned.transform.SetParent(handToHoldWeapons, true);
         }
