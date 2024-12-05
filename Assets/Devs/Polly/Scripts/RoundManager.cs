@@ -53,13 +53,14 @@ public class RoundManager : MonoBehaviour
 
     private void StartRound()
     {
+        playersDeadThisRound = 0;
         currentRound++;
         for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
         {
             PlayerDataStorage.connectedPlayerObjects[i].transform.position = playerSpawnpoints[i].transform.position;
             PlayerDataStorage.connectedPlayerObjects[i].SetActive(true);
         }
-        Debug.Log("StartRound Works");
+        
     }
     private IEnumerator SwitchRoundsCooldown()
     {
