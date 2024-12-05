@@ -14,7 +14,7 @@ public class RoundManager : MonoBehaviour
     public int currentRound = 0;
     private List<GameObject> playerSpawnpoints;
 
-    private int maxRounds = 1;
+    private int maxRounds = 3;
     public static RoundManager instance;
 
     private void Awake()
@@ -88,7 +88,7 @@ public class RoundManager : MonoBehaviour
         spawnedWinner.transform.localScale = Vector3.one;
         GameObject.Find("Camera").transform.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("CharacterSelect");
+        SceneManager.LoadScene("TitleScreen");
         yield return null;
     }
 
