@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class RoundManager : MonoBehaviour
 {
@@ -85,6 +86,8 @@ public class RoundManager : MonoBehaviour
         spawnedWinner.transform.localRotation = Quaternion.Euler(0, -90, 0);
         spawnedWinner.transform.localScale = Vector3.one;
         GameObject.Find("Camera").transform.GetChild(0).gameObject.SetActive(true);
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("CharacterSelect");
         yield return null;
     }
 
