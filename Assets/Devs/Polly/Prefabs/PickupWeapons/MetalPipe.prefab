@@ -184,7 +184,7 @@ MonoBehaviour:
   pickupWeaponData:
     name: metalpipe
     damage: 8
-    startup: 0.1
+    startup: 0.3
     recovery: 1
     knockback: 5
     hitboxes:
@@ -198,7 +198,7 @@ MonoBehaviour:
     swingable: 1
     throwable: 0
     weaponToThrow: {fileID: 0}
-    hitSound: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: 173abec40c08eb6449c45d0cbd4ed39c, type: 3}
     bleedAmount: 0
   lifeTime: 10
   rotationSpeed: 1
@@ -217,7 +217,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

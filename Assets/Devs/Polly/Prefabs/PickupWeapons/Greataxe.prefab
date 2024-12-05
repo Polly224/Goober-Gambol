@@ -184,21 +184,21 @@ MonoBehaviour:
   pickupWeaponData:
     name: greataxe
     damage: 10
-    startup: 1
-    recovery: 4
-    knockback: 10
+    startup: 0.8
+    recovery: 5
+    knockback: 15
     hitboxes:
-    - positionOffset: {x: 0, y: 0, z: 5}
+    - positionOffset: {x: 0, y: 0, z: 3}
       duration: 0.1
       xSize: 1
-      ySize: 9
+      ySize: 3
       hitboxShape: 0
     attackType: 3
     weaponGimmick: 0
     swingable: 1
     throwable: 0
     weaponToThrow: {fileID: 0}
-    hitSound: {fileID: 0}
+    hitSound: {fileID: 8300000, guid: 0592b7ab27e4bbd499d76316207707f3, type: 3}
     bleedAmount: 0
   lifeTime: 100
   rotationSpeed: 1
@@ -217,7 +217,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
