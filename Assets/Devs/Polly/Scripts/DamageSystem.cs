@@ -68,6 +68,8 @@ public class DamageSystem : MonoBehaviour
         /*GetComponent<Rigidbody>().AddForce(knockbackDirection * totalKnockback);
         GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(Random.Range(damageTaken, damageTaken * 2), 0, Random.Range(damageTaken, damageTaken * 2)), ForceMode.Impulse);*/
         if (damageTaken > 50 && !isDizzy) EnterDizzy();
+        GetComponent<AttackScript>().StopAllCoroutines();
+        GetComponent<AttackScript>().attackOnCooldown = false;
     }
     private void EnterDizzy()
     {
