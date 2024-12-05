@@ -8,12 +8,13 @@ public class MainGameUI : MonoBehaviour
     [SerializeField] GameObject CharacterHealthText;
     [SerializeField] GameObject Charactercross;
 
-    private List<GameObject> InventorySlots;
+    [SerializeField] List<GameObject> InventorySlots;
+    [SerializeField] List<Sprite> PlayerSprites;
+    [SerializeField] List<Sprite> WeaponSprites;
 
     //Temp stuff    
     public bool playerElim = false;
     [SerializeField] float PlayerHealthPercentage = 0;
-
 
     private void Update()
     {

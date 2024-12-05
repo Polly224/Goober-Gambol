@@ -327,6 +327,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pike
       objectReference: {fileID: 0}
+    - target: {fileID: 8276616174554961172, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+      propertyPath: pickupWeaponData.startup
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].ySize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].hitboxShape
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].positionOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 50201f0e460855145a09669f41ad34dc, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].positionOffset.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -499,9 +523,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45
       objectReference: {fileID: 0}
+    - target: {fileID: 7193964181503782377, guid: da95684e014f2284cbabc8118a95bd29, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7737149658405604811, guid: da95684e014f2284cbabc8118a95bd29, type: 3}
       propertyPath: m_Name
       value: BaseballBat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: da95684e014f2284cbabc8118a95bd29, type: 3}
+      propertyPath: pickupWeaponData.startup
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: da95684e014f2284cbabc8118a95bd29, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].xSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: da95684e014f2284cbabc8118a95bd29, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].ySize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: da95684e014f2284cbabc8118a95bd29, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].hitboxShape
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: da95684e014f2284cbabc8118a95bd29, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].positionOffset.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15366,13 +15414,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133363645}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ce38dbad5ae8464a84e1e16b352e4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   winningPlayer: {fileID: 0}
   playersDeadThisRound: 0
+  currentRound: 0
 --- !u!4 &1133363647
 Transform:
   m_ObjectHideFlags: 0
@@ -15497,6 +15546,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MetalPipe
       objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: c3548ea9132cf7d4daada321d4115c3f, type: 3}
+      propertyPath: pickupWeaponData.startup
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603140663094253575, guid: c3548ea9132cf7d4daada321d4115c3f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15550,6 +15607,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45
       objectReference: {fileID: 0}
+    - target: {fileID: 7047841655584556230, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7737149658405604811, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
       propertyPath: m_Name
       value: Greataxe
@@ -15557,6 +15618,26 @@ PrefabInstance:
     - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
       propertyPath: lifeTime
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+      propertyPath: pickupWeaponData.startup
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+      propertyPath: pickupWeaponData.recovery
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+      propertyPath: pickupWeaponData.knockback
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].ySize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: 98679f98ba9f4ad4bac45f136941611a, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].positionOffset.z
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15571,6 +15652,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6040571992771366480, guid: ecd6d54ac6111cd48b6e1b007f21f498, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6722057637103102638, guid: ecd6d54ac6111cd48b6e1b007f21f498, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.174555
@@ -15628,6 +15713,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 98016624140324382, guid: cb1456c7b11f83b418fba528e2744974, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6722057637103102638, guid: cb1456c7b11f83b418fba528e2744974, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.704491
@@ -15671,6 +15760,14 @@ PrefabInstance:
     - target: {fileID: 7737149658405604811, guid: cb1456c7b11f83b418fba528e2744974, type: 3}
       propertyPath: m_Name
       value: PlasticBottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: cb1456c7b11f83b418fba528e2744974, type: 3}
+      propertyPath: pickupWeaponData.startup
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446861335711057446, guid: cb1456c7b11f83b418fba528e2744974, type: 3}
+      propertyPath: pickupWeaponData.hitboxes.Array.data[0].xSize
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15766,6 +15863,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6040571992771366480, guid: 013db078f6cb4fd4bb708518f3c147f4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6722057637103102638, guid: 013db078f6cb4fd4bb708518f3c147f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.385469
