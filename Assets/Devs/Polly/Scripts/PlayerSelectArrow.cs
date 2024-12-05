@@ -90,7 +90,7 @@ public class PlayerSelectArrow : MonoBehaviour
             {
                 if (character != PickedCharacter.Unselected) count++;
             }
-            if(count >= 1)
+            if(count >= 2)
             {
                 SceneManager.LoadScene("StageSelect");
             }
