@@ -53,10 +53,9 @@ public class InputManagerTest : MonoBehaviour
                 };
                 pIM.joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
                 if (pIM.playerPrefab != null) PlayerDataStorage.connectedPlayerObjects.Add(pIM.JoinPlayer(i, -1, null, PlayerDataStorage.connectedControllers[i]).gameObject);
-                yield return null;
             }
         }
-        yield return new WaitForSeconds(0.1f);
+        yield return null;
         if(SceneManager.GetActiveScene().name != "CharacterSelect")
         GameObject.Find("Camera").GetComponent<PlayerCameraFollower>().playersDoneSpawing = true;
         yield break;

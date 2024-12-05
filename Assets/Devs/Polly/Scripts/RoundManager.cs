@@ -30,10 +30,6 @@ public class RoundManager : MonoBehaviour
             GameObject.FindGameObjectsWithTag("Player")[i].SetActive(true);
         }
     }
-    private void Update()
-    {
-        
-    }
 
     private void StartRound()
     {

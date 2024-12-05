@@ -12,9 +12,9 @@ public class PlayerPlacement : MonoBehaviour
         RoundManager = FindObjectOfType<RoundManager>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (RoundManager.playersDeadThisRound == GameObject.FindGameObjectsWithTag("Player").Length - 1 && placingValue != 1)
+        if (RoundManager.playersDeadThisRound == PlayerDataStorage.connectedPlayerObjects.Count - 1 && placingValue != 1)
         {
             placingValue = 1;
             RoundManager.instance.EndRound();
