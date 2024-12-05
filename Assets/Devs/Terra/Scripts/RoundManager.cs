@@ -23,7 +23,17 @@ public class RoundManager : MonoBehaviour
         Players = FindObjectOfType<PlayerDataStorage>();
         PlayerPlacement = FindObjectOfType<PlayerPlacement>();
         MainGameUI = FindObjectOfType<MainGameUI>();
-        foreach (GameObject g in GameObject.FindGameObjectsWithTag("PlayerSpawnpoint")) playerSpawnpoints.Add(g);
+    }
+
+    private void Start()
+    {
+        playerSpawnpoints = new();
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("PlayerSpawnpoint")) playerSpawnpoints.Add(g);   
+        for (int i = 0; i < GameObject.FindGameObjectsWithTag("Player").Length; i++)
+        {
+            GameObject.FindGameObjectsWithTag("Player")[i].transform.position = playerSpawnpoints[i].transform.position;
+            GameObject.FindGameObjectsWithTag("Player")[i].SetActive(true);
+        }
     }
     private void Update()
     {
