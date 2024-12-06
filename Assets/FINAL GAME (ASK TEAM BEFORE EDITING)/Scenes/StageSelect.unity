@@ -2879,6 +2879,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rooftop Finished (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5650371058296438550, guid: 30d219098adedf64cb58edf50105e365, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.29411766
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 600069525949598932, guid: 30d219098adedf64cb58edf50105e365, type: 3}
