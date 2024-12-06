@@ -13,7 +13,7 @@ public class PlayerCameraFollower : MonoBehaviour
     [SerializeField] float zoomSpeed;
     public bool playersDoneSpawing = false;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(PlayerDataStorage.connectedPlayerObjects.Count > 0 && playersDoneSpawing)
         {
@@ -30,6 +30,7 @@ public class PlayerCameraFollower : MonoBehaviour
             for(int i = 0; i < activePlayerObjects.Count; i++)
             {
                 GameObject curObj = activePlayerObjects[i];
+                if(curObj.GetComponent<InputHandler>().isRagdolling) curObj = curObj.GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject;
                 if(distances.Count > 0)
                 {
                     if (Vector3.Distance(curObj.transform.position, transform.position) > distances[0])
@@ -61,6 +62,10 @@ public class PlayerCameraFollower : MonoBehaviour
             // If there's only 1 player, the camera just focuses on them.
             if (activePlayerObjects.Count == 1)
             {
+                foreach (GameObject g in GameObject.FindGameObjectsWithTag("Ragdoll"))
+                {
+                    if (g.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer == activePlayerObjects[0]) activePlayerObjects[0] = g.transform.root.GetChild(4).GetChild(0).gameObject;
+                }
                 transform.position = activePlayerObjects[0].transform.position - transform.forward * zoomDistance * 10;
             }
             // If there's MORE than 1 player, however...
@@ -70,7 +75,8 @@ public class PlayerCameraFollower : MonoBehaviour
             {
                 Vector3 middlePosition = new();
                 for (int i = 0; i < objects.Count; i++)
-                { 
+                {
+                    
                     middlePosition += objects[i].transform.position;
                 }
                 middlePosition /= activePlayerObjects.Count;
