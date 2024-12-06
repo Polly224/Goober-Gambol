@@ -1070,9 +1070,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -23.8
       objectReference: {fileID: 0}
+    - target: {fileID: 2948041032094203210, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948041032094203210, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
+      propertyPath: lengthInSec
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3341385197031420021, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
       propertyPath: m_LocalPosition.y
       value: -23.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699962490750730118, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699962490750730118, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
+      propertyPath: lengthInSec
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3728384217911113123, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1218,6 +1234,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6839099329950528733, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6839099329950528733, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
+      propertyPath: lengthInSec
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6908916792732923091, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1229,6 +1253,14 @@ PrefabInstance:
     - target: {fileID: 7609400096027530134, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
       propertyPath: m_LocalPosition.y
       value: -23.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780821380884603477, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780821380884603477, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
+      propertyPath: lengthInSec
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7925703768703716668, guid: a9fed98f052c46244b8557e410c08d47, type: 3}
       propertyPath: m_LocalPosition.y
