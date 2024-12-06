@@ -21,6 +21,7 @@ public class PlayerCameraFollower : MonoBehaviour
             List<float> distances = new();
             List<GameObject> activePlayerObjects = new();
             activePlayerObjects.Clear();
+            objects.Clear();
             for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
             {
                 if (PlayerDataStorage.connectedPlayerObjects[i].activeSelf) activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i]);

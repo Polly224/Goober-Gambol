@@ -57,8 +57,10 @@ public class InputManagerTest : MonoBehaviour
             }
         }
         yield return null;
-        if(SceneManager.GetActiveScene().name != "CharacterSelect")
+        yield return new WaitForSeconds(0.1f);
+        if (SceneManager.GetActiveScene().name != "CharacterSelect")
         GameObject.Find("Camera").GetComponent<PlayerCameraFollower>().playersDoneSpawing = true;
+        yield return null;
         yield break;
     }
 }
