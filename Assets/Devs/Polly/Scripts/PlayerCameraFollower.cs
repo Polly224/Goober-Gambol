@@ -81,7 +81,7 @@ public class PlayerCameraFollower : MonoBehaviour
                 }
                 middlePosition /= activePlayerObjects.Count;
                 // This line of code took a solid 10 years off my life span.
-                transform.position = middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(objects[0].transform.position, objects[1].transform.position)) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f;
+                transform.position = Vector3.Slerp(transform.position, middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(objects[0].transform.position, objects[1].transform.position)) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f, 0.1f);
             }
         }
     }
