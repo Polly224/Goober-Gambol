@@ -74,10 +74,9 @@ public class PlayerCameraFollower : MonoBehaviour
             else if(activePlayerObjects.Count > 1)
             {
                 Vector3 middlePosition = new();
-                for (int i = 0; i < objects.Count; i++)
+                for (int i = 0; i < activePlayerObjects.Count; i++)
                 {
-                    
-                    middlePosition += objects[i].transform.position;
+                    middlePosition += activePlayerObjects[i].transform.position;
                 }
                 middlePosition /= activePlayerObjects.Count;
                 // This line of code took a solid 10 years off my life span.
