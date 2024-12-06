@@ -27,35 +27,41 @@ public class PlayerCameraFollower : MonoBehaviour
                 if (PlayerDataStorage.connectedPlayerObjects[i].activeSelf) activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i]);
                 else if (PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().spawnedRagdoll != null) activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject);
             }
+            Vector3 middlePosition = new();
+            for (int i = 0; i < activePlayerObjects.Count; i++)
+            {
+                middlePosition += activePlayerObjects[i].transform.position;
+            }
+            middlePosition /= activePlayerObjects.Count;
             // Algorithm that gets the 2 furthest objects from the camera from all player objects present.
-            for(int i = 0; i < activePlayerObjects.Count; i++)
+            for (int i = 0; i < activePlayerObjects.Count; i++)
             {
                 GameObject curObj = activePlayerObjects[i];
                 if(curObj.GetComponent<InputHandler>().isRagdolling) curObj = curObj.GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject;
                 if(distances.Count > 0)
                 {
-                    if (Vector3.Distance(curObj.transform.position, transform.position) > distances[0])
+                    if (Vector3.Distance(curObj.transform.position, middlePosition) > distances[0])
                     {
-                        distances.Insert(0, Vector3.Distance(curObj.transform.position, transform.position));
+                        distances.Insert(0, Vector3.Distance(curObj.transform.position, middlePosition));
                         objects.Insert(0, curObj);
                     } 
                     else if(distances.Count > 1)
                     {
-                        if(Vector3.Distance(curObj.transform.position, transform.position) > distances[1])
+                        if(Vector3.Distance(curObj.transform.position, middlePosition) > distances[1])
                         {
-                            distances.Insert(1, Vector3.Distance(curObj.transform.position, transform.position));
+                            distances.Insert(1, Vector3.Distance(curObj.transform.position, middlePosition));
                             objects.Insert(1, curObj);
                     }
                     }
                     else
                     {
-                        distances.Add(Vector3.Distance(curObj.transform.position, transform.position));
+                        distances.Add(Vector3.Distance(curObj.transform.position, middlePosition));
                         objects.Add(curObj);
                     }
                 }
                 else
                 {
-                    distances.Add(Vector3.Distance(curObj.transform.position, transform.position));
+                    distances.Add(Vector3.Distance(curObj.transform.position, middlePosition));
                     objects.Add(curObj);
                 }
             }
@@ -74,12 +80,6 @@ public class PlayerCameraFollower : MonoBehaviour
             // 2 objects' z coordinates. I love coding. Coding is awesome. This definitely didn't take me an hour to write.
             else if(activePlayerObjects.Count > 1)
             {
-                Vector3 middlePosition = new();
-                for (int i = 0; i < activePlayerObjects.Count; i++)
-                {
-                    middlePosition += activePlayerObjects[i].transform.position;
-                }
-                middlePosition /= activePlayerObjects.Count;
                 // This line of code took a solid 10 years off my life span.
                 transform.position = Vector3.Slerp(transform.position, middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(objects[0].transform.position, objects[1].transform.position)) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f, 0.1f);
             }
