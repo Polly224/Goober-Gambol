@@ -20,15 +20,16 @@ public class PlayerCameraFollower : MonoBehaviour
             List<GameObject> objects = new();
             List<float> distances = new();
             List<GameObject> activePlayerObjects = new();
+            activePlayerObjects.Clear();
             for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
             {
-                if(PlayerDataStorage.connectedPlayerObjects[i].activeSelf) activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i]);
+                if (PlayerDataStorage.connectedPlayerObjects[i].activeSelf) activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i]);
+                else if (PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().spawnedRagdoll != null) activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject);
             }
             // Algorithm that gets the 2 furthest objects from the camera from all player objects present.
             for(int i = 0; i < activePlayerObjects.Count; i++)
             {
-                GameObject curObj = PlayerDataStorage.connectedPlayerObjects[i];
-                if (curObj.GetComponent<InputHandler>().isRagdolling) curObj = curObj.GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject;
+                GameObject curObj = activePlayerObjects[i];
                 if(distances.Count > 0)
                 {
                     if (Vector3.Distance(curObj.transform.position, transform.position) > distances[0])
@@ -60,7 +61,7 @@ public class PlayerCameraFollower : MonoBehaviour
             // If there's only 1 player, the camera just focuses on them.
             if (activePlayerObjects.Count == 1)
             {
-                transform.position = objects[0].transform.position - transform.forward * zoomDistance * 10;
+                transform.position = activePlayerObjects[0].transform.position - transform.forward * zoomDistance * 10;
             }
             // If there's MORE than 1 player, however...
             // It gets the total distance between the 2 furthest player objects, then moves the camera back based on that distance and the difference between those
@@ -68,9 +69,9 @@ public class PlayerCameraFollower : MonoBehaviour
             else if(activePlayerObjects.Count > 1)
             {
                 Vector3 middlePosition = new();
-                for (int i = 0; i < activePlayerObjects.Count; i++)
-                {
-                    middlePosition += activePlayerObjects[i].transform.position;
+                for (int i = 0; i < objects.Count; i++)
+                { 
+                    middlePosition += objects[i].transform.position;
                 }
                 middlePosition /= activePlayerObjects.Count;
                 // This line of code took a solid 10 years off my life span.
