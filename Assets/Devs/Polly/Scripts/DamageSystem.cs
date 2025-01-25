@@ -13,6 +13,7 @@ public class DamageSystem : MonoBehaviour
     public float dizzyTimerSpeed = 1;
     public List<float> bleedStacks = new();
     private ParticleSystem bleedEffect;
+    [SerializeField] GameObject hitEffect;
 
     private void Start()
     {
@@ -80,6 +81,9 @@ public class DamageSystem : MonoBehaviour
         GetComponent<InputHandler>().Ragdoll(true, knockbackDirection * totalKnockback / 5);
         /*GetComponent<Rigidbody>().AddForce(knockbackDirection * totalKnockback);
         GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(Random.Range(damageTaken, damageTaken * 2), 0, Random.Range(damageTaken, damageTaken * 2)), ForceMode.Impulse);*/
+        GameObject pS = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        pS.transform.LookAt(hitboxPosition - transform.position);
+        pS.GetComponent<ParticleSystem>().Play();
         if (damageTaken > 30 && !isDizzy) EnterDizzy();
         GetComponent<AttackScript>().StopAllCoroutines();
         GetComponent<AttackScript>().attackOnCooldown = false;

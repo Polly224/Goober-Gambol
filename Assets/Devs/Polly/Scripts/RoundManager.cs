@@ -14,7 +14,7 @@ public class RoundManager : MonoBehaviour
     public int currentRound = 0;
     private List<GameObject> playerSpawnpoints;
 
-    private int maxRounds = 1;
+    private int maxRounds = 3;
     public static RoundManager instance;
 
     private void Awake()

@@ -93,7 +93,7 @@ public class WeaponSystem : MonoBehaviour
         name = "Punch",
         damage = 5,
         startup = 0.3f,
-        recovery = 0.2f,
+        recovery = 1f,
         knockback = 2,
         hitboxes = new()
         {
