@@ -33,25 +33,34 @@ public class PlayerCameraFollower : MonoBehaviour
                 middlePosition += activePlayerObjects[i].transform.position;
             }
             middlePosition /= activePlayerObjects.Count;
+
             // Algorithm that gets the 2 furthest objects from the camera from all player objects present.
-            for (int i = 0; i < activePlayerObjects.Count; i++)
+            if (activePlayerObjects.Count > 2)
             {
-                GameObject curObj = activePlayerObjects[i];
-                if(curObj.GetComponent<InputHandler>().isRagdolling) curObj = curObj.GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject;
-                if(distances.Count > 0)
+                for (int i = 0; i < activePlayerObjects.Count; i++)
                 {
-                    if (Vector3.Distance(curObj.transform.position, middlePosition) > distances[0])
+                    GameObject curObj = activePlayerObjects[i];
+                    if (curObj.GetComponent<InputHandler>().isRagdolling) curObj = curObj.GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject;
+                    if (distances.Count > 0)
                     {
-                        distances.Insert(0, Vector3.Distance(curObj.transform.position, middlePosition));
-                        objects.Insert(0, curObj);
-                    } 
-                    else if(distances.Count > 1)
-                    {
-                        if(Vector3.Distance(curObj.transform.position, middlePosition) > distances[1])
+                        if (Vector3.Distance(curObj.transform.position, middlePosition) > distances[0])
                         {
-                            distances.Insert(1, Vector3.Distance(curObj.transform.position, middlePosition));
-                            objects.Insert(1, curObj);
-                    }
+                            distances.Insert(0, Vector3.Distance(curObj.transform.position, middlePosition));
+                            objects.Insert(0, curObj);
+                        }
+                        else if (distances.Count > 1)
+                        {
+                            if (Vector3.Distance(curObj.transform.position, middlePosition) > distances[1])
+                            {
+                                distances.Insert(1, Vector3.Distance(curObj.transform.position, middlePosition));
+                                objects.Insert(1, curObj);
+                            }
+                        }
+                        else
+                        {
+                            distances.Add(Vector3.Distance(curObj.transform.position, middlePosition));
+                            objects.Add(curObj);
+                        }
                     }
                     else
                     {
@@ -59,13 +68,23 @@ public class PlayerCameraFollower : MonoBehaviour
                         objects.Add(curObj);
                     }
                 }
-                else
-                {
-                    distances.Add(Vector3.Distance(curObj.transform.position, middlePosition));
-                    objects.Add(curObj);
-                }
             }
-
+                
+            if(activePlayerObjects.Count == 2)
+            {
+                GameObject[] objs = GameObject.FindGameObjectsWithTag("Ragdoll");
+                for (int i = 0; i < objs.Length; i++)
+                {
+                    if (objs[i].transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer == activePlayerObjects[i])
+                    {
+                        activePlayerObjects[i] = objs[i].transform.root.GetChild(4).GetChild(0).gameObject;
+                        break;
+                    }
+                }
+                Vector3 averagePos = (activePlayerObjects[0].transform.position + activePlayerObjects[1].transform.position) / 2;
+                transform.position = Vector3.Lerp(transform.position, averagePos - transform.forward * 2 -transform.forward * (zoomDistance * Vector3.Distance(activePlayerObjects[0].transform.position, activePlayerObjects[1].transform.position)) - transform.forward * (activePlayerObjects[0].transform.position.z - activePlayerObjects[1].transform.position.z) / 3.5f, 0.1f);
+            }
+            
             // If there's only 1 player, the camera just focuses on them.
             if (activePlayerObjects.Count == 1)
             {
@@ -78,10 +97,10 @@ public class PlayerCameraFollower : MonoBehaviour
             // If there's MORE than 1 player, however...
             // It gets the total distance between the 2 furthest player objects, then moves the camera back based on that distance and the difference between those
             // 2 objects' z coordinates. I love coding. Coding is awesome. This definitely didn't take me an hour to write.
-            else if(activePlayerObjects.Count > 1)
+            if(activePlayerObjects.Count > 2)
             {
                 // This line of code took a solid 10 years off my life span.
-                transform.position = Vector3.Slerp(transform.position, middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(objects[0].transform.position, objects[1].transform.position)) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f, 0.1f);
+                transform.position = Vector3.Lerp(transform.position, middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(objects[0].transform.position, objects[1].transform.position)) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f, 0.1f);
             }
         }
     }

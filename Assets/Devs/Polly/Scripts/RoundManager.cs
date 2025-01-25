@@ -14,7 +14,7 @@ public class RoundManager : MonoBehaviour
     public int currentRound = 0;
     private List<GameObject> playerSpawnpoints;
 
-    private int maxRounds = 3;
+    private int maxRounds = 1;
     public static RoundManager instance;
 
     private void Awake()
@@ -90,6 +90,10 @@ public class RoundManager : MonoBehaviour
         spawnedWinner.transform.LookAt(GameObject.Find("Camera").transform.position);
         spawnedWinner.transform.localRotation = Quaternion.Euler(0, -90, 0);
         spawnedWinner.transform.localScale = Vector3.one;
+        if (PlayerDataStorage.playerCharacters[winningPlayer.GetComponent<PlayerInput>().playerIndex] == PlayerSelectArrow.PickedCharacter.Bunny)
+        {
+            spawnedWinner.transform.localScale = Vector3.one / 10f;
+        }
         GameObject.Find("Camera").transform.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("TitleScreen");

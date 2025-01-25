@@ -38,6 +38,14 @@ public class MainGameUI : MonoBehaviour
             };
             transform.GetChild(objectToIndex[i]).gameObject.SetActive(true);
             transform.GetChild(objectToIndex[i]).GetChild(3).gameObject.GetComponent<TMP_Text>().text = Mathf.Round(PlayerDataStorage.connectedPlayerObjects[i].GetComponent<DamageSystem>().damageTaken).ToString() + "%";
+            if(PlayerDataStorage.connectedPlayerObjects[i].GetComponent<DamageSystem>().damageTaken > 0)
+            {
+                transform.GetChild(objectToIndex[i]).GetChild(3).gameObject.GetComponent<TMP_Text>().color = Color.HSVToRGB(0, 0 + Mathf.Clamp(PlayerDataStorage.connectedPlayerObjects[i].GetComponent<DamageSystem>().damageTaken, 0, 30) / 30, 1);
+            }
+            else
+            {
+                transform.GetChild(objectToIndex[i]).GetChild(3).gameObject.GetComponent<TMP_Text>().color = Color.white;
+            }
         }
         for(int i = 0; i < objectToIndex.Count; i++)
         {

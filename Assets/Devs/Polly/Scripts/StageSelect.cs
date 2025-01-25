@@ -56,7 +56,7 @@ public class StageSelect : MonoBehaviour
 
     private IEnumerator TimeDelay()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         canContinue = true;
         yield break;
     }
