@@ -90,7 +90,7 @@ public class RoundManager : MonoBehaviour
         spawnedWinner.transform.LookAt(GameObject.Find("Camera").transform.position);
         spawnedWinner.transform.localRotation = Quaternion.Euler(0, -90, 0);
         spawnedWinner.transform.localScale = Vector3.one;
-        if (PlayerDataStorage.playerCharacters[winningPlayer.GetComponent<PlayerInput>().playerIndex] == PlayerSelectArrow.PickedCharacter.Bunny)
+        if (PlayerDataStorage.playerCharacters[winningPlayer.GetComponent<PlayerInput>().playerIndex] == PlayerSelectArrow.PickedCharacter.Bunny || PlayerDataStorage.playerCharacters[winningPlayer.GetComponent<PlayerInput>().playerIndex] == PlayerSelectArrow.PickedCharacter.Robot)
         {
             spawnedWinner.transform.localScale = Vector3.one / 10f;
         }
