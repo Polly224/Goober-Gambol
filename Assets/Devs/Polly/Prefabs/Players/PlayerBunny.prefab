@@ -482,6 +482,7 @@ MonoBehaviour:
   dizzyTimer: 0
   dizzyTimerSpeed: 5
   bleedStacks: []
+  hitEffect: {fileID: 7427235678155728528, guid: 3126579c15ad12f4da1ad6ef390cdc03, type: 3}
 --- !u!54 &4139782108211817537
 Rigidbody:
   m_ObjectHideFlags: 0

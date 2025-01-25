@@ -91,10 +91,10 @@ public class WeaponSystem : MonoBehaviour
     public static Weapon fists = new()
     {
         name = "Punch",
-        damage = 5,
+        damage = 2,
         startup = 0.3f,
-        recovery = 1f,
-        knockback = 2,
+        recovery = 0.2f,
+        knockback = 1,
         hitboxes = new()
         {
             new Hitbox()

@@ -157,10 +157,10 @@ Transform:
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8229424260982523229}
   - {fileID: 6743747138447838926}
   - {fileID: 5472492951122402329}
   - {fileID: 1516968359592473866}
+  - {fileID: 8229424260982523229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8129324851063242216
@@ -482,6 +482,7 @@ MonoBehaviour:
   dizzyTimer: 0
   dizzyTimerSpeed: 5
   bleedStacks: []
+  hitEffect: {fileID: 7427235678155728528, guid: 3126579c15ad12f4da1ad6ef390cdc03, type: 3}
 --- !u!54 &4139782108211817537
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -82,7 +82,7 @@ public class DamageSystem : MonoBehaviour
         /*GetComponent<Rigidbody>().AddForce(knockbackDirection * totalKnockback);
         GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(Random.Range(damageTaken, damageTaken * 2), 0, Random.Range(damageTaken, damageTaken * 2)), ForceMode.Impulse);*/
         GameObject pS = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        pS.transform.LookAt(hitboxPosition - transform.position);
+        pS.transform.LookAt(pS.transform.position + knockbackDirection);
         pS.GetComponent<ParticleSystem>().Play();
         if (damageTaken > 30 && !isDizzy) EnterDizzy();
         GetComponent<AttackScript>().StopAllCoroutines();
