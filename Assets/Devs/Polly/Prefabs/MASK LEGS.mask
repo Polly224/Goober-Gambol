@@ -7,5 +7,101 @@ AvatarMask:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MASK LEGS
-  m_Mask: 01000000000000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
-  m_Elements: []
+  m_Mask: 00000000000000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Arm_Left
+    m_Weight: 0
+  - m_Path: Arm_Right
+    m_Weight: 0
+  - m_Path: Ear_Left
+    m_Weight: 0
+  - m_Path: Ear_Right
+    m_Weight: 0
+  - m_Path: metarig
+    m_Weight: 0
+  - m_Path: metarig/shin.L.001
+    m_Weight: 1
+  - m_Path: metarig/shin.L.001/shin.L
+    m_Weight: 1
+  - m_Path: metarig/shin.L.001/shin.L/foot.L
+    m_Weight: 1
+  - m_Path: metarig/shin.L.001/shin.L/foot.L/foot.L_end
+    m_Weight: 1
+  - m_Path: metarig/shin.L.001/shin.L/foot.L/Foot_Left
+    m_Weight: 1
+  - m_Path: metarig/shin.L.001/shin.L/Leg_Left
+    m_Weight: 1
+  - m_Path: metarig/shin.R.001
+    m_Weight: 1
+  - m_Path: metarig/shin.R.001/shin.R
+    m_Weight: 1
+  - m_Path: metarig/shin.R.001/shin.R/foot.R
+    m_Weight: 1
+  - m_Path: metarig/shin.R.001/shin.R/foot.R/foot.R_end
+    m_Weight: 1
+  - m_Path: metarig/shin.R.001/shin.R/foot.R/Foot_Right
+    m_Weight: 1
+  - m_Path: metarig/shin.R.001/shin.R/Left_Right
+    m_Weight: 1
+  - m_Path: metarig/spine.001
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/spine.004
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/spine.004/Head
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/spine.004/spine.005
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/spine.004/spine.005/spine.008/spine.008_end
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/spine.004/spine.009
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/spine.004/spine.009/spine.010/spine.010_end
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.L
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.L/forearm.L
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/hand.L_end
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.L/forearm.L/forearm.L.001/hand.L/Hand_Right
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.R
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.R/forearm.R
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/hand.R_end
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.003/upper_arm.R/forearm.R/forearm.R.001/hand.R/Hand_Left
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.012
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.012/spine.011
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.012/spine.011/spine.002
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.012/spine.011/spine.002/spine.002_end
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.012/spine.011/spine.002/Tail_end
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.012/spine.011/Tail_Middle
+    m_Weight: 0
+  - m_Path: metarig/spine.001/spine.012/Tail_Begin
+    m_Weight: 0
+  - m_Path: Torso
+    m_Weight: 0
