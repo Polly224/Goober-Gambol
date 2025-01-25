@@ -81,7 +81,15 @@ public class AttackScript : MonoBehaviour
         {
             if(inventory.weaponInventory.Count >= inventory.currentWeaponIndex + 1)
             {
-                StartCoroutine(StartAttack(inventory.weaponInventory[inventory.currentWeaponIndex]));
+                if (inventory.weaponInventory[inventory.currentWeaponIndex].throwable)
+                {
+                    // If the weapon the player's holding is throwable, throw the weapon instead.
+                    StartCoroutine(ThrowAttack(inventory.weaponInventory[inventory.currentWeaponIndex]));
+                }
+                else
+                {
+                    StartCoroutine(StartAttack(inventory.weaponInventory[inventory.currentWeaponIndex]));
+                }
             }
             else
             {

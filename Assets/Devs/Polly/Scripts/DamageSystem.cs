@@ -80,7 +80,7 @@ public class DamageSystem : MonoBehaviour
         GetComponent<InputHandler>().Ragdoll(true, knockbackDirection * totalKnockback / 5);
         /*GetComponent<Rigidbody>().AddForce(knockbackDirection * totalKnockback);
         GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(Random.Range(damageTaken, damageTaken * 2), 0, Random.Range(damageTaken, damageTaken * 2)), ForceMode.Impulse);*/
-        if (damageTaken > 50 && !isDizzy) EnterDizzy();
+        if (damageTaken > 30 && !isDizzy) EnterDizzy();
         GetComponent<AttackScript>().StopAllCoroutines();
         GetComponent<AttackScript>().attackOnCooldown = false;
     }

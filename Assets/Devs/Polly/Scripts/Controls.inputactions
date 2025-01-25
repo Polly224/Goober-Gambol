@@ -60,15 +60,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "AltAttack",
-                    "type": "Button",
-                    "id": "37752205-9acd-4211-88a2-a2b3cd3d90e4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Ragdoll",
                     "type": "Button",
                     "id": "ea6c4ae2-f2cb-4a70-9b35-87a4e0fbb81d",
@@ -244,17 +235,6 @@
                 },
                 {
                     "name": "",
-                    "id": "ea52af27-e0b0-4e25-8631-551524df1520",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AltAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b7b8c836-38c0-420e-b685-0f1e5508b247",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -272,6 +252,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "efa48fa8-2bd5-4282-99c9-c43999e04364",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -31,16 +31,17 @@ public class DeathZone : MonoBehaviour
         }
         else if (other.CompareTag("Ragdoll"))
         {
-            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<PlayerPlacement>().Died();
-            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<PlayerInventory>().RemoveCurrentWeapon();
-            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().isDizzy = false;
-            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().dizzyTimer = 0;
-            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().bleedStacks.Clear();
-            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().damageTaken = 0;
-            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().bleedAmount = 0;
-            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().hasHitCollision = true;
-            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.SetActive(false);
-            other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<InputHandler>().StopRagdolling();
+            SpawnedRagdoll sR = other.transform.root.gameObject.GetComponent<SpawnedRagdoll>();
+            sR.originPlayer.GetComponent<PlayerPlacement>().Died();
+            sR.originPlayer.GetComponent<PlayerInventory>().RemoveCurrentWeapon();
+            sR.originPlayer.GetComponent<DamageSystem>().isDizzy = false;
+            sR.originPlayer.GetComponent<DamageSystem>().dizzyTimer = 0;
+            sR.originPlayer.GetComponent<DamageSystem>().bleedStacks.Clear();
+            sR.originPlayer.GetComponent<DamageSystem>().damageTaken = 0;
+            sR.originPlayer.GetComponent<DamageSystem>().bleedAmount = 0;
+            sR.hasHitCollision = true;
+            sR.originPlayer.SetActive(false);
+            sR.originPlayer.GetComponent<InputHandler>().StopRagdolling();
             Destroy(other.transform.root.gameObject, 0.1f);
         }
     }
