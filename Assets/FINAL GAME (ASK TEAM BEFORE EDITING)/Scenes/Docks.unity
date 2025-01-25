@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7703947897208696486, guid: 4464f6b16033e72479562820cb129577, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -119.70005
+      value: -151.4
       objectReference: {fileID: 0}
     - target: {fileID: 7703947897208696486, guid: 4464f6b16033e72479562820cb129577, type: 3}
       propertyPath: m_LocalPosition.y
@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971752394771280612, guid: 8222cd77de67f934aa6583e39bddfbc6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.599998
+      value: 139
       objectReference: {fileID: 0}
     - target: {fileID: 8971752394771280612, guid: 8222cd77de67f934aa6583e39bddfbc6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -584,7 +584,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 743136114238701038, guid: bc4b5e54f1b0cfa4c8075530de083785, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.299934
+      value: 135.7
       objectReference: {fileID: 0}
     - target: {fileID: 743136114238701038, guid: bc4b5e54f1b0cfa4c8075530de083785, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1365,7 +1365,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2091889016128863513, guid: a6850b4415e1a13439734436a7b776fc, type: 3}
       propertyPath: m_Name
-      value: DeathZone (2)
+      value: ff
       objectReference: {fileID: 0}
     - target: {fileID: 2427364219113786783, guid: a6850b4415e1a13439734436a7b776fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1377,7 +1377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2427364219113786783, guid: a6850b4415e1a13439734436a7b776fc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -100.4
+      value: -168.2
       objectReference: {fileID: 0}
     - target: {fileID: 2427364219113786783, guid: a6850b4415e1a13439734436a7b776fc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1596,7 +1596,7 @@ Transform:
   m_GameObject: {fileID: 2097737295}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
-  m_LocalPosition: {x: -28, y: -23.401144, z: 44.752968}
+  m_LocalPosition: {x: -28, y: -23.401144, z: 153}
   m_LocalScale: {x: 412.6492, y: 253.96924, z: 38.633797}
   m_ConstrainProportionsScale: 0
   m_Children: []
