@@ -207,7 +207,7 @@ MonoBehaviour:
     damage: 4
     startup: 0.1
     recovery: 0.5
-    knockback: 3
+    knockback: 2
     hitboxes:
     - positionOffset: {x: 0, y: 0, z: 1.5}
       duration: 0.3
@@ -220,6 +220,6 @@ MonoBehaviour:
     throwable: 0
     weaponToThrow: {fileID: 0}
     hitSound: {fileID: 8300000, guid: 4bc0b4ed51d3be04d8c458a8630e62fc, type: 3}
-    bleedAmount: 10
+    bleedAmount: 12
   lifeTime: 100
   rotationSpeed: 1

@@ -100,10 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupWeaponData:
     name: pike
-    damage: 7
+    damage: 6
     startup: 0.4
     recovery: 1.5
-    knockback: 5
+    knockback: 4
     hitboxes:
     - positionOffset: {x: 0, y: 0, z: 1}
       duration: 0.3

@@ -204,10 +204,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupWeaponData:
     name: ninjastar
-    damage: 3
+    damage: 4
     startup: 0.1
     recovery: 0.5
-    knockback: 2
+    knockback: 1
     hitboxes:
     - positionOffset: {x: 0, y: 0, z: 1}
       duration: 0.3

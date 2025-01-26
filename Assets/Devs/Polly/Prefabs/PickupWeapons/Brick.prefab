@@ -121,10 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupWeaponData:
     name: brick
-    damage: 6
+    damage: 8
     startup: 0.1
     recovery: 0.5
-    knockback: 3
+    knockback: 2
     hitboxes:
     - positionOffset: {x: -1, y: 0, z: 1}
       duration: 0.3
@@ -133,7 +133,7 @@ MonoBehaviour:
       hitboxShape: 0
     attackType: 2
     weaponGimmick: 0
-    swingable: 1
+    swingable: 0
     throwable: 1
     weaponToThrow: {fileID: 1762811529330813548, guid: d37ff2305acecc4478aa57d56c7e8952, type: 3}
     hitSound: {fileID: 8300000, guid: 4d84c76cf64010e48a377b7696e79018, type: 3}
