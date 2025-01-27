@@ -141,6 +141,7 @@ MonoBehaviour:
     hitSound: {fileID: 0}
     bleedAmount: 0
   hitPlayers: []
+  pickupForThrowable: {fileID: 7737149658405604811, guid: ecd6d54ac6111cd48b6e1b007f21f498, type: 3}
 --- !u!54 &6152878114609545341
 Rigidbody:
   m_ObjectHideFlags: 0

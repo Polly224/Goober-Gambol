@@ -221,5 +221,5 @@ MonoBehaviour:
     weaponToThrow: {fileID: 0}
     hitSound: {fileID: 8300000, guid: 4bc0b4ed51d3be04d8c458a8630e62fc, type: 3}
     bleedAmount: 12
-  lifeTime: 100
+  lifeTime: 300
   rotationSpeed: 1

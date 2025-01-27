@@ -8,6 +8,7 @@ public class Hitbox : MonoBehaviour
     public WeaponSystem.Hitbox hitboxData;
     public WeaponSystem.Weapon attackData;
     public List<GameObject> hitPlayers = new();
+    [SerializeField] GameObject pickupForThrowable;
 
     private void Start()
     {
@@ -36,6 +37,14 @@ public class Hitbox : MonoBehaviour
                 knockbackDir *= 3;
                 if (other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().isDizzy) knockbackDir *= 3;
                 other.GetComponent<Rigidbody>().AddForce(attackData.knockback * other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().damageTaken * knockbackDir, ForceMode.Impulse);
+            }
+        }
+        if (attackData.throwable)
+        {
+            if (other.gameObject.CompareTag("Collision"))
+            {
+                Instantiate(pickupForThrowable, transform.position + Vector3.up, Quaternion.identity);
+                Destroy(gameObject);
             }
         }
     }

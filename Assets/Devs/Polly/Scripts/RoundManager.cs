@@ -15,7 +15,7 @@ public class RoundManager : MonoBehaviour
     private List<GameObject> playerSpawnpoints;
     [SerializeField] private ParticleSystem confetti;
 
-    private int maxRounds = 1;
+    private int maxRounds = 3;
     public static RoundManager instance;
 
     private void Awake()

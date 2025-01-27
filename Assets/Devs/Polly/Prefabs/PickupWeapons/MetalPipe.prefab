@@ -200,7 +200,7 @@ MonoBehaviour:
     weaponToThrow: {fileID: 0}
     hitSound: {fileID: 8300000, guid: 173abec40c08eb6449c45d0cbd4ed39c, type: 3}
     bleedAmount: 0
-  lifeTime: 10
+  lifeTime: 300
   rotationSpeed: 1
 --- !u!65 &8603140663094253575
 BoxCollider:

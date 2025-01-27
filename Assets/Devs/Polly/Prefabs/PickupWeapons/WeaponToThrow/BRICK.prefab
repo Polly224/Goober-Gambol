@@ -138,8 +138,10 @@ MonoBehaviour:
     swingable: 0
     throwable: 0
     weaponToThrow: {fileID: 0}
+    hitSound: {fileID: 0}
     bleedAmount: 0
   hitPlayers: []
+  pickupForThrowable: {fileID: 7737149658405604811, guid: 591c08ff46d3d574fa60c1d9ef1685bc, type: 3}
 --- !u!54 &6152878114609545341
 Rigidbody:
   m_ObjectHideFlags: 0
