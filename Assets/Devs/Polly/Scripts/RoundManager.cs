@@ -46,13 +46,13 @@ public class RoundManager : MonoBehaviour
             PlayerDataStorage.connectedPlayerObjects[i].SetActive(true);
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().isRagdolling = false;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().StopRagdolling(true);
+            PlayerDataStorage.connectedPlayerObjects[i].transform.GetChild(0).gameObject.SetActive(true);
             yield return null;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerPlacement>().placingValue = 0;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInventory>().RemoveAllWeapons();
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInput>().ActivateInput();
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInput>().SwitchCurrentControlScheme(PlayerDataStorage.connectedControllers[i]);
             PlayerDataStorage.connectedPlayerObjects[i].transform.position = playerSpawnpoints[i].transform.position;
-            PlayerDataStorage.connectedPlayerObjects[i].transform.GetChild(0).gameObject.SetActive(true);
         }
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Pickup")) Destroy(g);
         yield return null;
@@ -93,14 +93,14 @@ public class RoundManager : MonoBehaviour
         spawnedWinner.transform.LookAt(GameObject.Find("Camera").transform.position);
         spawnedWinner.transform.localRotation = Quaternion.Euler(0, -90, 0);
         spawnedWinner.transform.localScale = Vector3.one;
-        if (PlayerDataStorage.playerCharacters[winningPlayer.GetComponent<PlayerInput>().playerIndex] == PlayerSelectArrow.PickedCharacter.Bunny || PlayerDataStorage.playerCharacters[winningPlayer.GetComponent<PlayerInput>().playerIndex] == PlayerSelectArrow.PickedCharacter.Robot)
-        {
-            spawnedWinner.transform.localScale = Vector3.one / 10f;
-        }
         GameObject.Find("Camera").transform.GetChild(0).gameObject.SetActive(true);
         confetti.gameObject.transform.position = spawnedWinner.transform.position + transform.forward * 4 - transform.up;
         confetti.gameObject.transform.SetParent(GameObject.Find("Camera").transform, true);
         confetti.Play();
+        if (PlayerDataStorage.playerCharacters[winningPlayer.GetComponent<PlayerInput>().playerIndex] == PlayerSelectArrow.PickedCharacter.Bunny || PlayerDataStorage.playerCharacters[winningPlayer.GetComponent<PlayerInput>().playerIndex] == PlayerSelectArrow.PickedCharacter.Robot)
+        {
+            spawnedWinner.transform.localScale = Vector3.one / 10f;
+        }
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("TitleScreen");
         yield return null;

@@ -73,6 +73,11 @@ public class PlayerCameraFollower : MonoBehaviour
             if(activePlayerObjects.Count == 2)
             {
                 GameObject[] objs = GameObject.FindGameObjectsWithTag("Ragdoll");
+                foreach(GameObject obj in objs)
+                {
+                    Debug.Log(obj.name);
+                }
+                if(objs.Length > 0)
                 for (int i = 0; i < objs.Length; i++)
                 {
                     if (objs[i].transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer == activePlayerObjects[i])
