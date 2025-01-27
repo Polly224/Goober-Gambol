@@ -13,8 +13,9 @@ public class RoundManager : MonoBehaviour
     public int playersDeadThisRound;
     public int currentRound = 0;
     private List<GameObject> playerSpawnpoints;
+    [SerializeField] private ParticleSystem confetti;
 
-    private int maxRounds = 3;
+    private int maxRounds = 1;
     public static RoundManager instance;
 
     private void Awake()
@@ -95,6 +96,9 @@ public class RoundManager : MonoBehaviour
             spawnedWinner.transform.localScale = Vector3.one / 10f;
         }
         GameObject.Find("Camera").transform.GetChild(0).gameObject.SetActive(true);
+        confetti.gameObject.transform.position = spawnedWinner.transform.position + transform.forward * 4 - transform.up;
+        confetti.gameObject.transform.SetParent(GameObject.Find("Camera").transform, true);
+        confetti.Play();
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("TitleScreen");
         yield return null;
