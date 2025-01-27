@@ -114,4 +114,12 @@ public class PlayerInventory : MonoBehaviour
         weaponInventory.Clear();
         SwitchWeaponsToIndex(0);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Pickup") && weaponInventory.Count < 2)
+        {
+            PickUpWeapon();
+        }
+    }
 }

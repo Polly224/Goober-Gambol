@@ -39,4 +39,13 @@ public class Pickup : MonoBehaviour
         Destroy(gameObject, 0.1f);
         return pickupWeaponData;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (other.gameObject.GetComponent<PlayerInventory>().weaponInventory.Count < 2)
+            other.gameObject.GetComponent<PlayerInventory>().PickUpWeapon();
+        }
+    }
 }
