@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 8079413899177528733}
   m_Layer: 3
   m_Name: G-Field_Rigged_Ragdoll
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -2171,7 +2171,7 @@ GameObject:
   - component: {fileID: -1687359489782099194}
   m_Layer: 0
   m_Name: Dawg_Rigged_Ragdoll
-  m_TagString: Untagged
+  m_TagString: Ragdoll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

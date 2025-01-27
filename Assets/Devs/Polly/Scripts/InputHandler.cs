@@ -191,9 +191,20 @@ public class InputHandler : MonoBehaviour
         StartCoroutine(DelayedRagdoll());
     }
 
-    public void StopRagdolling()
+    public void StopRagdolling(bool fromRoundChange = false)
     {
+        if(!fromRoundChange)
         if (!GetComponent<DamageSystem>().isDizzy && spawnedRagdoll.GetComponent<SpawnedRagdoll>().hasHitCollision)
+        {
+            isRagdolling = false;
+            transform.position = spawnedRagdoll.transform.GetChild(4).GetChild(0).position;
+            playModel.SetActive(true);
+            dizzyParticle.transform.SetParent(transform, false);
+            dizzyParticle.transform.position += transform.up * 0.8f;
+            bloodParticle.transform.SetParent(transform, false);
+            Destroy(spawnedRagdoll);
+        }
+        if (fromRoundChange && spawnedRagdoll != null)
         {
             isRagdolling = false;
             transform.position = spawnedRagdoll.transform.GetChild(4).GetChild(0).position;

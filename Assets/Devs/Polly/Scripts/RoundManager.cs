@@ -43,14 +43,16 @@ public class RoundManager : MonoBehaviour
         PickupSpawningSystem.instance.StartCoroutine(PickupSpawningSystem.instance.StartSpawnRoutine());
         for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
         {
-            PlayerDataStorage.connectedPlayerObjects[i].transform.position = playerSpawnpoints[i].transform.position;
-            PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().isRagdolling = false;
-            PlayerDataStorage.connectedPlayerObjects[i].transform.GetChild(0).gameObject.SetActive(true);
             PlayerDataStorage.connectedPlayerObjects[i].SetActive(true);
+            PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().isRagdolling = false;
+            PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().StopRagdolling(true);
+            yield return null;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerPlacement>().placingValue = 0;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInventory>().RemoveAllWeapons();
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInput>().ActivateInput();
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInput>().SwitchCurrentControlScheme(PlayerDataStorage.connectedControllers[i]);
+            PlayerDataStorage.connectedPlayerObjects[i].transform.position = playerSpawnpoints[i].transform.position;
+            PlayerDataStorage.connectedPlayerObjects[i].transform.GetChild(0).gameObject.SetActive(true);
         }
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Pickup")) Destroy(g);
         yield return null;
