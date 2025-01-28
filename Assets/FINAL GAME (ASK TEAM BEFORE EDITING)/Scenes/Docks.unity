@@ -1934,7 +1934,15 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Collision
       objectReference: {fileID: 0}
+    - target: {fileID: 3346298831397001309, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
+      propertyPath: m_TagString
+      value: Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 3798942264889780052, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
+      propertyPath: m_TagString
+      value: Collision
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876171177914396631, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
       propertyPath: m_TagString
       value: Collision
       objectReference: {fileID: 0}

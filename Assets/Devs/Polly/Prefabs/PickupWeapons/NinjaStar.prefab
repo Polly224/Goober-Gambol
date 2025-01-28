@@ -204,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupWeaponData:
     name: ninjastar
-    damage: 4
+    damage: 2
     startup: 0.1
     recovery: 0.5
     knockback: 1
@@ -220,6 +220,6 @@ MonoBehaviour:
     throwable: 1
     weaponToThrow: {fileID: 1762811529330813548, guid: 4a8883ca1dca1004a84051e4683f606f, type: 3}
     hitSound: {fileID: 8300000, guid: ab53b7054bf8986409619cfb77174c54, type: 3}
-    bleedAmount: 30
+    bleedAmount: 70
   lifeTime: 300
   rotationSpeed: 1

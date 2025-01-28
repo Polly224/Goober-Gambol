@@ -269,7 +269,7 @@ MonoBehaviour:
     damage: 1
     startup: 0.8
     recovery: 2
-    knockback: 8
+    knockback: 9
     hitboxes:
     - positionOffset: {x: 0, y: 0, z: 1}
       duration: 0.1

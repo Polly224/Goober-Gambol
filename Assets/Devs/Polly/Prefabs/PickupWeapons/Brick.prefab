@@ -121,10 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupWeaponData:
     name: brick
-    damage: 8
+    damage: 10
     startup: 0.1
     recovery: 0.5
-    knockback: 2
+    knockback: 3
     hitboxes:
     - positionOffset: {x: -1, y: 0, z: 1}
       duration: 0.3

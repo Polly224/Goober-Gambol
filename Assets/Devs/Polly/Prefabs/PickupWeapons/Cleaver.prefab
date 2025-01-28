@@ -204,10 +204,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupWeaponData:
     name: cleaver
-    damage: 4
+    damage: 5
     startup: 0.1
-    recovery: 0.5
-    knockback: 2
+    recovery: 1
+    knockback: 0.2
     hitboxes:
     - positionOffset: {x: 0, y: 0, z: 1.5}
       duration: 0.3
