@@ -53,7 +53,6 @@ public class PlayerCameraFollower : MonoBehaviour
                 for (int i = 0; i < activePlayerObjects.Count; i++)
                 {
                     GameObject curObj = activePlayerObjects[i];
-                    if (curObj.GetComponent<InputHandler>().isRagdolling) curObj = curObj.GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject;
                     if (distances.Count > 0)
                     {
                         if (Vector3.Distance(curObj.transform.position, middlePosition) > distances[0])
