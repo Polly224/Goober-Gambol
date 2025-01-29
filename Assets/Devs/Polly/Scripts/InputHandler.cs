@@ -68,15 +68,6 @@ public class InputHandler : MonoBehaviour
             };
     }
 
-    private void OnEnable()
-    {
-        playerInput.ActivateInput();
-    }
-    private void OnDisable()
-    {
-        playerInput.DeactivateInput();
-    }
-
     private void OnDestroy() => PlayerDataStorage.connectedPlayerObjects.Remove(gameObject);
     private void FixedUpdate()
     {
