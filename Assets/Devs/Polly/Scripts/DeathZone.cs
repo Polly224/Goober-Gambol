@@ -12,6 +12,7 @@ public class DeathZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerPlacement>().Died();
+            other.gameObject.GetComponent<DamageSystem>().damageTaken = 0;
             other.gameObject.GetComponent<PlayerInventory>().RemoveCurrentWeapon();
             other.gameObject.SetActive(false);
         }
