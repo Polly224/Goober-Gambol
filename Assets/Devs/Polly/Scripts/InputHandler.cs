@@ -270,7 +270,7 @@ public class InputHandler : MonoBehaviour
         foreach(Transform t in transform.GetChild(0))
         {
             if (t.gameObject.GetComponent<MeshRenderer>() != null) mats.Add(t.gameObject.GetComponent<MeshRenderer>().material);
-            if (t.gameObject.GetComponent<SkinnedMeshRenderer>() != null) mats.Add(t.gameObject.GetComponent<SkinnedMeshRenderer>().material);
+            if (t.gameObject.GetComponent<SkinnedMeshRenderer>() != null) mats.Add(t.gameObject.GetComponent<SkinnedMeshRenderer>().materials[0]);
         }
         while (isInvincible)
         {
