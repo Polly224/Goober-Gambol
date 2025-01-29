@@ -276,6 +276,7 @@ MonoBehaviour:
   zoomDistance: 1
   zoomSpeed: 0
   playersDoneSpawing: 0
+  intendedPos: {x: 0, y: 0, z: 0}
 --- !u!1 &63073188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1018,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224437636726402927, guid: 30d219098adedf64cb58edf50105e365, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -64.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 224437636726402927, guid: 30d219098adedf64cb58edf50105e365, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.562
+      objectReference: {fileID: 0}
     - target: {fileID: 1116365731848665617, guid: 30d219098adedf64cb58edf50105e365, type: 3}
       propertyPath: playOnAwake
       value: 1
@@ -1085,9 +1094,25 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7299039755893646997, guid: 30d219098adedf64cb58edf50105e365, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -63.644
+      objectReference: {fileID: 0}
+    - target: {fileID: 7299039755893646997, guid: 30d219098adedf64cb58edf50105e365, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.358
+      objectReference: {fileID: 0}
     - target: {fileID: 7892767157331801222, guid: 30d219098adedf64cb58edf50105e365, type: 3}
       propertyPath: playOnAwake
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383592633402896063, guid: 30d219098adedf64cb58edf50105e365, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7832457
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383592633402896063, guid: 30d219098adedf64cb58edf50105e365, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.95
       objectReference: {fileID: 0}
     - target: {fileID: 8562473807853738733, guid: 30d219098adedf64cb58edf50105e365, type: 3}
       propertyPath: m_Convex
@@ -1096,6 +1121,18 @@ PrefabInstance:
     - target: {fileID: 8656482733900145932, guid: 30d219098adedf64cb58edf50105e365, type: 3}
       propertyPath: playOnAwake
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8881285087776128924, guid: 30d219098adedf64cb58edf50105e365, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -64.076
+      objectReference: {fileID: 0}
+    - target: {fileID: 8881285087776128924, guid: 30d219098adedf64cb58edf50105e365, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.344
+      objectReference: {fileID: 0}
+    - target: {fileID: 8881285087776128924, guid: 30d219098adedf64cb58edf50105e365, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.057
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
