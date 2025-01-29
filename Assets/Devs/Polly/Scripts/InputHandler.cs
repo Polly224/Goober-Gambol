@@ -213,7 +213,8 @@ public class InputHandler : MonoBehaviour
         if (canGoInvincible)
         {
             isInvincible = true;
-            StartCoroutine(LoseInvul(2));
+            StartCoroutine(LoseInvul(1));
+            StartCoroutine(InvulFlash(0.2f));
             canGoInvincible = false;
         }
         if(!fromRoundChange)
@@ -260,6 +261,35 @@ public class InputHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         isInvincible = false;
+        yield break;
+    }
+
+    public IEnumerator InvulFlash(float delayBetweenFlashes)
+    {
+        List<Material> mats = new();
+        foreach(Transform t in transform.GetChild(0))
+        {
+            if (t.gameObject.GetComponent<MeshRenderer>() != null) mats.Add(t.gameObject.GetComponent<MeshRenderer>().material);
+            if (t.gameObject.GetComponent<SkinnedMeshRenderer>() != null) mats.Add(t.gameObject.GetComponent<SkinnedMeshRenderer>().material);
+        }
+        while (isInvincible)
+        {
+            foreach(Material mat in mats)
+            {
+                mat.color = new(0.5f, 0.5f, 0.5f);
+            }
+            yield return new WaitForSeconds(delayBetweenFlashes);
+            foreach(Material mat in mats)
+            {
+                mat.color = new(1, 1, 1);
+            }
+            yield return new WaitForSeconds(delayBetweenFlashes);
+        }
+        foreach(Material mat in mats)
+        {
+            mat.color = new(1, 1, 1);
+        }
+        yield return null;
         yield break;
     }
 }

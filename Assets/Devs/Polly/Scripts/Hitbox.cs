@@ -23,8 +23,11 @@ public class Hitbox : MonoBehaviour
         // If the hitbox hasn't hit the other player before, deal damage and knockback to them. If the hitbox is that of a thrown weapon, it destroys the thrown weapon.
         if(other.gameObject.CompareTag("Player") && !hitPlayers.Contains(other.gameObject) && !other.gameObject.GetComponent<InputHandler>().isRagdolling)
         {
-            hitPlayers.Add(other.gameObject);
-            other.GetComponent<DamageSystem>().GotHit(attackData, transform.position);
+            if (!other.GetComponent<InputHandler>().isInvincible)
+            {
+                hitPlayers.Add(other.gameObject);
+                other.GetComponent<DamageSystem>().GotHit(attackData, transform.position);
+            }
             if(attackData.throwable) Destroy(gameObject);
         }
         if (other.gameObject.CompareTag("Ragdoll") && !hitPlayers.Contains(other.gameObject)) 
