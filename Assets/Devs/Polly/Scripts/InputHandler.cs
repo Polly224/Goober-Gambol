@@ -201,13 +201,6 @@ public class InputHandler : MonoBehaviour
 
     public void StopRagdolling(bool fromRoundChange = false)
     {
-        if (canGoInvincible)
-        {
-            isInvincible = true;
-            StartCoroutine(LoseInvul(1));
-            StartCoroutine(InvulFlash(0.2f));
-            canGoInvincible = false;
-        }
         if(!fromRoundChange)
         if (!GetComponent<DamageSystem>().isDizzy && spawnedRagdoll.GetComponent<SpawnedRagdoll>().hasHitCollision)
         {
@@ -231,6 +224,13 @@ public class InputHandler : MonoBehaviour
             bloodParticle.transform.SetParent(transform, false);
             pointerArrow.transform.SetParent(transform, true);
             Destroy(spawnedRagdoll);
+        }
+        if (canGoInvincible)
+        {
+            isInvincible = true;
+            StartCoroutine(LoseInvul(1));
+            StartCoroutine(InvulFlash(0.2f));
+            canGoInvincible = false;
         }
     }
 
@@ -258,12 +258,23 @@ public class InputHandler : MonoBehaviour
 
     public IEnumerator InvulFlash(float delayBetweenFlashes)
     {
+        MeshRenderer[] mR = GetComponentsInChildren<MeshRenderer>();
+        SkinnedMeshRenderer[] sMR = GetComponentsInChildren<SkinnedMeshRenderer>();
         List<Material> mats = new();
-        foreach(Transform t in transform.GetChild(0))
+        for (int i = 0; i < mR.Length; i++)
+        {
+            mats.Add(mR[i].material);
+        }
+        for(int i = 0; i < sMR.Length; i++)
+        {
+            mats.Add(sMR[i].material);
+        }
+        /*foreach(Transform t in transform.GetChild(0))
         {
             if (t.gameObject.GetComponent<MeshRenderer>() != null) mats.Add(t.gameObject.GetComponent<MeshRenderer>().material);
             if (t.gameObject.GetComponent<SkinnedMeshRenderer>() != null) mats.Add(t.gameObject.GetComponent<SkinnedMeshRenderer>().materials[0]);
-        }
+        }*/
+        
         while (isInvincible)
         {
             foreach(Material mat in mats)
