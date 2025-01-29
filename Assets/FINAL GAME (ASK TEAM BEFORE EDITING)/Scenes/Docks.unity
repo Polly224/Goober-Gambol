@@ -254,7 +254,7 @@ Transform:
   m_GameObject: {fileID: 13372943}
   serializedVersion: 2
   m_LocalRotation: {x: 0.27563733, y: 0, z: 0, w: 0.96126175}
-  m_LocalPosition: {x: 6.6, y: 12.2, z: -80.6}
+  m_LocalPosition: {x: 2.68, y: 12.2, z: -80.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1874,6 +1874,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Collision
       objectReference: {fileID: 0}
+    - target: {fileID: 234358348159165041, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 418715399235769341, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 798587856136607085, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -1889,6 +1897,10 @@ PrefabInstance:
     - target: {fileID: 1768758608073770024, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
       propertyPath: m_Range
       value: 3.5611677
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073751356779019953, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2363513512757065234, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1934,6 +1946,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Collision
       objectReference: {fileID: 0}
+    - target: {fileID: 2801217427227165019, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046649869092436471, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3346298831397001309, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
       propertyPath: m_TagString
       value: Collision
@@ -1957,6 +1977,10 @@ PrefabInstance:
     - target: {fileID: 5588039962896306167, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
       propertyPath: m_TagString
       value: Collision
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756009618440323205, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6186059046081781230, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
       propertyPath: m_TagString
@@ -1982,9 +2006,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: DOCKS LEVEL 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6953122260240332881, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7415039709119966071, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
       propertyPath: m_TagString
       value: Collision
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609900440749164887, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8778679088948689026, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
       propertyPath: m_TagString
