@@ -5,22 +5,10 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    public bool RagdollStateCheck = false;
     [SerializeField] GameObject deathExplosion;
     [SerializeField] AudioClip deathSound;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") || other.CompareTag("Ragdoll"))
-        {
-            ParticleSystem pS = Instantiate(deathExplosion, other.transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
-            pS.Play();
-            GameObject spawnedSoundPlayer = new("HitSound");
-            spawnedSoundPlayer.transform.position = other.transform.position;
-            spawnedSoundPlayer.AddComponent<AudioSource>();
-            spawnedSoundPlayer.GetComponent<AudioSource>().clip = deathSound;
-            spawnedSoundPlayer.GetComponent<AudioSource>().Play();
-            Destroy(spawnedSoundPlayer, deathSound.length);
-        }
         if (other.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerPlacement>().Died();
@@ -45,6 +33,17 @@ public class DeathZone : MonoBehaviour
             sR.originPlayer.SetActive(false);
             sR.originPlayer.GetComponent<InputHandler>().StopRagdolling();
             Destroy(other.transform.root.gameObject, 0.1f);
+        }
+        if(other.CompareTag("Player") || other.CompareTag("Ragdoll"))
+        {
+            ParticleSystem pS = Instantiate(deathExplosion, other.transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
+            pS.Play();
+            GameObject spawnedSoundPlayer = new("HitSound");
+            spawnedSoundPlayer.transform.position = other.transform.position;
+            spawnedSoundPlayer.AddComponent<AudioSource>();
+            spawnedSoundPlayer.GetComponent<AudioSource>().clip = deathSound;
+            spawnedSoundPlayer.GetComponent<AudioSource>().Play();
+            Destroy(spawnedSoundPlayer, deathSound.length);
         }
     }
 }
