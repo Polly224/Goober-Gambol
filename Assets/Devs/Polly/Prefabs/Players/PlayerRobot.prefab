@@ -137,6 +137,7 @@ MonoBehaviour:
   turnSpeed: 5
   ragdollModel: {fileID: 6178220730746847537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
   spawnedRagdoll: {fileID: 0}
+  dashParticle: {fileID: 6081377969945574190, guid: 724b363cb84c61b47bc67ad78c4c0224, type: 3}
 --- !u!114 &484948906729318700
 MonoBehaviour:
   m_ObjectHideFlags: 0

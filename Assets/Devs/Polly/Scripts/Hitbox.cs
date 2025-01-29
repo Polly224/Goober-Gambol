@@ -31,12 +31,15 @@ public class Hitbox : MonoBehaviour
         {
             if (!hitPlayers.Contains(other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer))
             {
-                hitPlayers.Add(other.gameObject);
-                Vector3 knockbackDir = other.transform.position - transform.position;
-                knockbackDir.Normalize();
-                knockbackDir *= 3;
-                if (other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().isDizzy) knockbackDir *= 3;
-                other.GetComponent<Rigidbody>().AddForce(attackData.knockback * other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().damageTaken * knockbackDir, ForceMode.Impulse);
+                if (!other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<InputHandler>().isInvincible)
+                {
+                    hitPlayers.Add(other.gameObject);
+                    Vector3 knockbackDir = other.transform.position - transform.position;
+                    knockbackDir.Normalize();
+                    knockbackDir *= 3;
+                    if (other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().isDizzy) knockbackDir *= 3;
+                    other.GetComponent<Rigidbody>().AddForce(attackData.knockback * other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().damageTaken * knockbackDir, ForceMode.Impulse);
+                }
             }
         }
         if (attackData.throwable)

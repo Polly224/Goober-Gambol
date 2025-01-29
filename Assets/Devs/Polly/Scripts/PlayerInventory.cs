@@ -59,7 +59,7 @@ public class PlayerInventory : MonoBehaviour
                 pickupInRange = true;
             }
         }
-        if (pickupInRange && context.performed) PickUpWeapon();
+        if (pickupInRange && context.performed && weaponInventory.Count == 2) PickUpWeapon();
     }
 
     // Only gets called if there's a weapon in range to pick up. Picks up the closest weapon, and either adds it to the player inventory or swaps the current gun.

@@ -22,6 +22,8 @@ public class InputHandler : MonoBehaviour
     public bool isLooking = false;
     public bool isMoving = false;
     public bool isRagdolling = false;
+    public bool isInvincible = false;
+    public bool canGoInvincible = false;
     public bool canStopRagdolling = true;
     private Animator modelAnim;
     private Rigidbody rb;
@@ -34,6 +36,7 @@ public class InputHandler : MonoBehaviour
     private bool buttonPressedForRagdoll = false;
     private ParticleSystem dizzyParticle;
     private ParticleSystem bloodParticle;
+    [SerializeField] GameObject dashParticle;
     private GameObject pointerArrow;
     private void Awake()
     {
@@ -159,7 +162,8 @@ public class InputHandler : MonoBehaviour
             {
                 // If the player's not already ragdolling and also grounded, the player jumps forward with a large burst of speed and ragdolls.
                 transform.LookAt(rb.position + new Vector3(lookDir.x, 0, lookDir.y) + Vector3.up / 5);
-                Ragdoll(true, new Vector3(lookDir.x, 0, lookDir.y) * jumpRollSpeed * 1.25f + Vector3.up * 0.5f * jumpRollSpeed);
+                Instantiate(dashParticle, transform.position, Quaternion.Euler(0, -transform.rotation.eulerAngles.y, 0));
+                Ragdoll(true, new Vector3(lookDir.x, 0, lookDir.y) * jumpRollSpeed * 1.25f + Vector3.up * 0.5f * jumpRollSpeed, false);
                 // If the player cancelled an attack with their jumproll, it cancels said attack.
                 GetComponent<AttackScript>().StopAllCoroutines();
                 GetComponent<AttackScript>().attackOnCooldown = false;
@@ -180,9 +184,10 @@ public class InputHandler : MonoBehaviour
             }
         }
     }
-    public void Ragdoll(bool addForce = false, Vector3? forceAdded = null)
+    public void Ragdoll(bool addForce = false, Vector3? forceAdded = null, bool gainsInvulOnExit = true)
     {
         // Activates ragdoll, stopping all control input until the ground is hit.
+        canGoInvincible = gainsInvulOnExit;
         if (!isRagdolling) isRagdolling = true;
         playModel.SetActive(false);
         spawnedRagdoll = Instantiate(ragdollModel, transform.position, Quaternion.identity);
@@ -205,6 +210,12 @@ public class InputHandler : MonoBehaviour
 
     public void StopRagdolling(bool fromRoundChange = false)
     {
+        if (canGoInvincible)
+        {
+            isInvincible = true;
+            StartCoroutine(LoseInvul(2));
+            canGoInvincible = false;
+        }
         if(!fromRoundChange)
         if (!GetComponent<DamageSystem>().isDizzy && spawnedRagdoll.GetComponent<SpawnedRagdoll>().hasHitCollision)
         {
@@ -242,6 +253,13 @@ public class InputHandler : MonoBehaviour
         canStopRagdolling = false;
         yield return new WaitForSeconds(delay);
         StopRagdolling();
+        yield break;
+    }
+
+    public IEnumerator LoseInvul(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isInvincible = false;
         yield break;
     }
 }

@@ -30,8 +30,14 @@ public class PlayerCameraFollower : MonoBehaviour
             objects.Clear();
             for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
             {
-                if (PlayerDataStorage.connectedPlayerObjects[i].activeSelf) activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i]);
-                else if (PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().spawnedRagdoll != null) activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject);
+                if (PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().spawnedRagdoll == null)
+                {
+                    activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i]);
+                }
+                else
+                {
+                    activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().spawnedRagdoll.transform.GetChild(4).GetChild(0).gameObject);
+                }
             }
             Vector3 middlePosition = new();
             for (int i = 0; i < activePlayerObjects.Count; i++)
@@ -78,20 +84,19 @@ public class PlayerCameraFollower : MonoBehaviour
             // If there's 2 players, the camera focuses on the point between the two.
             if(activePlayerObjects.Count == 2)
             {
-                GameObject[] objs = GameObject.FindGameObjectsWithTag("Ragdoll");
-                foreach(GameObject obj in objs)
-                {
-                    Debug.Log(obj.name);
-                }
+                /*GameObject[] objs = GameObject.FindGameObjectsWithTag("Ragdoll");
                 if(objs.Length > 0)
                 for (int i = 0; i < objs.Length; i++)
                 {
-                    if (objs[i].transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer == activePlayerObjects[i])
+                    for(int j = 0; j < activePlayerObjects.Count; j++)
                     {
-                        activePlayerObjects[i] = objs[i].transform.root.GetChild(4).GetChild(0).gameObject;
-                        break;
+                        if(objs[i].transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer == activePlayerObjects[j])
+                        {
+                            activePlayerObjects[j] = objs[i];
+                            break;
+                        }
                     }
-                }
+                }*/
                 Vector3 averagePos = (activePlayerObjects[0].transform.position + activePlayerObjects[1].transform.position) / 2;
                 intendedPos = averagePos - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(activePlayerObjects[0].transform.position, activePlayerObjects[1].transform.position)) - transform.forward * (activePlayerObjects[0].transform.position.z - activePlayerObjects[1].transform.position.z) / 3.5f;
             }
@@ -113,7 +118,7 @@ public class PlayerCameraFollower : MonoBehaviour
                 // This line of code took a solid 10 years off my life span.
                 intendedPos = middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(objects[0].transform.position, objects[1].transform.position)) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f;
             }
-            transform.position = Vector3.Lerp(transform.position, intendedPos, 0.02f);
+            transform.position = Vector3.Lerp(transform.position, intendedPos, 0.05f);
         }
     }
 }
