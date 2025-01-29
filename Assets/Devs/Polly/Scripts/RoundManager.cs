@@ -50,7 +50,6 @@ public class RoundManager : MonoBehaviour
             yield return null;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerPlacement>().placingValue = 0;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInventory>().RemoveAllWeapons();
-            PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInput>().ActivateInput();
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInput>().SwitchCurrentControlScheme(PlayerDataStorage.connectedControllers[i]);
             PlayerDataStorage.connectedPlayerObjects[i].transform.position = playerSpawnpoints[i].transform.position;
         }
