@@ -75,7 +75,7 @@ public class PlayerCameraFollower : MonoBehaviour
                     }
                 }
             }
-                
+            // If there's 2 players, the camera focuses on the point between the two.
             if(activePlayerObjects.Count == 2)
             {
                 GameObject[] objs = GameObject.FindGameObjectsWithTag("Ragdoll");
@@ -105,7 +105,7 @@ public class PlayerCameraFollower : MonoBehaviour
                 }
                 intendedPos = activePlayerObjects[0].transform.position - transform.forward * zoomDistance * 10;
             }
-            // If there's MORE than 1 player, however...
+            // If there's MORE than 2 players, however...
             // It gets the total distance between the 2 furthest player objects, then moves the camera back based on that distance and the difference between those
             // 2 objects' z coordinates. I love coding. Coding is awesome. This definitely didn't take me an hour to write.
             if(activePlayerObjects.Count > 2)
