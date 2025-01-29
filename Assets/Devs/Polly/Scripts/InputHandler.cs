@@ -213,6 +213,7 @@ public class InputHandler : MonoBehaviour
         {
             isRagdolling = false;
             transform.position = spawnedRagdoll.transform.GetChild(4).GetChild(0).position;
+            transform.rotation = Quaternion.Euler(0, transform.eulerAngles.x, 0);
             playModel.SetActive(true);
             dizzyParticle.transform.SetParent(transform, false);
             dizzyParticle.transform.position += transform.up * 0.8f;
