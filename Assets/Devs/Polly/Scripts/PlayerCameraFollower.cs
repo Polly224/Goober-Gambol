@@ -32,6 +32,7 @@ public class PlayerCameraFollower : MonoBehaviour
             {
                 if (PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().spawnedRagdoll == null)
                 {
+                    if (PlayerDataStorage.connectedPlayerObjects[i].activeSelf)
                     activePlayerObjects.Add(PlayerDataStorage.connectedPlayerObjects[i]);
                 }
                 else
