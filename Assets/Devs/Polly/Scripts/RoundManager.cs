@@ -44,6 +44,7 @@ public class RoundManager : MonoBehaviour
         for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
         {
             PlayerDataStorage.connectedPlayerObjects[i].transform.position = playerSpawnpoints[i].transform.position;
+            PlayerDataStorage.connectedPlayerObjects[i].transform.rotation = Quaternion.Euler(0, 0, 0);
             PlayerDataStorage.connectedPlayerObjects[i].SetActive(true);
             yield return null;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().isRagdolling = false;
