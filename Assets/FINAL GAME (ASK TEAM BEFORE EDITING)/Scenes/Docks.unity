@@ -6930,7 +6930,8 @@ PrefabInstance:
       value: DOCKS LEVEL 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4226085929730362068, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 489cbba16a2fd7d41bd638ffdfdcc2e8, type: 3}
