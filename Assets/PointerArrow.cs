@@ -14,7 +14,7 @@ public class PointerArrow : MonoBehaviour
     {
         transform.localPosition = Vector3.zero;
         transform.position += transform.up * 3;
-        transform.lossyScale.Set(1, 1, 1);
+        if(transform.root.gameObject.CompareTag("Player")) transform.localScale = new(1, 1f / 3f, 1);
         transform.LookAt(cameraObj.transform.position);
     }
 }

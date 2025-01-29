@@ -30,19 +30,16 @@ public class Hitbox : MonoBehaviour
             }
             if(attackData.throwable) Destroy(gameObject);
         }
-        if (other.gameObject.CompareTag("Ragdoll") && !hitPlayers.Contains(other.gameObject)) 
+
+        if ((other.gameObject.CompareTag("Ragdoll") || other.gameObject.CompareTag("RagdollLimb")) && !hitPlayers.Contains(other.gameObject)) 
         {
             if (!hitPlayers.Contains(other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer))
             {
-                if (!other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<InputHandler>().isInvincible)
-                {
-                    hitPlayers.Add(other.gameObject);
-                    Vector3 knockbackDir = other.transform.position - transform.position;
-                    knockbackDir.Normalize();
-                    knockbackDir *= 3;
-                    if (other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().isDizzy) knockbackDir *= 3;
-                    other.GetComponent<Rigidbody>().AddForce(attackData.knockback * other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().damageTaken * knockbackDir, ForceMode.Impulse);
-                }
+                hitPlayers.Add(other.gameObject);
+                Vector3 knockbackDir = other.transform.position - transform.position;
+                knockbackDir.Normalize();
+                knockbackDir *= 3;
+                other.GetComponent<Rigidbody>().AddForce(attackData.knockback * other.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer.GetComponent<DamageSystem>().damageTaken * knockbackDir, ForceMode.VelocityChange);
             }
         }
         if (attackData.throwable)

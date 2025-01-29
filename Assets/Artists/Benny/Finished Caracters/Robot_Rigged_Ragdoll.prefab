@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3073724491383408673}
   m_Layer: 3
   m_Name: metarig.002
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 1204492587462497072}
   m_Layer: 3
   m_Name: hand.R_end
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 6888714968186300561}
   m_Layer: 3
   m_Name: shin.L.001
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 8019046039064815646}
   m_Layer: 3
   m_Name: upper_arm.R
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 1871261535853776675}
   m_Layer: 3
   m_Name: Foot_Right.002
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 773643503311400287}
   m_Layer: 3
   m_Name: spine.010_end
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 7943056140850571151}
   m_Layer: 3
   m_Name: foot.L
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 3655041703436684588}
   m_Layer: 3
   m_Name: spine.002
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 8216484655404203590}
   m_Layer: 3
   m_Name: spine.008
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 5871122459979936862}
   m_Layer: 3
   m_Name: spine.003
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -909,7 +909,7 @@ GameObject:
   - component: {fileID: 8310954968729710249}
   m_Layer: 3
   m_Name: spine.002_end
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 2835065458849773643}
   m_Layer: 3
   m_Name: spine.012
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1098,7 +1098,7 @@ GameObject:
   - component: {fileID: 3664345679999735290}
   m_Layer: 3
   m_Name: spine.005
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 4211007704418192324}
   m_Layer: 3
   m_Name: shin.R.001
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1398,7 +1398,7 @@ GameObject:
   - component: {fileID: 2473535803116623823}
   m_Layer: 3
   m_Name: Leg_Left.002
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1492,7 +1492,7 @@ GameObject:
   - component: {fileID: 2050392512932923320}
   m_Layer: 3
   m_Name: foot.R_end
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1648,7 +1648,7 @@ GameObject:
   - component: {fileID: 3586549651276324784}
   m_Layer: 3
   m_Name: foot.R
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1790,7 +1790,7 @@ GameObject:
   - component: {fileID: 926439029682618865}
   m_Layer: 3
   m_Name: spine.010
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1835,7 +1835,7 @@ GameObject:
   - component: {fileID: 224345734536494109}
   m_Layer: 3
   m_Name: spine.008_end
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1881,7 +1881,7 @@ GameObject:
   - component: {fileID: 4788979198404086091}
   m_Layer: 3
   m_Name: Tail_Begin.002
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1977,7 +1977,7 @@ GameObject:
   - component: {fileID: 2714272789130346544}
   m_Layer: 3
   m_Name: Cylinder.009
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2074,7 +2074,7 @@ GameObject:
   - component: {fileID: 164512160988225211}
   m_Layer: 3
   m_Name: spine.011
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2216,7 +2216,7 @@ GameObject:
   - component: {fileID: 242157329017855133}
   m_Layer: 3
   m_Name: upper_arm.L
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2373,7 +2373,7 @@ GameObject:
   - component: {fileID: 8950242433116045876}
   m_Layer: 3
   m_Name: shin.R
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2517,7 +2517,7 @@ GameObject:
   - component: {fileID: 4317653183164487251}
   m_Layer: 3
   m_Name: spine.001
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2615,7 +2615,7 @@ GameObject:
   - component: {fileID: 6194776015835435339}
   m_Layer: 3
   m_Name: Hand_Left.002
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2709,7 +2709,7 @@ GameObject:
   - component: {fileID: 1961798273580685359}
   m_Layer: 3
   m_Name: hand.L
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2757,7 +2757,7 @@ GameObject:
   - component: {fileID: 8468724548217167780}
   m_Layer: 3
   m_Name: Tail_Begin.003
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2903,7 +2903,7 @@ GameObject:
   - component: {fileID: 9109176106097715416}
   m_Layer: 3
   m_Name: foot.L_end
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2950,7 +2950,7 @@ GameObject:
   - component: {fileID: 2141219178298623636}
   m_Layer: 3
   m_Name: shin.L
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3092,7 +3092,7 @@ GameObject:
   - component: {fileID: 2686107136040667516}
   m_Layer: 3
   m_Name: hand.L_end
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3136,7 +3136,7 @@ GameObject:
   - component: {fileID: 3045183074298759315}
   m_Layer: 3
   m_Name: hand.R
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3184,7 +3184,7 @@ GameObject:
   - component: {fileID: 5033785249068126312}
   m_Layer: 3
   m_Name: Foot_Left.002
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3280,7 +3280,7 @@ GameObject:
   - component: {fileID: 7568367047301166629}
   m_Layer: 3
   m_Name: Left_Right.002
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3377,7 +3377,7 @@ GameObject:
   - component: {fileID: 589004672733283327}
   m_Layer: 3
   m_Name: forearm.R
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3521,7 +3521,7 @@ GameObject:
   - component: {fileID: 8874059929425819234}
   m_Layer: 3
   m_Name: spine.004
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3664,7 +3664,7 @@ GameObject:
   - component: {fileID: 3802155705885495334}
   m_Layer: 3
   m_Name: forearm.R.001
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3805,7 +3805,7 @@ GameObject:
   - component: {fileID: 82095189894043087}
   m_Layer: 3
   m_Name: spine.009
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3853,7 +3853,7 @@ GameObject:
   - component: {fileID: 5527353771826683591}
   m_Layer: 3
   m_Name: forearm.L.001
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3997,7 +3997,7 @@ GameObject:
   - component: {fileID: 3011471177824531879}
   m_Layer: 3
   m_Name: forearm.L
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4358,7 +4358,7 @@ GameObject:
   - component: {fileID: 4476210726114723644}
   m_Layer: 3
   m_Name: Hand_Right.002
-  m_TagString: Untagged
+  m_TagString: RagdollLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

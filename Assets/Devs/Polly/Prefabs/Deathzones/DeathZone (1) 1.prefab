@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 500, y: -31.9, z: 0}
-  m_LocalScale: {x: 2000, y: 1, z: 2000}
+  m_LocalScale: {x: 2000, y: 10, z: 2000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -118,6 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ff35a73b3ad84498cbda38b191dd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RagdollStateCheck: 0
   deathExplosion: {fileID: 2168474961327644615, guid: bca95691d3834d44aaedc91ca1fa83a2, type: 3}
   deathSound: {fileID: 8300000, guid: 49dec111ca70ab9448d53b1188c770bb, type: 3}

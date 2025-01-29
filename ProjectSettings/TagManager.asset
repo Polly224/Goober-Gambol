@@ -10,6 +10,7 @@ TagManager:
   - WeaponSpawnpoint
   - Collision
   - Ragdoll
+  - RagdollLimb
   layers:
   - Default
   - TransparentFX
