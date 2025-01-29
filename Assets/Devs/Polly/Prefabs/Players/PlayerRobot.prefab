@@ -133,6 +133,8 @@ MonoBehaviour:
   isLooking: 0
   isMoving: 0
   isRagdolling: 0
+  isInvincible: 0
+  canGoInvincible: 0
   canStopRagdolling: 1
   turnSpeed: 5
   ragdollModel: {fileID: 6178220730746847537, guid: 4855bcf1f443d964babe5449141d78a5, type: 3}
@@ -366,6 +368,7 @@ MonoBehaviour:
   dizzyTimerSpeed: 5
   bleedStacks: []
   hitEffect: {fileID: 7427235678155728528, guid: 3126579c15ad12f4da1ad6ef390cdc03, type: 3}
+  punchSound: {fileID: 8300000, guid: b983c9e6df79fea4e80dafd39a0d5b12, type: 3}
 --- !u!54 &4139782108211817537
 Rigidbody:
   m_ObjectHideFlags: 0

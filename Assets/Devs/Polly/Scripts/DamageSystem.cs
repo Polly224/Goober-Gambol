@@ -14,6 +14,7 @@ public class DamageSystem : MonoBehaviour
     public List<float> bleedStacks = new();
     private ParticleSystem bleedEffect;
     [SerializeField] GameObject hitEffect;
+    [SerializeField] AudioClip punchSound;
 
     private void Start()
     {
@@ -70,6 +71,7 @@ public class DamageSystem : MonoBehaviour
             }
         }
         spawnedSoundPlayer.GetComponent<AudioSource>().clip = hitSoundToPlay;
+        if (weaponHitBy.name == "Punch") spawnedSoundPlayer.GetComponent<AudioSource>().clip = punchSound;
         spawnedSoundPlayer.GetComponent<AudioSource>().Play();
         damageTaken += totalDamage;
         totalKnockback *= damageTaken;

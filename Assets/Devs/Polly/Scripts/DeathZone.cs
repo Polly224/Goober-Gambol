@@ -7,24 +7,19 @@ public class DeathZone : MonoBehaviour
 {
     public bool RagdollStateCheck = false;
     [SerializeField] GameObject deathExplosion;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    [SerializeField] AudioClip deathSound;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player") || other.CompareTag("Ragdoll"))
         {
             ParticleSystem pS = Instantiate(deathExplosion, other.transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
             pS.Play();
+            GameObject spawnedSoundPlayer = new("HitSound");
+            spawnedSoundPlayer.transform.position = other.transform.position;
+            spawnedSoundPlayer.AddComponent<AudioSource>();
+            spawnedSoundPlayer.GetComponent<AudioSource>().clip = deathSound;
+            spawnedSoundPlayer.GetComponent<AudioSource>().Play();
+            Destroy(spawnedSoundPlayer, deathSound.length);
         }
         if (other.CompareTag("Player"))
         {
