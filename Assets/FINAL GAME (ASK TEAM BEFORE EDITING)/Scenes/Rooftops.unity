@@ -427,7 +427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ff35a73b3ad84498cbda38b191dd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RagdollStateCheck: 0
   deathExplosion: {fileID: 2168474961327644615, guid: bca95691d3834d44aaedc91ca1fa83a2, type: 3}
   deathSound: {fileID: 8300000, guid: 49dec111ca70ab9448d53b1188c770bb, type: 3}
 --- !u!65 &146951406
@@ -666,7 +665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ff35a73b3ad84498cbda38b191dd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RagdollStateCheck: 0
   deathExplosion: {fileID: 2168474961327644615, guid: bca95691d3834d44aaedc91ca1fa83a2, type: 3}
   deathSound: {fileID: 8300000, guid: 49dec111ca70ab9448d53b1188c770bb, type: 3}
 --- !u!65 &241360713
@@ -897,7 +895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ff35a73b3ad84498cbda38b191dd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RagdollStateCheck: 0
   deathExplosion: {fileID: 2168474961327644615, guid: bca95691d3834d44aaedc91ca1fa83a2, type: 3}
   deathSound: {fileID: 8300000, guid: 49dec111ca70ab9448d53b1188c770bb, type: 3}
 --- !u!65 &368841148
@@ -1137,7 +1134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ff35a73b3ad84498cbda38b191dd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RagdollStateCheck: 0
   deathExplosion: {fileID: 2168474961327644615, guid: bca95691d3834d44aaedc91ca1fa83a2, type: 3}
   deathSound: {fileID: 8300000, guid: 49dec111ca70ab9448d53b1188c770bb, type: 3}
 --- !u!65 &948551566
@@ -1363,7 +1359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ff35a73b3ad84498cbda38b191dd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RagdollStateCheck: 0
   deathExplosion: {fileID: 2168474961327644615, guid: bca95691d3834d44aaedc91ca1fa83a2, type: 3}
   deathSound: {fileID: 8300000, guid: 49dec111ca70ab9448d53b1188c770bb, type: 3}
 --- !u!65 &1073321501
@@ -1646,7 +1641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ff35a73b3ad84498cbda38b191dd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RagdollStateCheck: 0
   deathExplosion: {fileID: 2168474961327644615, guid: bca95691d3834d44aaedc91ca1fa83a2, type: 3}
   deathSound: {fileID: 8300000, guid: 49dec111ca70ab9448d53b1188c770bb, type: 3}
 --- !u!65 &1393099165
