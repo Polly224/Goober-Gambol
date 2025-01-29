@@ -19,7 +19,7 @@ public class DeathZone : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-        else if (other.CompareTag("Ragdoll"))
+        else if (other.CompareTag("Ragdoll") || other.CompareTag("RagdollLimb"))
         {
             SpawnedRagdoll sR = other.transform.root.gameObject.GetComponent<SpawnedRagdoll>();
             sR.originPlayer.GetComponent<PlayerPlacement>().Died();
