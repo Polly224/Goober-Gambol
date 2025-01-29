@@ -12,6 +12,12 @@ public class PlayerCameraFollower : MonoBehaviour
     [SerializeField] float zoomDistance;
     [SerializeField] float zoomSpeed;
     public bool playersDoneSpawing = false;
+    public Vector3 intendedPos;
+
+    private void Start()
+    {
+        intendedPos = transform.position;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -87,7 +93,7 @@ public class PlayerCameraFollower : MonoBehaviour
                     }
                 }
                 Vector3 averagePos = (activePlayerObjects[0].transform.position + activePlayerObjects[1].transform.position) / 2;
-                transform.position = Vector3.Lerp(transform.position, averagePos - transform.forward * 2 -transform.forward * (zoomDistance * Vector3.Distance(activePlayerObjects[0].transform.position, activePlayerObjects[1].transform.position)) - transform.forward * (activePlayerObjects[0].transform.position.z - activePlayerObjects[1].transform.position.z) / 3.5f, 0.1f);
+                intendedPos = averagePos - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(activePlayerObjects[0].transform.position, activePlayerObjects[1].transform.position)) - transform.forward * (activePlayerObjects[0].transform.position.z - activePlayerObjects[1].transform.position.z) / 3.5f;
             }
             
             // If there's only 1 player, the camera just focuses on them.
@@ -97,7 +103,7 @@ public class PlayerCameraFollower : MonoBehaviour
                 {
                     if (g.transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer == activePlayerObjects[0]) activePlayerObjects[0] = g.transform.root.GetChild(4).GetChild(0).gameObject;
                 }
-                transform.position = activePlayerObjects[0].transform.position - transform.forward * zoomDistance * 10;
+                intendedPos = activePlayerObjects[0].transform.position - transform.forward * zoomDistance * 10;
             }
             // If there's MORE than 1 player, however...
             // It gets the total distance between the 2 furthest player objects, then moves the camera back based on that distance and the difference between those
@@ -105,8 +111,9 @@ public class PlayerCameraFollower : MonoBehaviour
             if(activePlayerObjects.Count > 2)
             {
                 // This line of code took a solid 10 years off my life span.
-                transform.position = Vector3.Lerp(transform.position, middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(objects[0].transform.position, objects[1].transform.position)) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f, 0.1f);
+                intendedPos = middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(objects[0].transform.position, objects[1].transform.position)) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f;
             }
+            transform.position = Vector3.Lerp(transform.position, intendedPos, 0.02f);
         }
     }
 }

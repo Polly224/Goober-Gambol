@@ -119,3 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RagdollStateCheck: 0
+  deathExplosion: {fileID: 2168474961327644615, guid: bca95691d3834d44aaedc91ca1fa83a2, type: 3}
