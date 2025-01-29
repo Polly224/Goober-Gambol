@@ -44,6 +44,7 @@ public class RoundManager : MonoBehaviour
         for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
         {
             PlayerDataStorage.connectedPlayerObjects[i].SetActive(true);
+            yield return null;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().isRagdolling = false;
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<InputHandler>().StopRagdolling(true);
             PlayerDataStorage.connectedPlayerObjects[i].transform.GetChild(0).gameObject.SetActive(true);
@@ -52,6 +53,8 @@ public class RoundManager : MonoBehaviour
             PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInventory>().RemoveAllWeapons();
             // PlayerDataStorage.connectedPlayerObjects[i].GetComponent<PlayerInput>().SwitchCurrentControlScheme(PlayerDataStorage.connectedControllers[i]);
             PlayerDataStorage.connectedPlayerObjects[i].transform.position = playerSpawnpoints[i].transform.position;
+            PlayerDataStorage.connectedPlayerObjects[i].SetActive(true);
+            yield return null;
         }
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Pickup")) Destroy(g);
         yield return null;
