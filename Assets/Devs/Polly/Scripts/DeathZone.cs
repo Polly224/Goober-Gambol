@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
     public bool RagdollStateCheck = false;
+    [SerializeField] GameObject deathExplosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,11 @@ public class DeathZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.CompareTag("Player") || other.CompareTag("Ragdoll"))
+        {
+            ParticleSystem pS = Instantiate(deathExplosion, other.transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
+            pS.Play();
+        }
         if (other.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerPlacement>().Died();

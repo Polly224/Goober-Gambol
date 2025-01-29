@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Transactions;
 using Unity.VisualScripting;
+using UnityEditor.Sprites;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
@@ -33,6 +34,7 @@ public class InputHandler : MonoBehaviour
     private bool buttonPressedForRagdoll = false;
     private ParticleSystem dizzyParticle;
     private ParticleSystem bloodParticle;
+    private GameObject pointerArrow;
     private void Awake()
     {
         // Gets the player input and the player's material for later usage.
@@ -43,6 +45,7 @@ public class InputHandler : MonoBehaviour
         playModel = transform.GetChild(0).gameObject;
         dizzyParticle = transform.GetChild(1).gameObject.GetComponent<ParticleSystem>();
         bloodParticle = transform.GetChild(2).gameObject.GetComponent<ParticleSystem>();
+        pointerArrow = transform.GetChild(3).gameObject;
         playModel.SetActive(true);
     }
 
@@ -52,6 +55,14 @@ public class InputHandler : MonoBehaviour
         // When a player is added, their controller gets added to the controller list.
         if(!PlayerDataStorage.connectedControllers.Contains(playerInput.GetDevice<InputDevice>()))
         PlayerDataStorage.instance.AddToControllers(playerInput.GetDevice<InputDevice>());
+            transform.GetChild(3).GetComponent<SpriteRenderer>().color = playerInput.playerIndex switch
+            {
+                0 => Color.red,
+                1 => Color.blue,
+                2 => Color.green,
+                3 => Color.magenta,
+                _ => Color.white
+            };
     }
 
     private void OnEnable()
@@ -178,6 +189,7 @@ public class InputHandler : MonoBehaviour
         dizzyParticle.transform.localPosition = Vector3.zero;
         dizzyParticle.transform.SetParent(spawnedRagdoll.transform.GetChild(4).GetChild(0), false);
         bloodParticle.transform.SetParent(spawnedRagdoll.transform.GetChild(4).GetChild(0), false);
+        pointerArrow.transform.SetParent(spawnedRagdoll.transform.GetChild(4).GetChild(0), true);
         spawnedRagdoll.GetComponent<SpawnedRagdoll>().originPlayer = gameObject;
         spawnedRagdoll.transform.rotation = Quaternion.LookRotation(new Vector3(lookDir.x, 0, lookDir.y));
         if (addForce)
@@ -202,6 +214,7 @@ public class InputHandler : MonoBehaviour
             dizzyParticle.transform.SetParent(transform, false);
             dizzyParticle.transform.position += transform.up * 0.8f;
             bloodParticle.transform.SetParent(transform, false);
+            pointerArrow.transform.SetParent(transform, true);
             Destroy(spawnedRagdoll);
         }
         if (fromRoundChange && spawnedRagdoll != null)
@@ -212,6 +225,7 @@ public class InputHandler : MonoBehaviour
             dizzyParticle.transform.SetParent(transform, false);
             dizzyParticle.transform.position += transform.up * 0.8f;
             bloodParticle.transform.SetParent(transform, false);
+            pointerArrow.transform.SetParent(transform, true);
             Destroy(spawnedRagdoll);
         }
     }
