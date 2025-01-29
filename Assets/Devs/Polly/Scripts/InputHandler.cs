@@ -225,7 +225,7 @@ public class InputHandler : MonoBehaviour
             pointerArrow.transform.SetParent(transform, true);
             Destroy(spawnedRagdoll);
         }
-        if (canGoInvincible)
+        if (canGoInvincible && gameObject.activeSelf)
         {
             isInvincible = true;
             StartCoroutine(LoseInvul(1));
