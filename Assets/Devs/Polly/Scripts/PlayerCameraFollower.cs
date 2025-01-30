@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCameraFollower : MonoBehaviour
 {
-    [SerializeField] float zoomDistance;
+    float zoomDistance = 0.6f;
     [SerializeField] float zoomSpeed;
     public bool playersDoneSpawing = false;
     public Vector3 intendedPos;
@@ -84,21 +84,10 @@ public class PlayerCameraFollower : MonoBehaviour
             // If there's 2 players, the camera focuses on the point between the two.
             if(activePlayerObjects.Count == 2)
             {
-                /*GameObject[] objs = GameObject.FindGameObjectsWithTag("Ragdoll");
-                if(objs.Length > 0)
-                for (int i = 0; i < objs.Length; i++)
-                {
-                    for(int j = 0; j < activePlayerObjects.Count; j++)
-                    {
-                        if(objs[i].transform.root.gameObject.GetComponent<SpawnedRagdoll>().originPlayer == activePlayerObjects[j])
-                        {
-                            activePlayerObjects[j] = objs[i];
-                            break;
-                        }
-                    }
-                }*/
                 Vector3 averagePos = (activePlayerObjects[0].transform.position + activePlayerObjects[1].transform.position) / 2;
-                intendedPos = averagePos - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(activePlayerObjects[0].transform.position, activePlayerObjects[1].transform.position)) - transform.forward * (activePlayerObjects[0].transform.position.z - activePlayerObjects[1].transform.position.z) / 3.5f;
+                float playerDist = Vector3.Distance(activePlayerObjects[0].transform.position, activePlayerObjects[1].transform.position);
+                playerDist = Mathf.Clamp(playerDist, 10, 100000000);
+                intendedPos = averagePos - transform.forward * 2 - transform.forward * (zoomDistance * playerDist) - transform.forward * (activePlayerObjects[0].transform.position.z - activePlayerObjects[1].transform.position.z) / 2f;
             }
             
             // If there's only 1 player, the camera just focuses on them.
@@ -116,7 +105,9 @@ public class PlayerCameraFollower : MonoBehaviour
             if(activePlayerObjects.Count > 2)
             {
                 // This line of code took a solid 10 years off my life span.
-                intendedPos = middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * Vector3.Distance(objects[0].transform.position, objects[1].transform.position)) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f;
+                float playerDistance = Vector3.Distance(objects[0].transform.position, objects[1].transform.position);
+                playerDistance = Mathf.Clamp(playerDistance, 10, 1000000);
+                intendedPos = middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * playerDistance) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f;
             }
             transform.position = Vector3.Lerp(transform.position, intendedPos, 0.05f);
         }

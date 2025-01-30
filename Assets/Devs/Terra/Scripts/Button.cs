@@ -22,12 +22,6 @@ public class Button : MonoBehaviour
         Continue = GameObject.Find("Continue");
         Back = GameObject.Find("ControlsBack");
         EventSystem = EventSystem.current;
-        Debug.Log(Back);
-    }
-
-    private void Start()
-    {
-        Debug.Log(EventSystem.gameObject);
     }
 
     public void StartPressed()

@@ -17,6 +17,7 @@ public class RoundManager : MonoBehaviour
 
     private int maxRounds = 3;
     public static RoundManager instance;
+    public bool canEndRound = true;
 
     private void Awake()
     {
@@ -33,6 +34,9 @@ public class RoundManager : MonoBehaviour
             GameObject.FindGameObjectsWithTag("Player")[i].transform.position = playerSpawnpoints[i].transform.position;
             GameObject.FindGameObjectsWithTag("Player")[i].SetActive(true);
         }
+        GameObject.Find("Camera").transform.GetChild(1).gameObject.SetActive(true);
+        GameObject.Find("Camera").transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = "Round " + (currentRound + 1).ToString();
+        StartCoroutine(RemoveRoundText(2));
         PickupSpawningSystem.instance.StartCoroutine(PickupSpawningSystem.instance.StartSpawnRoutine());
     }
 
@@ -41,7 +45,11 @@ public class RoundManager : MonoBehaviour
         playersDeadThisRound = 0;
         currentRound++;
         PickupSpawningSystem.instance.StartCoroutine(PickupSpawningSystem.instance.StartSpawnRoutine());
-        for(int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
+        GameObject.Find("Camera").transform.GetChild(1).gameObject.SetActive(true);
+        GameObject.Find("Camera").transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = "Round " + (currentRound + 1).ToString();
+        StartCoroutine(RemoveRoundText(2));
+        yield return null;
+        for (int i = 0; i < PlayerDataStorage.connectedPlayerObjects.Count; i++)
         {
             PlayerDataStorage.connectedPlayerObjects[i].transform.position = playerSpawnpoints[i].transform.position;
             PlayerDataStorage.connectedPlayerObjects[i].transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -57,8 +65,19 @@ public class RoundManager : MonoBehaviour
             PlayerDataStorage.connectedPlayerObjects[i].SetActive(true);
             yield return null;
         }
+        canEndRound = true;
+        yield return null;
         foreach(GameObject g in GameObject.FindGameObjectsWithTag("Pickup")) Destroy(g);
         yield return null;
+        yield break;
+    }
+
+    IEnumerator RemoveRoundText(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GameObject.Find("Camera").transform.GetChild(1).gameObject.SetActive(false);
+        yield return null;
+        yield break;
     }
     private IEnumerator SwitchRoundsCooldown()
     {
@@ -100,7 +119,7 @@ public class RoundManager : MonoBehaviour
         confetti.gameObject.transform.position = spawnedWinner.transform.position + transform.forward * 4 - transform.up;
         confetti.gameObject.transform.SetParent(GameObject.Find("Camera").transform, true);
         confetti.Play();
-        if (PlayerDataStorage.playerCharacters[winningPlayer.GetComponent<PlayerInput>().playerIndex] == PlayerSelectArrow.PickedCharacter.Bunny || PlayerDataStorage.playerCharacters[winningPlayer.GetComponent<PlayerInput>().playerIndex] == PlayerSelectArrow.PickedCharacter.Robot)
+        if (winningPlayer.name == "PlayerBunny" || winningPlayer.name == "PlayerRobot")
         {
             spawnedWinner.transform.localScale = Vector3.one / 10f;
         }
@@ -111,11 +130,15 @@ public class RoundManager : MonoBehaviour
 
     public void EndRound()
     {
-        PickupSpawningSystem.instance.StopAllCoroutines();
-        foreach (GameObject g in PlayerDataStorage.connectedPlayerObjects) 
+        if (canEndRound)
         {
-            g.GetComponent<PlayerPlacement>().totalPlacingValue += PlayerDataStorage.connectedPlayerObjects.Count - g.GetComponent<PlayerPlacement>().placingValue;
+            canEndRound = false;
+            PickupSpawningSystem.instance.StopAllCoroutines();
+            foreach (GameObject g in PlayerDataStorage.connectedPlayerObjects) 
+            {
+                g.GetComponent<PlayerPlacement>().totalPlacingValue += PlayerDataStorage.connectedPlayerObjects.Count - g.GetComponent<PlayerPlacement>().placingValue;
+            }
+            StartCoroutine(ShowRoundResults());
         }
-        StartCoroutine(ShowRoundResults());
     }
 }
