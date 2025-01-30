@@ -9,6 +9,7 @@ public class Hitbox : MonoBehaviour
     public WeaponSystem.Weapon attackData;
     public List<GameObject> hitPlayers = new();
     [SerializeField] GameObject pickupForThrowable;
+    bool canSpawnSelf = true;
 
     private void Start()
     {
@@ -44,8 +45,9 @@ public class Hitbox : MonoBehaviour
         }
         if (attackData.throwable)
         {
-            if (other.gameObject.CompareTag("Collision"))
+            if (other.gameObject.CompareTag("Collision") && canSpawnSelf)
             {
+                canSpawnSelf = false;
                 Instantiate(pickupForThrowable, transform.position + Vector3.up, Quaternion.identity);
                 Destroy(gameObject);
             }

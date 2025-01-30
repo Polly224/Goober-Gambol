@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCameraFollower : MonoBehaviour
 {
-    float zoomDistance = 0.6f;
+    float zoomDistance = 0.8f;
     [SerializeField] float zoomSpeed;
     public bool playersDoneSpawing = false;
     public Vector3 intendedPos;
@@ -87,7 +87,16 @@ public class PlayerCameraFollower : MonoBehaviour
                 Vector3 averagePos = (activePlayerObjects[0].transform.position + activePlayerObjects[1].transform.position) / 2;
                 float playerDist = Vector3.Distance(activePlayerObjects[0].transform.position, activePlayerObjects[1].transform.position);
                 playerDist = Mathf.Clamp(playerDist, 10, 100000000);
-                intendedPos = averagePos - transform.forward * 2 - transform.forward * (zoomDistance * playerDist) - transform.forward * (activePlayerObjects[0].transform.position.z - activePlayerObjects[1].transform.position.z) / 2f;
+                float baseZoomDist = 0;
+                for(int i = 0; i < activePlayerObjects.Count; i++)
+                {
+                    if (activePlayerObjects[i].transform.position.z > baseZoomDist)
+                    {
+                        baseZoomDist = activePlayerObjects[i].transform.position.z;
+                    }
+                }
+                float zoomDist = baseZoomDist / 2f;
+                intendedPos = averagePos - transform.forward * 2 - transform.forward * (zoomDistance * playerDist) - transform.forward * zoomDist;
             }
             
             // If there's only 1 player, the camera just focuses on them.
@@ -107,7 +116,16 @@ public class PlayerCameraFollower : MonoBehaviour
                 // This line of code took a solid 10 years off my life span.
                 float playerDistance = Vector3.Distance(objects[0].transform.position, objects[1].transform.position);
                 playerDistance = Mathf.Clamp(playerDistance, 10, 1000000);
-                intendedPos = middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * playerDistance) - transform.forward * (objects[0].transform.position.z - objects[1].transform.position.z) / 3.5f;
+                float baseZoomDist = 0;
+                for (int i = 0; i < activePlayerObjects.Count; i++)
+                {
+                    if (activePlayerObjects[i].transform.position.z > baseZoomDist)
+                    {
+                        baseZoomDist = activePlayerObjects[i].transform.position.z;
+                    }
+                }
+                float zoomDist = baseZoomDist / 2f;
+                intendedPos = middlePosition - transform.forward * 2 - transform.forward * (zoomDistance * playerDistance) - transform.forward * zoomDist;
             }
             transform.position = Vector3.Lerp(transform.position, intendedPos, 0.05f);
         }
